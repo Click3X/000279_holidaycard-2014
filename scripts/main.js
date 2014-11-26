@@ -13,14 +13,14 @@ require.config({
         }
     },
     paths: {
-        jquery:     '../scripts/vendor/jquery/dist/jquery',
-        backbone:   '../scripts/vendor/backbone/backbone',
-        underscore: '../scripts/vendor/underscore/underscore-min',
-        bootstrap:  '../scripts/vendor/sass-bootstrap/dist/js/bootstrap',
-        text:       '../scripts/vendor/require/text.min',
-        routes:     '../scripts/routes',
-        views:      '../scripts/views',
-        modules:    '../scripts/modules'
+        jquery:     'scripts/vendor/jquery/dist/jquery',
+        backbone:   'scripts/vendor/backbone/backbone',
+        underscore: 'scripts/vendor/underscore/underscore-min',
+        bootstrap:  'scripts/vendor/sass-bootstrap/dist/js/bootstrap',
+        text:       'scripts/vendor/require/text.min',
+        routes:     'scripts/routes',
+        views:      'scripts/views',
+        modules:    'scripts/modules'
     }
 });
     
