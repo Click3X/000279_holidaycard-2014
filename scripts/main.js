@@ -32,6 +32,7 @@ require([
     'routes/router'
 ], function(Router) {
     router            = new Router();
+    console.log(base_url);
 
     //========MASTER CLICK EVENTS=========//
 
