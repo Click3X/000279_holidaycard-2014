@@ -9,6 +9,10 @@
         <link rel="stylesheet" href="<?= base_url();?>styles/css/main.css">
         <script src="<?= base_url(); ?>scripts/vendor/modernizr/modernizr.js"></script>
 
+        <!-- TYPE KIT FONT JS CODE -->
+        <script src="//use.typekit.net/ali5dgb.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+
         <!-- TEMP STYLE TAGS TILL I TALK TO JASON ABOUT GRUNT/COMPASS -->
         <style>
             .clearfix:before,
