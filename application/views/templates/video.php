@@ -10,3 +10,17 @@
 		</video>
 	</div>
 </section>
+
+<!-- SOCIAL LINKS -->
+<section class="button-holder clearfix">
+    <div class="c-half clearfix">
+        <div class="social-buttons">
+            <a class="fb"></a>
+            <a class="tw"></a>
+            <span class="share-it">Now share it!</span>
+        </div>
+    </div>
+    <div class="start-over-holder c-half clearfix">
+        <a class="start-over"></a>
+    </div>
+</section>

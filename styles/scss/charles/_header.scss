@@ -207,7 +207,7 @@ ul.nav.nav-pills {
 
     .gift-icon {
         width: 67px; height: 75px;
-        margin:2.75em auto 1em;
+        margin: 2.25em auto 1.25em;
         background-image:url('../../images/footer/gift-icon.png');
     }
 
@@ -236,7 +236,6 @@ ul.nav.nav-pills {
             display: block;
             height: 0;
             font-size: .8em;
-            // margin-bottom: -.1em;
             margin-bottom: .1em;
             margin-top: -.1em;
 
@@ -245,3 +244,65 @@ ul.nav.nav-pills {
 }
 
 .red { color:$red; }
+
+.fb, .tw, .start-over {
+    display: block;
+    background-size: contain;
+    background-repeat:no-repeat;
+}
+
+.fb, .tw {
+    width: 87px;
+    height: 88px;
+}
+
+.fb { background-image:url('../../images/ui/fb.png'); }
+.tw { background-image:url('../../images/ui/tw.png'); }
+
+.fb {float: left;}
+.tw {float: right;}
+
+.social-buttons {
+    width: 100%;
+    max-width: 200px;
+    text-align:center;
+    margin:0 auto;
+    .share-it {
+        text-align: center;
+        text-transform: uppercase;
+        color: #41729d;
+        font-weight:700;
+        font-family: "proxima-nova-alt-ext-cond",sans-serif;
+        letter-spacing: 0.06em;
+        max-width: 15em;
+        font-size: 2.1em;
+        line-height: 1.5em;
+        display: inline-block;
+    }
+}
+
+.button-holder {
+    width: 100%;
+    max-width: 640px;
+    margin: 2em auto 0;
+}
+
+.start-over-holder {
+    margin:1em auto;
+
+    .start-over {
+        width:90%;
+        max-width:251px;
+        height: 60px;
+        background-image:url('../../images/ui/start-over.png');
+        margin:0 auto;
+    }
+}
+
+.c-half {
+    width: 100%;
+    @media(min-width:481px) {
+        width: 50%;
+        float:left;
+    }
+}
