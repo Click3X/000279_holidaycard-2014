@@ -2,7 +2,7 @@
 
 define([
     'views/qpage',
-    'text!/template/q3.php'
+    'text!../template/q3.php'
 ], function (QPageTemplate, T) {
     'use strict';
 

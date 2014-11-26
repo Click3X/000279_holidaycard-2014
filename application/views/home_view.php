@@ -32,6 +32,7 @@
 
         <script type="text/javascript">
             var router;
+            var base_url = "<?=base_url(); ?>";
         </script>
 
         <div id="main-nav-container">

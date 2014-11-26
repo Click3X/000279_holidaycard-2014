@@ -3,7 +3,7 @@
 define([
     'views/page',
     'modules/slider/slider_view',
-    'text!/template/tshirt.php'
+    'text!../template/tshirt.php'
 ], function (PageTemplate, SliderView, T) {
     'use strict';
 
