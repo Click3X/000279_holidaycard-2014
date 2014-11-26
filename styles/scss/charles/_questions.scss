@@ -1,0 +1,38 @@
+// QUESTIONS
+.path-section h1 {
+    text-transform: uppercase;
+    font-weight: 800;
+    color:$blue;
+    text-align: center;
+    font-size:2em;
+    @media(min-width: 460px) { font-size: 2.75em; }
+    @media(min-width: 640px) { font-size: 4em; }
+}
+
+ul.answer-list, ul.tshirt-slides{
+    padding:0;
+    margin:0;
+
+    li{
+
+        a{
+
+            section.question-label{
+
+                .question-label-inner{
+
+                }
+
+                h4 {
+                    text-transform: uppercase;
+                    color:$darkblue;
+                    font-weight: 800;
+                    text-align: center;
+                    font-size:2em;
+                    @media(min-width: 460px) { font-size: 2.75em; }
+                    @media(min-width: 640px) { font-size: 4em; }
+                }
+            }
+        }
+    }
+}

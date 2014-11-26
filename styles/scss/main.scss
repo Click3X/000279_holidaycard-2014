@@ -5,6 +5,16 @@ $icon-font-path: "/vendor/bootstrap-sass-official/assets/fonts/bootstrap/";
 $tablet-width:680px;
 $desktop-width:960px;
 
+// COLOR VARS
+$lightblue: #45adf5;
+// QUESTIONS
+$blue: #3b86ba;
+$darkblue: #184a78;
+$submitblue: #41729e;
+$dotblue: #3d86bb;
+
+$red: #e42726;
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -182,3 +192,7 @@ ul.tshirt-slides{
         }
     }
 }
+
+// IMPORT CHARLES SCSS STYLESHEETS
+@import 'charles/header.scss';
+@import 'charles/questions.scss';
