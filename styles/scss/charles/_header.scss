@@ -61,10 +61,9 @@ body { padding-top:0; }
 
 .just-logos {
     background-image:url('../../images/header/happy-logos.png');
-    // width:86.25%;
+    background-size: contain;
     width:88%;
     max-width: 552px;
-    // padding-bottom: 18.125%;
     padding-bottom: 18.4%;
     margin: auto;
     position: absolute;
@@ -126,9 +125,7 @@ ul.nav.nav-pills {
             counter-increment: nav-counter; 
             width:75px;
 
-            @media(min-width: 400px) {
-                width: 82px;
-            }
+            @media(min-width: 400px) { width: 82px; }
         }
 
         li a {

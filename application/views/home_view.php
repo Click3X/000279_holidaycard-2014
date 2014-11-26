@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Holidaycard2014</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
         <link rel="stylesheet" href="<?= base_url();?>styles/css/main.css">
         <script src="<?= base_url(); ?>scripts/vendor/modernizr/modernizr.js"></script>
 
