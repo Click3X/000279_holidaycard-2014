@@ -34,14 +34,9 @@ a, a:visited{
 
 #page-container{
     padding:0;
-    // padding-top:40px;
     padding-top:10px;
     max-width: 1200px;
     margin:0 auto;
-
-    // @media(min-width:640px) {
-    //     padding-top:20px;
-    // }
 
     .video-wrapper{
         width: 100%;
@@ -104,6 +99,7 @@ ul.answer-list, ul.tshirt-slides{
             color: #333;
             text-decoration: none;
         }
+
         a{
             cursor: pointer;
             display: block;
@@ -118,8 +114,11 @@ ul.answer-list, ul.tshirt-slides{
             background-position:center center;
 
             section.question-label{
-                width:100%;
+                width:90%;
                 position: absolute;
+                left: 0; right: 0;
+                margin-left: auto;
+                margin-right: auto;
 
                 .question-label-inner{ padding:10px; }
 

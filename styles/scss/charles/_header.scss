@@ -3,26 +3,9 @@
     content: "";
     display: table;
 } 
-.clearfix:after {
-    clear: both;
-}
-.clearfix {
-    zoom: 1; /* For IE 6/7 (trigger hasLayout) */
-}
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; /* For IE 6/7 (trigger hasLayout) */ }
 
-body {
-    /* TEMP BG IMAGE FOR DESIGNING */
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position:50% 0;
-}
-/*           body.page-home {background-image:url('../../images/pages/page-1.jpg');}
-body.page-2 {background-image:url('../../images/pages/page-2.jpg');}
-body.page-3 {background-image:url('../../images/pages/page-2.jpg');}
-body.page-4 {background-image:url('../../images/pages/page-2.jpg');}
-body.page-video {background-image:url('../../images/pages/page-3.jpg');}
-body.page-tshirt {background-image:url('../../images/pages/page-4.jpg');}
-*/
 body { padding-top:0; }
 
 .bg-img {
@@ -170,15 +153,11 @@ ul.nav.nav-pills {
 .nav>li>a:focus,
 .nav-pills>li.active>a:before, 
 .nav-pills>li.active>a:hover, 
-.nav-pills>li.active>a:focus {
-    background-color:transparent;
-}
+.nav-pills>li.active>a:focus { background-color:transparent; }
 
 // TEMPORARIALY HIDE LAST 2 LINKS IN MAIN NAV
 #main-nav-container > ul > li:nth-child(5),
-#main-nav-container > ul > li:nth-child(6) {
-    display: none;
-}
+#main-nav-container > ul > li:nth-child(6) { display: none; }
 
 // GET STARTED DIRECTIONS
 .directions {
@@ -213,9 +192,7 @@ ul.nav.nav-pills {
             display:block;
             text-align: center;
             width:1em; height: 1em;
-            margin:0 auto;
-            margin-bottom: -.5em;
-            // background-color: $red;
+            margin:0 auto; margin-bottom: -.5em;
             background-image:url('../../images/ui/red-arrow.png');
             background-size:contain;
             background-repeat: no-repeat;
@@ -223,3 +200,48 @@ ul.nav.nav-pills {
         }
     }
 }
+
+// FOOTER 
+.footer {
+    padding: 0 .5em;
+
+    .gift-icon {
+        width: 67px; height: 75px;
+        margin:2.75em auto 1em;
+        background-image:url('../../images/footer/gift-icon.png');
+    }
+
+    p {
+        text-align: center;
+        text-transform: uppercase;
+        color: #184a78;
+        font-weight: 600;
+        font-family: "proxima-nova-alt-ext-cond",sans-serif;
+        letter-spacing: 0.06em;
+        max-width: 15em;
+        margin: 0 auto 2em;
+        font-size: 1.5em;
+        line-height: 1.3em;
+
+        @media(min-width: 481px) {
+            font-size: 1.9em;
+            line-height: 1.2em;
+        }
+
+        .serif-italic {
+            font-family: Georgia, serif;
+            font-style: italic;
+            text-transform: lowercase;
+            font-weight: 700;
+            display: block;
+            height: 0;
+            font-size: .8em;
+            // margin-bottom: -.1em;
+            margin-bottom: .1em;
+            margin-top: -.1em;
+
+        }
+    }
+}
+
+.red { color:$red; }

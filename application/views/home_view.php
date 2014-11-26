@@ -55,6 +55,13 @@
         </div>
         <div id="page-container"></div>
 
+
+        <!-- FOOTER -->
+        <div id="footer" class="footer clearfix">
+            <div class="gift-icon"></div>
+            <p>If you have a <span class="red">gift code</span> enter it here for your free gift<br><span class="serif-italic">or</span><br>enter <span class="red">the give away</span> here</p>
+        </div>
+
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
