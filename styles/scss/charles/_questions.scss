@@ -5,34 +5,77 @@
     color:$blue;
     text-align: center;
     font-size:2em;
+    line-height: 1em;
+
     @media(min-width: 460px) { font-size: 2.75em; }
     @media(min-width: 640px) { font-size: 4em; }
 }
 
-ul.answer-list, ul.tshirt-slides{
+ul.answer-list, ul.tshirt-slides {
     padding:0;
     margin:0;
 
     li{
+        position: relative;
 
         a{
-
             section.question-label{
-
-                .question-label-inner{
-
-                }
+                .question-label-inner{}
 
                 h4 {
                     text-transform: uppercase;
                     color:$darkblue;
                     font-weight: 800;
                     text-align: center;
-                    font-size:2em;
-                    @media(min-width: 460px) { font-size: 2.75em; }
-                    @media(min-width: 640px) { font-size: 4em; }
+                    font-size:1.6em;
+                    line-height: 1em;
+                    background-color: #fff;
+                    border:3px solid $darkblue;
+                    @include prefix(box-shadow, 6px 6px 0 0 #ffffff );
+                    padding:26px 20px 20px;
+                    @media(min-width: 460px) { font-size: 2em; }
+                    @media(min-width: 640px) { font-size: 2.9em; }
                 }
             }
+        }
+    }
+}
+
+// NUMBERS
+ul.answer-list, ul.tshirt-slides {
+    counter-reset: list-counter;
+
+    li { counter-increment: list-counter; }
+    
+    .question-label { margin-top:2em; }
+
+    .question-label:before {
+        content: counter(list-counter);
+        display: block;
+        width:2.75em;
+        border-radius: 50%;
+        background-color: $red;
+        font-family: Georgia, serif;
+        color:white;
+        font-style: italic;
+        margin:0 auto;
+        text-align: center;
+        
+        position: absolute;
+        top: -.5em;
+        left: 0;
+        right: 0;
+        z-index: 1;
+
+        line-height: 1.1em;
+        font-size: 1.8em;
+        width: 1.6em; height: 1.6em;
+        border:2px solid #fff;
+
+        @media(min-width: 640px) { 
+            border:3px solid #fff;
+            font-size: 2.4em; line-height: 1.15em;
+            width: 1.6em; height: 1.6em;
         }
     }
 }

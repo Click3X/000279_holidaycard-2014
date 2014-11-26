@@ -1,0 +1,16 @@
+// PREFIX
+@mixin prefix($property, $value, $prefixes: ("-webkit-","-moz-","-o-","-ms-","")) {
+  @each $prefix in $prefixes {
+    #{$prefix}#{$property}: #{$value};
+  }
+}
+
+// COLOR VARS
+$lightblue: #45adf5;
+// QUESTIONS
+$blue: #3b86ba;
+$darkblue: #184a78;
+$submitblue: #41729e;
+$dotblue: #3d86bb;
+
+$red: #e42726;
