@@ -82,6 +82,9 @@ define([
 
             console.log(this.currentpage);
 
+            //update body tag with page class
+            $("body").removeClass().addClass("page-" + _pageid);
+
             //render new page
             this.currentpage.page.render();
 	    },
