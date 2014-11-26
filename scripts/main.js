@@ -37,6 +37,13 @@ require([
     //---------Main navigation-----------//
 
     $(".nav li a").click(function(){
+        // CHARLES CODE TO TRIGGER CLASS ON BODY
+        // GET DATA ATT FROM NAV
+        var page = 'page-' + $(this).parent("li").attr("data-id");
+        // ADD CLASS TO BODY NAED AFTER NAV DATA ATTT
+        $('body').removeClass().addClass(page);
+        // END CHARLES CODE
+        
         router.navigate( $(this).parent("li").attr("data-id"), true );
     });
 });
