@@ -61,9 +61,11 @@ body { padding-top:0; }
 
 .just-logos {
     background-image:url('../../images/header/happy-logos.png');
-    width:86.25%;
+    // width:86.25%;
+    width:88%;
     max-width: 552px;
-    padding-bottom: 18.125%;
+    // padding-bottom: 18.125%;
+    padding-bottom: 18.4%;
     margin: auto;
     position: absolute;
     top: 65.7%; left: -7px; right: 0;
@@ -133,7 +135,6 @@ ul.nav.nav-pills {
             display: block;
             width:2.75em;
             border-radius: 50%;
-            // background-color:$lightblue;
             background-color:$grey;
             font-family: Georgia, serif;
             color:$darkblue;
@@ -142,10 +143,7 @@ ul.nav.nav-pills {
             text-align: center;
             
             position: absolute;
-            left: 0;
-            right: 0;
-            bottom:0;
-            top:0;
+            left: 0; right: 0; bottom:0; top:0;
             z-index: 1;
 
             // border:3px solid #fff;
@@ -180,13 +178,12 @@ ul.nav.nav-pills {
         display:block;
         color:$darkblue;
         max-width: 16.5em;
-        font-size: 2em;
         margin: .5em auto 1em;
+        font-size: 1.2em;
         line-height: 1.2em;
+        @media(min-width: 481px) { font-size: 2em; }
     }
     .get-started {
-        font-size: 1.8em;
-        margin-bottom: 1.4em;
         color:$darkblue;
         display: inline-block;
         position: relative;
@@ -194,6 +191,13 @@ ul.nav.nav-pills {
         text-transform: uppercase;
         font-weight: 800;
         font-family: "proxima-nova-alt-ext-cond",sans-serif;
+        font-size: 1.5em;
+        margin-bottom: .75em;
+
+        @media(min-width: 481px) { 
+            font-size: 1.8em;
+            margin-bottom: 1.4em;
+        }
 
         &:after {
             content: "";

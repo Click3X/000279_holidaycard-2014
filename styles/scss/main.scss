@@ -35,9 +35,13 @@ a, a:visited{
 #page-container{
     padding:0;
     // padding-top:40px;
-    padding-top:20px;
+    padding-top:10px;
     max-width: 1200px;
     margin:0 auto;
+
+    @media(min-width:640px) {
+        padding-top:20px;
+    }
 
     .video-wrapper{
         width: 100%;
