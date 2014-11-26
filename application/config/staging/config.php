@@ -15,7 +15,7 @@
 |
 */
 $config['base_url']	= '';
-$config['root_directory'] = '';
+$config['root_directory'] = 'holidaycard-2014';
 
 /*
 |--------------------------------------------------------------------------

@@ -18,7 +18,23 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
-	define('ENVIRONMENT', 'development');
+
+$host 	=  	$_SERVER['HTTP_HOST'];
+
+switch ($host) {
+	case 'staging.click3x.com':
+		define('ENVIRONMENT', 'staging');
+		break;
+	case 'holiday.dev':
+	case 'holidaycard.dev':
+	case 'localhost':
+		define('ENVIRONMENT', 'local');
+	break;
+	default:
+		define('ENVIRONMENT', 'production');
+	break;
+}
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
@@ -32,11 +48,11 @@ if (defined('ENVIRONMENT'))
 {
 	switch (ENVIRONMENT)
 	{
-		case 'development':
+		case 'local':
 			error_reporting(E_ALL);
 		break;
 	
-		case 'testing':
+		case 'staging':
 		case 'production':
 			error_reporting(0);
 		break;

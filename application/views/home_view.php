@@ -37,10 +37,10 @@
             <div id="get-started" class="get-started">Get Started</div>
         </div>
 
-
         <script type="text/javascript">
             var router;
             var base_url = "<?=base_url(); ?>";
+            var root_dir = "<?= $this->config->item('root_directory'); ?>";
         </script>
 
         <div id="main-nav-container">
