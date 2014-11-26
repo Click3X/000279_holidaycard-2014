@@ -5,6 +5,7 @@
 /*===============================*/
 
 require.config({
+    baseUrl: base_url,
     shim: {
         bootstrap: {
             deps:       ['jquery'],
