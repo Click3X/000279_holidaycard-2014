@@ -24,11 +24,19 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <!-- HEADER CONTAINER -->
         <div id="header-container" class="header-container clearfix">
             <div class="bg-img snow"></div>
             <div class="bg-img happy-holidays"></div>
             <div class="bg-img just-logos"></div>
         </div>
+
+        <!-- HOME PAGE DIRECTIONS - shows only on home page via body-class -->
+        <div class="directions clearfix">
+            <p>Answer each question to create a custom Holiday Video, then share your story with others!</p>
+            <div id="get-started" class="get-started">Get Started</div>
+        </div>
+
 
         <script type="text/javascript">
             var router;
@@ -36,7 +44,6 @@
         </script>
 
         <div id="main-nav-container">
-            <!-- <ul class="nav nav-pills"> -->
             <ul class="nav nav-pills">
               <li role="presentation" data-id="home"><a>Home</a></li>
               <li role="presentation" data-id="2"><a>Q2</a></li>

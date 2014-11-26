@@ -21,21 +21,10 @@ body,html,ul,li{
     overflow: hidden;
 }
 
-html{
-    overflow: auto;
-}
-
-body{
-    padding:20px 0;
-}
-
-ul{
-    list-style: none;
-}
-
-li{
-    display: inline-block;
-}
+html{ overflow: auto; }
+body{ padding:20px 0; }
+ul{ list-style: none; }
+li{ display: inline-block; }
 
 a, a:visited{
     cursor: pointer;
@@ -45,7 +34,8 @@ a, a:visited{
 
 #page-container{
     padding:0;
-    padding-top:40px;
+    // padding-top:40px;
+    padding-top:20px;
     max-width: 1200px;
     margin:0 auto;
 
@@ -127,9 +117,7 @@ ul.answer-list, ul.tshirt-slides{
                 width:100%;
                 position: absolute;
 
-                .question-label-inner{
-                    padding:10px;
-                }
+                .question-label-inner{ padding:10px; }
 
                 h4{
                     background-color:#CCC;
@@ -152,9 +140,7 @@ ul.answer-list, ul.tshirt-slides{
 }
 
 ul.answer-list{
-    @media(min-width:$tablet-width){
-        margin:-2px 0 0 -2px;
-    }
+    @media(min-width:$tablet-width){ margin:-2px 0 0 -2px; }
 
     li{
         width: 100%;
@@ -182,9 +168,7 @@ ul.tshirt-slides{
         width: 25%;
         padding:2px;
 
-        @media(min-width:$tablet-width){
-            width: 50%;
-        }
+        @media(min-width:$tablet-width){ width: 50%; }
     }
 }
 
