@@ -2,8 +2,8 @@ $icon-font-path: "/vendor/bootstrap-sass-official/assets/fonts/bootstrap/";
 
 @import 'vendor/bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
 
-$mobile-width:420px;
-$tablet-small-width:680px;
+$tablet-width:680px;
+$desktop-width:960px;
 
 .browsehappy {
     margin: 0.2em 0;
@@ -23,11 +23,10 @@ html{
 }
 
 body{
-    padding:20px;
+    padding:20px 0;
 }
 
 ul{
-    line-height: 0;
     list-style: none;
 }
 
@@ -41,7 +40,10 @@ a, a:visited{
 }
 
 #page-container{
+    padding:0;
     padding-top:40px;
+    max-width: 1200px;
+    margin:0 auto;
 
     .video-wrapper{
         width: 100%;
@@ -59,25 +61,47 @@ a, a:visited{
 }
 
 /******************************************************************
-Answer List
+Answer List and Tshirt Slider
 ******************************************************************/
-ul.answer-list{
-    margin:-2px 0 0 -2px;
-    padding:0 0 0 0;
+div.slider-wrapper{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
 
-    @media(max-width:$tablet-small-width){
-        margin:0;
+ul.slider-nav{
+    z-index: 3;
+    position: absolute;
+    top:50%;
+    margin-top:-30px;
+    width: 100%;
+
+    @media(min-width:$tablet-width){
+        display: none;
     }
 
     li{
-        padding:2px;
-        width: 50%;
-
-        @media(max-width:$tablet-small-width){
-            padding:2px 0;
-            width:100%;
+        a{
+            display: inline-block;
+            padding:20px;
+            font-size: 20px;
+            color: #FFF;
+            background:#999;
         }
+    }
+    li.prev-btn{
+        float: left;
+    }
+    li.next-btn{
+        float: right;
+    }
+}
 
+ul.answer-list, ul.tshirt-slides{
+    padding:0;
+    margin:0;
+
+    li{
         a:visited, a:link{
             color: #333;
             text-decoration: none;
@@ -96,7 +120,6 @@ ul.answer-list{
             background-position:center center;
 
             section.question-label{
-                @include transition(border-bottom 0.2s ease-in-out);
                 width:100%;
                 position: absolute;
 
@@ -120,6 +143,42 @@ ul.answer-list{
                 h4{
                 }
             }
+        }
+    }
+}
+
+ul.answer-list{
+    @media(min-width:$tablet-width){
+        margin:-2px 0 0 -2px;
+    }
+
+    li{
+        width: 100%;
+        padding:2px;
+
+        @media(min-width:$tablet-width){
+            width: 50%;
+            padding:2px;
+        }
+    }
+}
+
+ul.tshirt-slides{
+    position:relative;
+    width: 400%;
+    @include transition(margin-left 0.2s ease-in-out);
+
+    @media(min-width:$tablet-width){
+        width: 100%;
+        margin-left: 0 !important;
+    }
+
+    li{
+        width: 25%;
+        padding:2px;
+
+        @media(min-width:$tablet-width){
+            width: 50%;
         }
     }
 }

@@ -18,7 +18,7 @@
             var router;
         </script>
 
-        <div id="main-nav-container" class="container">
+        <div id="main-nav-container">
             <ul class="nav nav-pills">
               <li role="presentation" data-id="home"><a>Home</a></li>
               <li role="presentation" data-id="2"><a>Q2</a></li>
@@ -28,7 +28,7 @@
               <li role="presentation" data-id="tshirt"><a>T-Shirt</a></li>
             </ul>
         </div>
-        <div id="page-container" class="container"></div>
+        <div id="page-container"></div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

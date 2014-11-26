@@ -18,7 +18,8 @@ require.config({
         bootstrap:  '../scripts/vendor/sass-bootstrap/dist/js/bootstrap',
         text:       '../scripts/vendor/require/text.min',
         routes:     '../scripts/routes',
-        views:      '../scripts/views'
+        views:      '../scripts/views',
+        modules:    '../scripts/modules'
     }
 });
     

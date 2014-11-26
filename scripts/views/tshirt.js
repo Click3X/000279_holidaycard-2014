@@ -2,23 +2,25 @@
 
 define([
     'views/page',
+    'modules/slider/slider_view',
     'text!/template/tshirt.php'
-], function (PageTemplate, T) {
+], function (PageTemplate, SliderView, T) {
     'use strict';
 
     var TShirt = PageTemplate.extend({
         template: _.template( T ),
+        slider:null,
         activate:function(){
             console.log("activate " + this.id);
 
-            this.$el.find("li a").on("click", function(){
-                console.log( "tshirt li clicked");
-            });
+            this.slider = new SliderView({ el:this.$el.find(".slider")[0] });
         },
         deactivate:function(){
+            console.log("deactivate " + this.id);
+
             this.$el.find("li a").off("click");
 
-            console.log("deactivate " + this.id);
+            this.slider.remove();
         }
     });
 

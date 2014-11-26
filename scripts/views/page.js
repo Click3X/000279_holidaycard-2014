@@ -1,7 +1,6 @@
 define([
-    'underscore',
     'backbone'
-], function (_,Backbone) {
+], function (Backbone) {
     'use strict';
 
     var QuestionPage = Backbone.View.extend({
