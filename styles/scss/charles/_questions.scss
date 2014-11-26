@@ -1,5 +1,6 @@
 // QUESTIONS
-.path-section h1 {
+.path-section h1,
+h1 {
     text-transform: uppercase;
     font-weight: 800;
     color:$blue;
@@ -11,6 +12,9 @@
     @media(min-width: 640px) { font-size: 4em; }
 }
 
+h1 {
+    font-family: "proxima-nova-alt-ext-cond",sans-serif;
+}
 ul.answer-list, ul.tshirt-slides {
     padding:0;
     margin:0;
@@ -23,6 +27,7 @@ ul.answer-list, ul.tshirt-slides {
                 .question-label-inner{}
 
                 h4 {
+                    font-family: "proxima-nova-alt-ext-cond",sans-serif;
                     text-transform: uppercase;
                     color:$darkblue;
                     font-weight: 800;
