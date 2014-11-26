@@ -36,6 +36,7 @@
         </script>
 
         <div id="main-nav-container">
+            <!-- <ul class="nav nav-pills"> -->
             <ul class="nav nav-pills">
               <li role="presentation" data-id="home"><a>Home</a></li>
               <li role="presentation" data-id="2"><a>Q2</a></li>

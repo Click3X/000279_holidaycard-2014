@@ -104,39 +104,70 @@ ul.nav.nav-pills {
     }
 }
 
-ul.nav-pills {
-    counter-reset: nav-counter;
+#main-nav-container {
+    text-align: center;
 
-    li { counter-increment: nav-counter; }
+    ul.nav-pills {
+        display: inline-block;
+        counter-reset: nav-counter;
 
-    li a:before {
-        content: counter(nav-counter);
-        display: block;
-        width:2.75em;
-        border-radius: 50%;
-        background-color:$lightblue;
-        font-family: Georgia, serif;
-        color:white;
-        font-style: italic;
-        margin:0 auto;
-        text-align: center;
-        
-        position: absolute;
-        // top: -.5em;
-        left: 0;
-        right: 0;
-        bottom:0;
-        z-index: 1;
+        .active a {
+            background-color:transparent;
 
-        line-height: 1.1em;
-        font-size: 1.8em;
-        width: 1.6em; height: 1.6em;
-        border:2px solid #fff;
-
-        @media(min-width: 640px) { 
-            border:3px solid #fff;
-            font-size: 2.4em; line-height: 1.3em;
-            width: 1.6em; height: 1.6em;
+            &:before {
+                background-color:$darkblue;
+            }
         }
-    }
-}   
+
+        li { counter-increment: nav-counter; }
+
+        li a {
+            padding:0;
+            border-radius: 0;
+            color: transparent;
+        }
+
+        li a:before {
+            content: counter(nav-counter);
+            display: block;
+            width:2.75em;
+            border-radius: 50%;
+            background-color:$lightblue;
+            font-family: Georgia, serif;
+            color:white;
+            font-style: italic;
+            margin:auto;
+            text-align: center;
+            
+            position: absolute;
+            // top: -.5em;
+            left: 0;
+            right: 0;
+            bottom:0;
+            top:0;
+            z-index: 1;
+
+            line-height: 1.1em;
+            font-size: 1.8em;
+            width: 1.6em; height: 1.6em;
+            border:2px solid #fff;
+
+            @media(min-width: 640px) { 
+                border:3px solid #fff;
+                font-size: 2.4em; line-height: 1.3em;
+                width: 1.6em; height: 1.6em;
+            }
+        }
+        a:hover:before {
+            background-color:$blue;
+        }
+    }   
+}
+
+.nav>li>a:hover, 
+.nav>li>a:focus,
+.nav-pills>li.active>a:before, 
+.nav-pills>li.active>a:hover, 
+.nav-pills>li.active>a:focus {
+    background-color:transparent;
+}
