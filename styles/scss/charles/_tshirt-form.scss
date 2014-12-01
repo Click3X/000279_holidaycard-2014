@@ -167,8 +167,10 @@ input[type=radio] {
 		select.state {
 			-webkit-appearance: none;  /*Removes default chrome and safari style*/
 			-moz-appearance: none; /* Removes Default Firefox style*/
+			appearance: none;
 			padding:1px 1px 1px .5em;
 			border:1px solid $submitgrey;
+			border-radius:6px;
 			font-size: 1.5em;
 			line-height: 1.5em;
 
