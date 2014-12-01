@@ -32,7 +32,7 @@ ul.answer-list, ul.tshirt-slides {
     li{
         position: relative;
         margin-bottom: .15em;
-        &:last-of-type { margin-bottom:0;}
+        // &:last-of-type { margin-bottom:0;}
         
         @media(min-width: 481px) {
             margin-bottom: 1.5rem;
@@ -40,7 +40,7 @@ ul.answer-list, ul.tshirt-slides {
 
         @media(min-width: 680px) {
             margin-bottom:0;
-            &:last-of-type { margin-bottom:0;}    
+            // &:last-of-type { margin-bottom:0;}    
         }
 
         a{
@@ -118,7 +118,6 @@ ul.answer-list, ul.tshirt-slides {
         }
     }
 }
-
 
 // 'QUESTION'
 #page-container > h5 {

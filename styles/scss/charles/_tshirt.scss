@@ -1,0 +1,57 @@
+// TSHIRT PAGE
+.page-tshirt {
+	.path-section { padding:0; }
+
+	ul.tshirt-slides li a { 
+		background-color:#ddd9d0; 
+		padding-bottom: 68.25%;
+	}
+}
+
+// TSHIRT SLIDER
+.slider-nav {
+	top: 44%;
+	.next-btn,
+	.prev-btn {
+		background-color: #f2f0f2;
+		a {	
+			color:transparent;
+			background-color: #f2f0f2;
+			background-image:url('../../images/ui/blue-arrow.svg');
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: 50% 50%;
+			width:22px; height: 34px;
+		}
+	}
+
+	.prev-btn { 
+		padding:13px 18px 13px 3px; 
+		border-top-right-radius:50%;
+		border-bottom-right-radius:50%;
+	}
+
+	.next-btn { 
+		padding:13px 3px 13px 18px; 
+		border-top-left-radius:50%;
+		border-bottom-left-radius:50%;
+	}
+
+	.prev-btn a {
+		@include prefix(transform, rotate(180deg));
+	}
+}
+
+.svg {
+	.slider-nav {
+		.next-btn,
+		.prev-btn {
+			a {
+				background-image:url('../../images/ui/blue-arrow.svg'); 
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: 50% 50%;
+			}
+		}
+	}	
+}
