@@ -26,21 +26,21 @@ body{ padding:20px 0; }
 ul{ list-style: none; }
 li{ display: inline-block; }
 
-html, body {
-    overflow-x:hidden;
-}
+html, body { overflow-x:hidden; }
 
 a, a:visited{
     cursor: pointer;
     text-decoration: none;
 }
 
-
 #page-container{
     padding:0;
-    padding-top:10px;
     max-width: 1200px;
     margin:0 auto;
+
+    @media(min-width: 481px) {
+        padding-top:10px;
+    }
 
     .video-wrapper{
         width: 100%;
@@ -73,9 +73,7 @@ ul.slider-nav{
     margin-top:-30px;
     width: 100%;
 
-    @media(min-width:$tablet-width){
-        display: none;
-    }
+    @media(min-width:$tablet-width){ display: none; }
 
     li{
         a{
@@ -86,12 +84,8 @@ ul.slider-nav{
             background:#999;
         }
     }
-    li.prev-btn{
-        float: left;
-    }
-    li.next-btn{
-        float: right;
-    }
+    li.prev-btn{ float: left; }
+    li.next-btn{ float: right; }
 }
 
 ul.answer-list, ul.tshirt-slides{
@@ -112,13 +106,8 @@ ul.answer-list, ul.tshirt-slides{
             width: 100%;
             padding-bottom: 60%;
 
-            @media(min-width: 481px) {
-                padding-bottom: 43.25%;
-            }
-
-            @media(min-width: 680px) {
-                padding-bottom:80%;
-            }
+            @media(min-width: 481px) { padding-bottom: 43.25%; }
+            @media(min-width: 680px) { padding-bottom:80%; }
 
             background-color:#EEE;
             background-size:cover;
@@ -190,3 +179,5 @@ ul.tshirt-slides{
 // IMPORT CHARLES SCSS STYLESHEETS
 @import 'charles/header.scss';
 @import 'charles/questions.scss';
+// SNOW ANIMATION TRY
+@import 'charles/snow.scss';

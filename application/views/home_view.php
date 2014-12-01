@@ -13,11 +13,6 @@
         <script src="//use.typekit.net/ali5dgb.js"></script>
         <script>try{Typekit.load();}catch(e){}</script>
 
-        <!-- TEMP STYLE TAGS TILL I TALK TO JASON ABOUT GRUNT/COMPASS -->
-        <style>
-           
-        </style>
-
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -27,6 +22,11 @@
         <!-- HEADER CONTAINER -->
         <div id="header-container" class="header-container clearfix">
             <div class="bg-img snow"></div>
+            <!--     
+            ANIMATED SNOW TRY - LOOKING OK, BUT COME BACK TO LATER   
+            <div class="bg-img snow snow-grad"></div>
+            <div id="snow" class="bg-img snow"></div> 
+            -->
             <div class="bg-img happy-holidays"></div>
             <div class="bg-img just-logos"></div>
         </div>
@@ -75,8 +75,7 @@
         <script data-main="scripts/main" src="<?= base_url();?>scripts/vendor/require/require.min.js"></script>
 
         <?php
-            // CHARLES DEV - OUTLINE DEBUG TOOL
-            // CONDITIONALLY LOAD OUTLINE SCRIPT
+            // CHARLES DEV - OUTLINE DEBUG TOOL -- CONDITIONALLY LOAD OUTLINE SCRIPT
             $server = $_SERVER['REMOTE_ADDR'];
             // IF SERVER IS LOCAL, ADD OUTLINE BUTTON
             if($server == '127.0.0.1') {
