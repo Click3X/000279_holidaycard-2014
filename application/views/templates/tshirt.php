@@ -26,10 +26,10 @@
 		</div>
 		<div class="form-txt">Pick a color</div>
 		<div class="tshirt-color-holder clearfix">
-			<label for="color-1" class="form-btn color">color-1</label>
 			<input type="radio" name="tshirt-color" id="color-1" value="color-1">
-			<label for="color-2" class="form-btn color">color-2</label>
+			<label for="color-1" class="form-btn color-1">color-1</label>
 			<input type="radio" name="tshirt-color" id="color-2" value="color-2">
+			<label for="color-2" class="form-btn color-2">color-2</label>
 		</div>
 		<div class="form-txt">Confirm your mailing info</div>
 		<div class="name">James Goodwind<br>BBDO</div>
