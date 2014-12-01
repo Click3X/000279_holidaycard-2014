@@ -55,3 +55,28 @@
 		}
 	}	
 }
+
+// NAV DOTS
+.nav-dots-holder {
+	text-align: center;
+}
+.nav-dots {
+	display: inline-block;
+}
+
+.nav-dot {
+	display: inline-block;
+	border-radius: 50%;
+	background-color:$dotgrey;
+	height: 1em; width: 1em;
+	margin: 0 .25em;
+
+	@media(min-width: 481px) {
+		height: 2em; width: 2em;
+		margin: 0 .5em;
+	}
+}
+
+.active-nav-dot {
+	background-color:$dotblue;
+}

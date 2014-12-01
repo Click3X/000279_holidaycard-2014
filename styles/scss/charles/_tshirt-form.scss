@@ -5,18 +5,39 @@
     font-style: italic;
     text-align: center;
     line-height: 1em;
-    margin:.5em auto;
+    margin:2em auto 1em;
     font-size: 1.2em;
 
     @media(min-width: 481px) { 
-        margin: .67em auto; 
-        font-size: 1.5em;
+        margin: 2.4em auto 1.2em;
+        font-size: 1.8em;
+    }
+
+    &:first-of-type {
+        margin:1em auto .5em;
+        @media(min-width: 481px) { 
+            margin: 1.2em auto .67em;
+        }
     }
 }
 
 label.form-txt { 
 	font-weight: normal; 
 	color:$darkblue;
+    margin:.75em auto .25em;
+    font-size: 1.2em;
+
+    @media(min-width: 481px) { 
+        margin: .67em auto .25em; 
+        font-size: 1.8em;
+    }
+
+    &:first-of-type {
+        margin:.75em auto .25em;
+        @media(min-width: 481px) { 
+            margin: .67em auto .25em;
+        }
+    }
 }
 
 .name {
@@ -28,6 +49,7 @@ label.form-txt {
     font-size:1.8em; 
     line-height: 1em;
     letter-spacing: .05em;
+    margin-bottom: .4em;
 
     @media(min-width: 460px) { font-size: 2.6em; }
     @media(min-width: 640px) { font-size: 4.3em; }

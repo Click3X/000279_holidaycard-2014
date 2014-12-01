@@ -41,7 +41,8 @@
 
         <!-- HOME PAGE DIRECTIONS - shows only on home page via body-class -->
         <div class="directions clearfix">
-            <p>Answer each question to create a custom Holiday Video, then share your story with others!</p>
+            <!-- <p>Answer each question to create a custom Holiday Video, then share your story with others!</p> -->
+            <p class="cta">Create &amp; share your holiday video today!</p>
             <div id="get-started" class="get-started">Get Started</div>
         </div>
 

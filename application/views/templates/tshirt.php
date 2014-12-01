@@ -10,6 +10,15 @@
 		--></ul>
 		<ul class="slider-nav"><li data-id="prev" class="prev-btn"><a>Prev</a></li><li data-id="next" class="next-btn"><a>Next</a></li></ul>
 	</div>
+	<!-- NAV DOTS - TO BE HOOKED INTO SOME JS LATER -->
+	<div class="nav-dots-holder clearfix">
+		<div class="nav-dots">
+			<span class="nav-dot active-nav-dot"></span>
+			<span class="nav-dot"></span>
+			<span class="nav-dot"></span>
+			<span class="nav-dot"></span>
+		</div>
+	</div>
 
 	<!-- TSHIRT FORM -->
 	<form id="tshirt-form" class="tshirt-form">
@@ -104,4 +113,4 @@
 		</div>
 	</form>
 
-</div>
+</section>

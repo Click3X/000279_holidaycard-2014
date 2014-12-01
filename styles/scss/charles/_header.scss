@@ -155,10 +155,12 @@ body { padding-top:0; }
     p {
         display:block;
         color:$darkblue;
-        max-width: 16.5em;
+        text-transform: capitalize;
+        // max-width: 16.5em;
+        max-width: 12em;
         margin: .5em auto 1em;
         font-size: 1.2em;
-        line-height: 1.2em;
+        line-height: 1.3em;
         @media(min-width: 481px) { font-size: 2em; }
     }
     .get-started {
@@ -290,13 +292,28 @@ body { padding-top:0; }
 
 .start-over-holder {
     margin:1em auto;
+    text-align: center;
 
-    .start-over {
-        width:90%;
-        max-width:251px;
-        height: 60px;
-        background-image:url('../../images/ui/start-over.png');
-        margin:0 auto;
+    // .start-over {
+    //     width:90%;
+    //     max-width:251px;
+    //     height: 60px;
+    //     // background-image:url('../../images/ui/start-over.png');
+    //     margin:0 auto;
+    // }
+
+    .start-over-btn {
+        display: inline-block;
+        text-decoration: none;
+        font-weight: 600;
+        background-color:$submitblue;
+        padding:0 1em;
+        @include prefix(transition, all 200ms);
+
+        &:hover {
+            color:#ffffff;
+            background-color: $darkblue;
+        }
     }
 }
 
