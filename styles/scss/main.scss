@@ -26,6 +26,10 @@ body{ padding:20px 0; }
 ul{ list-style: none; }
 li{ display: inline-block; }
 
+html, body {
+    overflow-x:hidden;
+}
+
 a, a:visited{
     cursor: pointer;
     text-decoration: none;
@@ -106,7 +110,15 @@ ul.answer-list, ul.tshirt-slides{
             position: relative;
             height: 0;
             width: 100%;
-            padding-bottom:80%;
+            padding-bottom: 60%;
+
+            @media(min-width: 481px) {
+                padding-bottom: 43.25%;
+            }
+
+            @media(min-width: 680px) {
+                padding-bottom:80%;
+            }
 
             background-color:#EEE;
             background-size:cover;

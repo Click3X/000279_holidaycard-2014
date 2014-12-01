@@ -5,20 +5,43 @@ h1 {
     font-weight: 800;
     color:$blue;
     text-align: center;
-    font-size:2em; line-height: 1em;
+    // font-size:2em; 
+    font-size:1.8em; 
+    line-height: 1em;
     margin-top:7px;
 
-    @media(min-width: 460px) { font-size: 2.85em; }
+    @media(min-width: 460px) { 
+        // font-size: 2.85em; 
+        font-size: 2.6em; 
+    }
     @media(min-width: 640px) { font-size: 4.3em; }
 }
 
 h1 { font-family: "proxima-nova-alt-ext-cond",sans-serif; }
 
+.path-section {
+    padding: 0 .35em;
+    @media(min-width: 481px) {
+        padding: 0 1.5rem;
+    }
+}
+
 ul.answer-list, ul.tshirt-slides {
-    padding:0; margin:0;
+    margin:0;
 
     li{
         position: relative;
+        margin-bottom: .15em;
+        &:last-of-type { margin-bottom:0;}
+        
+        @media(min-width: 481px) {
+            margin-bottom: 1.5rem;
+        }
+
+        @media(min-width: 680px) {
+            margin-bottom:0;
+            &:last-of-type { margin-bottom:0;}    
+        }
 
         a{
             section.question-label{
@@ -33,10 +56,15 @@ ul.answer-list, ul.tshirt-slides {
                     font-size:1.6em; line-height: 1em;
                     background-color: #fff;
                     border:3px solid $darkblue;
+                    padding: 18px 10px 14px;
+                    
                     @include prefix(box-shadow, 6px 6px 0 0 #ffffff );
-                    padding:26px 20px 20px;
+                    
                     @media(min-width: 460px) { font-size: 2em; }
-                    @media(min-width: 640px) { font-size: 2.9em; }
+                    @media(min-width: 640px) { 
+                        font-size: 2.9em; 
+                        padding:26px 20px 20px;
+                    }
                 }
             }
         }
@@ -49,7 +77,12 @@ ul.answer-list, ul.tshirt-slides {
 
     li { counter-increment: list-counter; }
     
-    .question-label { margin-top:2em; }
+    .question-label { 
+        margin-top:1.5em; 
+        @media(min-width: 680px){
+            margin-top:2em; 
+        }
+    }
 
     .question-label:before {
         content: counter(list-counter);
@@ -86,7 +119,11 @@ ul.answer-list, ul.tshirt-slides {
     font-family: Georgia, serif;
     font-style: italic;
     text-align: center;
-    font-size: 2em; line-height: 1em;
+    font-size: 1.5em; line-height: 1em;
     margin:0 auto .5em;
-    @media(min-width: 481px) { margin: .67em auto; }
+
+    @media(min-width: 481px) { 
+        margin: .67em auto; 
+        font-size: 1.5em;
+    }
 }
