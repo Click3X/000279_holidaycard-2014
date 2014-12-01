@@ -21,14 +21,6 @@ body { padding-top:0; }
     text-align: center;
 }
 
-// .snow {
-//     background-image:url('../../images/header/snow.jpg');                
-//     padding-bottom: 63.75%;
-//     background-size: contain;
-//     background-position:0 0;
-//     background-repeat:repeat-x;
-// }
-
 .happy-holidays {
     background-image:url('../../images/header/happy-dog-cat.png');
     padding-bottom: 63.75%;
@@ -37,7 +29,6 @@ body { padding-top:0; }
     padding-bottom: 53.75%;
     width: 89.21875%;
     max-width: 571px;
-
     position: absolute;
     top: 1px; left: -5px; right: 0;
 }
@@ -45,7 +36,6 @@ body { padding-top:0; }
 .just-logos {
     background-image:url('../../images/header/happy-logos.png');
     background-size: contain;
-    // width:88%;
     width:82%;
     max-width: 552px;
     padding-bottom: 18.4%;
@@ -55,7 +45,6 @@ body { padding-top:0; }
 }
 
 @media(min-width: 640px) {
-    // .snow { padding-bottom:408px; }
     .happy-holidays { 
         padding-bottom:195px;
         top:76px;
@@ -87,7 +76,6 @@ body { padding-top:0; }
 
         li { 
             counter-increment: nav-counter; 
-            // width:75px;
             width:58px;
             box-sizing: border-box;
             float:left;
@@ -140,10 +128,7 @@ body { padding-top:0; }
             height: 1.65em;
             font-size: 2.25em;
 
-            @media(min-width: 481px) {
-                font-size: 3em;
-            }
-
+            @media(min-width: 481px) { font-size: 3em; }
             @include prefix(transition, all 300ms);
 
         }
@@ -187,10 +172,7 @@ body { padding-top:0; }
         font-size: 1em;
         margin-bottom: .75em;
 
-        @media(min-width: 481px) { 
-            font-size: 1.5em;
-        }
-        
+        @media(min-width: 481px) { font-size: 1.5em; }
         @media(min-width: 640px) { 
             font-size: 1.8em;
             margin-bottom: 1em;

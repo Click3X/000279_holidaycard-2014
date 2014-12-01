@@ -33,7 +33,8 @@
                 <div class="snow background layered"></div>
             </div>
 
-            <!-- <div class="bg-img snow"></div> -->
+            <!--  OLD SNOW NO ANIMATION -->
+            <!-- <div class="bg-img snow"></div>  -->
             <div class="bg-img happy-holidays"></div>
             <div class="bg-img just-logos"></div>
         </div>

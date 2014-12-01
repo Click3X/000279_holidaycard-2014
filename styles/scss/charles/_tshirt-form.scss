@@ -1,0 +1,158 @@
+// TSHIRT FORM
+.form-txt {
+    color:$red;
+    font-family: Georgia, serif;
+    font-style: italic;
+    text-align: center;
+    line-height: 1em;
+    margin:.5em auto;
+    font-size: 1.2em;
+
+    @media(min-width: 481px) { 
+        margin: .67em auto; 
+        font-size: 1.5em;
+    }
+}
+
+label.form-txt { 
+	font-weight: normal; 
+	color:$darkblue;
+}
+
+.name {
+	font-family: "proxima-nova-alt-ext-cond",sans-serif;
+	color:$darkblue;
+	text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    font-size:1.8em; 
+    line-height: 1em;
+    letter-spacing: .05em;
+
+    @media(min-width: 460px) { font-size: 2.6em; }
+    @media(min-width: 640px) { font-size: 4.3em; }
+}
+
+// SIZE COLOR
+
+.form-btn {
+	font-family: "proxima-nova-alt-ext-cond",sans-serif;
+	text-transform: uppercase;
+	background-color:$btn-grey;
+	color:#ffffff;
+	text-shadow: 3px 3px 0px $btn-shadow;
+	font-size:1.4em; 
+    line-height: 1.8em;
+    padding:0 .7em;
+    border:1px solid $btn-border;
+    letter-spacing: .03em;
+
+    @media(min-width: 460px) { 
+    	font-size: 2em; 
+    	line-height: 1.6em;
+    }
+    @media(min-width: 640px) { font-size: 3.1em; }
+}
+
+
+// HIDE RADIO BUTTONS TO STYLES LABELS
+input[type=radio] {
+	position: absolute;
+	visibility: hidden;
+}
+
+.tshirt-form { 
+	text-align: center; 
+	input[type=radio] + label {
+		cursor: pointer;
+		margin:0 .075em;
+		@include prefix(transition, all 200ms);
+	}
+}
+
+#tshirt-form > div.tshirt-color-holder.clearfix > label {
+	cursor: pointer;
+	margin:0 .075em;
+	@include prefix(transition, all 200ms);
+}
+
+.tshirt-size-holder {
+	display: inline-block;
+
+	input[type=radio] + label {
+		&:hover { background-color: $darkblue; }
+	}
+
+	input[type=radio]:checked + label {
+		background-color: $btn-blue;
+		text-shadow: 3px 3px 0px $btn-shadow-active;
+	}
+}
+
+// ADDRESS, CITY, STATE, ZIP
+.txt-holder {
+	width:90%;
+	max-width: 560px;
+	margin: 0 auto;
+
+	label {
+		clear: both;
+		display: block;
+		text-transform: capitalize;
+	}
+
+	input[type=text] {
+		width: 100%;
+		margin:0 auto;
+		border-radius:6px;
+		border:1px solid $submitgrey;
+
+		font-size: 1.5em;
+		line-height: 1.5em;
+
+		@media(min-width: 481px) {
+			font-size: 2em;
+			line-height: 2em;
+		}
+	}
+
+	.state-zip-holder {
+		.zip-holder,
+		.state-holder {
+			width:50%;
+			float: left;
+		}
+
+		.zip-holder {
+			.zip,
+			input[type=text] {
+				width: 90%;
+				float:right;
+			}
+		}
+
+		.state-holder {
+			label.state,
+			select.state {
+				width:90%;
+				float:left;
+			}
+		}
+	}
+}
+
+input[type=submit] {
+	font-weight: 600;
+	background-color:$submitblue;
+}
+
+
+input[type=submit] { 
+	margin:1em auto;
+	padding:0 2em;
+	@include prefix(transition, all 200ms);
+
+	&:hover {
+		background-color: $darkblue;
+	}
+}

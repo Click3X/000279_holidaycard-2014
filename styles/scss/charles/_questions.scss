@@ -5,15 +5,11 @@ h1 {
     font-weight: 800;
     color:$blue;
     text-align: center;
-    // font-size:2em; 
     font-size:1.8em; 
     line-height: 1em;
     margin-top:7px;
 
-    @media(min-width: 460px) { 
-        // font-size: 2.85em; 
-        font-size: 2.6em; 
-    }
+    @media(min-width: 460px) { font-size: 2.6em; }
     @media(min-width: 640px) { font-size: 4.3em; }
 }
 
@@ -21,9 +17,7 @@ h1 { font-family: "proxima-nova-alt-ext-cond",sans-serif; }
 
 .path-section {
     padding: 0 .35em;
-    @media(min-width: 481px) {
-        padding: 0 1.5rem;
-    }
+    @media(min-width: 481px) { padding: 0 1.5rem; }
 }
 
 ul.answer-list, ul.tshirt-slides {
@@ -32,20 +26,12 @@ ul.answer-list, ul.tshirt-slides {
     li{
         position: relative;
         margin-bottom: .15em;
-        // &:last-of-type { margin-bottom:0;}
         
-        @media(min-width: 481px) {
-            margin-bottom: 1.5rem;
-        }
-
-        @media(min-width: 680px) {
-            margin-bottom:0;
-            // &:last-of-type { margin-bottom:0;}    
-        }
+        @media(min-width: 481px) { margin-bottom: 1.5rem; }
+        @media(min-width: 680px) { margin-bottom:0; }
 
         a{
             section.question-label{
-                .question-label-inner{}
 
                 h4 {
                     font-family: "proxima-nova-alt-ext-cond",sans-serif;
@@ -79,9 +65,7 @@ ul.answer-list, ul.tshirt-slides {
     
     .question-label { 
         margin-top:1.5em; 
-        @media(min-width: 680px){
-            margin-top:2em; 
-        }
+        @media(min-width: 680px){ margin-top:2em; }
     }
 
     .question-label:before {
