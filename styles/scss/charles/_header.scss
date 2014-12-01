@@ -21,13 +21,13 @@ body { padding-top:0; }
     text-align: center;
 }
 
-.snow {
-    background-image:url('../../images/header/snow.jpg');                
-    padding-bottom: 63.75%;
-    background-size: contain;
-    background-position:0 0;
-    background-repeat:repeat-x;
-}
+// .snow {
+//     background-image:url('../../images/header/snow.jpg');                
+//     padding-bottom: 63.75%;
+//     background-size: contain;
+//     background-position:0 0;
+//     background-repeat:repeat-x;
+// }
 
 .happy-holidays {
     background-image:url('../../images/header/happy-dog-cat.png');
@@ -55,7 +55,7 @@ body { padding-top:0; }
 }
 
 @media(min-width: 640px) {
-    .snow { padding-bottom:408px; }
+    // .snow { padding-bottom:408px; }
     .happy-holidays { 
         padding-bottom:195px;
         top:76px;

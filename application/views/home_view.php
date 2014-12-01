@@ -21,12 +21,17 @@
 
         <!-- HEADER CONTAINER -->
         <div id="header-container" class="header-container clearfix">
-            <div class="bg-img snow"></div>
-            <!--     
-            ANIMATED SNOW TRY - LOOKING OK, BUT COME BACK TO LATER   
-            <div class="bg-img snow snow-grad"></div>
-            <div id="snow" class="bg-img snow"></div> 
-            -->
+            <!-- ANIMATED SNOW TRY 2 -->
+            <div class="snow-container">
+                <div class="snow foreground"></div>
+                <div class="snow foreground layered"></div>
+                <div class="snow middleground"></div>
+                <div class="snow middleground layered"></div>
+                <div class="snow background"></div>
+                <div class="snow background layered"></div>
+            </div>
+            
+            <!-- <div class="bg-img snow"></div> -->
             <div class="bg-img happy-holidays"></div>
             <div class="bg-img just-logos"></div>
         </div>
