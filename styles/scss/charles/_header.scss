@@ -215,9 +215,19 @@ body { padding-top:0; }
     padding: 0 .5em;
 
     .gift-icon {
-        width: 67px; height: 75px;
         margin: 2.25em auto 1.25em;
-        background-image:url('../../images/footer/gift-icon.png');
+        background-image: url("../../images/footer/gift-icon.png");
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        width: 13%;
+        height: 0;
+        padding-bottom: 14.6%;
+
+        @media(min-width: 525px) {
+            width:67px;
+            padding-bottom:75px;
+        }
     }
 
     p {
