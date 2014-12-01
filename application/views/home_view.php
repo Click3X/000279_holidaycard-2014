@@ -7,6 +7,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
         <link rel="stylesheet" href="<?= base_url();?>styles/css/main.css">
+        <link rel="icon" type="image/png" href="favicon.png">
+
         <script src="<?= base_url(); ?>scripts/vendor/modernizr/modernizr.js"></script>
 
         <!-- TYPE KIT FONT JS CODE -->
@@ -30,7 +32,7 @@
                 <div class="snow background"></div>
                 <div class="snow background layered"></div>
             </div>
-            
+
             <!-- <div class="bg-img snow"></div> -->
             <div class="bg-img happy-holidays"></div>
             <div class="bg-img just-logos"></div>
