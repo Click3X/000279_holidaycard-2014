@@ -41,7 +41,6 @@
             <!-- NEW SVGS -->
             <div class="demo bg"></div>
             <div class="svg-holder clearfix">
-                <!-- <div class="happy-title bg"></div> -->
                 <div class="happy-all bg"></div>
             </div>
 
