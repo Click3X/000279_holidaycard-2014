@@ -33,9 +33,16 @@
                 <div class="snow background layered"></div>
             </div>
 
+            <!-- NEW SVGS -->
+            <div class="demo bg"></div>
+            <div class="svg-holder clearfix">
+                <!-- <div class="happy-title bg"></div> -->
+                <div class="happy-all bg"></div>
+            </div>
+
             <!--  OLD SNOW NO ANIMATION -->
             <!-- <div class="bg-img snow"></div>  -->
-            <div class="bg-img happy-holidays"></div>
+            <!-- <div class="bg-img happy-holidays"></div> -->
             <div class="bg-img just-logos"></div>
         </div>
 
