@@ -7,6 +7,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
         <link rel="stylesheet" href="<?= base_url();?>styles/css/main.css">
+        
+        <!--[if IE]>
+            <link rel="stylesheet" type="text/css" href="<?= base_url();?>styles/css/ie.css" />
+        <![endif]-->
+
         <link rel="icon" type="image/png" href="favicon.png">
 
         <script src="<?= base_url(); ?>scripts/vendor/modernizr/modernizr.js"></script>
@@ -17,9 +22,6 @@
 
     </head>
     <body>
-        <!--[if IE]>
-            <link rel="stylesheet" type="text/css" href="<?= base_url();?>styles/css/ie.css" />
-        <![endif]-->
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
