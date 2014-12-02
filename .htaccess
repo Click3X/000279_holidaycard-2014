@@ -8,3 +8,5 @@
 <IfModule !mod_rewrite.c>
      ErrorDocument 404 /index.php
 </IfModule>
+AddType image/svg+xml svg
+AddType image/svg+xml svgz
