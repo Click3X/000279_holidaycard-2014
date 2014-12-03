@@ -65,12 +65,12 @@
 
         <div id="main-nav-container">
             <ul class="nav nav-pills">
-              <li role="presentation" data-id="home"><a>Home</a></li>
-              <li role="presentation" data-id="2"><a>Q2</a></li>
-              <li role="presentation" data-id="3"><a>Q3</a></li>
-              <li role="presentation" data-id="4"><a>Q4</a></li>
-              <li role="presentation" data-id="video"><a>Video</a></li>
-              <li role="presentation" data-id="tshirt"><a>T-Shirt</a></li>
+              <li data-id="home" role="presentation"><a data-navigate-to="home">Home</a></li>
+              <li data-id="2" role="presentation"><a data-navigate-to="2">Q2</a></li>
+              <li data-id="3" role="presentation"><a data-navigate-to="3">Q3</a></li>
+              <li data-id="4" role="presentation"><a data-navigate-to="4">Q4</a></li>
+              <li data-id="video" role="presentation"><a data-navigate-to="video">Video</a></li>
+              <li data-id="tshirt" role="presentation"><a data-navigate-to="tshirt">T-Shirt</a></li>
             </ul>
         </div>
         <div id="page-container"></div>
@@ -79,7 +79,7 @@
         <!-- FOOTER -->
         <div id="footer" class="footer clearfix">
             <div class="gift-icon"></div>
-            <p>If you have a <span class="red">gift code</span> enter it here for your free gift<br><span class="serif-italic">or</span><br>enter <span class="red">the give away</span> here</p>
+            <p>If you have a gift code<br><a class="red" data-navigate-to="tshirt">enter it here</a><br><span class="serif-italic">or</span><br><a class="red">register here</a><br>for the give away</p>
         </div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

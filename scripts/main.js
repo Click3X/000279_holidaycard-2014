@@ -37,8 +37,9 @@ require([
     //========MASTER CLICK EVENTS=========//
 
     //---------Main navigation-----------//
-
-    $(".nav li a").click(function(){
-        router.navigate( $(this).parent("li").attr("data-id"), true );
+    $("a[data-navigate-to]").click(function(){
+        router.navigate( $(this).attr("data-navigate-to"), true );
     });
+
+
 });

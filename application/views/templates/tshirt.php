@@ -1,6 +1,6 @@
 <h5>Nothing beats free!</h5>
 <section class="path-section">
-	<h1>Select your design</h1>
+	<h1>Select your t-shirt design</h1>
 	<div class="slider-wrapper slider">
 		<ul class="tshirt-slides slides"><!--
 			--><li class="slide"><a><section class="question-label"><div class="question-label-inner"><h4>T-Shirt one</h4></div></section></a></li><!--
