@@ -57,6 +57,34 @@ a, a:visited{
     }
 }
 
+.arrow-right{
+    @include arrow(18px,18px,right,$darkblue);
+}
+.arrow-left{
+    @include arrow(18px,18px,left,$darkblue);
+}
+
+/******************************************************************
+Page specific
+******************************************************************/
+body.page-home{
+    a.back-btn{
+        display: none;
+    }
+}
+
+body.page-video, body.page-tshirt{
+    .directions,#main-nav-container,.get-started{
+        display: none;
+    }
+}
+
+body.page-tshirt{
+    #footer{
+        display: none;
+    }
+}
+
 /******************************************************************
 Answer List and Tshirt Slider
 ******************************************************************/
@@ -66,7 +94,7 @@ div.slider-wrapper{
     width: 100%;
 }
 
-ul.slider-nav{
+ul.slider-nav-arrows{
     z-index: 3;
     position: absolute;
     top:50%;
@@ -86,6 +114,10 @@ ul.slider-nav{
     }
     li.prev-btn{ float: left; }
     li.next-btn{ float: right; }
+}
+
+ul.slider-nav-dots{
+    @media(min-width:$tablet-width){ display: none; }
 }
 
 ul.answer-list, ul.tshirt-slides{

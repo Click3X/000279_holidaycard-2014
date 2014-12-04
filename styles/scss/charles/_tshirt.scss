@@ -9,7 +9,7 @@
 }
 
 // TSHIRT SLIDER
-.slider-nav {
+.slider-nav-arrows {
 	top: 44%;
 	.next-btn,
 	.prev-btn {
@@ -43,7 +43,7 @@
 }
 
 .svg {
-	.slider-nav {
+	.slider-nav-arrows {
 		.next-btn,
 		.prev-btn {
 			a {
@@ -57,14 +57,14 @@
 }
 
 // NAV DOTS
-.nav-dots-holder {
+.slider-nav-dots-holder {
 	text-align: center;
 }
-.nav-dots {
+.slider-nav-dots {
 	display: inline-block;
 }
 
-.nav-dot {
+.slider-nav-dot {
 	display: inline-block;
 	border-radius: 50%;
 	background-color:$dotgrey;
@@ -77,6 +77,6 @@
 	}
 }
 
-.active-nav-dot {
+.slider-nav-dot.active{
 	background-color:$dotblue;
 }

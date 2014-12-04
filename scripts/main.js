@@ -23,7 +23,17 @@ require.config({
         modules:    'scripts/modules'
     }
 });
-    
+
+/*===============================*/
+/*=============PUBLIC METHODS============*/
+/*===============================*/
+
+function navigateto(_pageid){
+    if(router){
+        if(_pageid == "back") router.prevpage();
+        else router.navigate(_pageid, true );
+    }
+}
 /*===============================*/
 /*=============ROUTER============*/
 /*===============================*/
@@ -36,10 +46,30 @@ require([
 
     //========MASTER CLICK EVENTS=========//
 
-    //---------Main navigation-----------//
-    $("a[data-navigate-to]").click(function(){
-        router.navigate( $(this).attr("data-navigate-to"), true );
+    //---------Page Navigation-----------//
+    $("#main-nav-container a[data-navigate-to]").click(function(){
+        navigateto( $(this).attr("data-navigate-to") );
     });
 
+    $("#footer form#gift-code-form").submit(function(e){
+        e.preventDefault();
 
+        var _form = $(this);
+
+        console.log("submit gift code", _form);
+        
+        $.ajax({
+          type: 'POST',
+          url: base_url + 'clients/code',
+          data: _form.serialize(),
+          dataType:'json'
+        }).done(function(result){ 
+            console.log("get code complete: ", result);
+            
+            router.setclient( result );
+            navigateto("tshirt");
+        }).error(function(er){
+            console.log(er.responseText);
+        });
+    });
 });

@@ -21,7 +21,7 @@
         <script>try{Typekit.load();}catch(e){}</script>
 
     </head>
-    <body>
+    <body class="page-home">
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -64,13 +64,12 @@
         </script>
 
         <div id="main-nav-container">
+            <a class="back-btn" data-navigate-to="back"><span class="arrow-left"></span><span class="serif-italic">Back</span></a>
             <ul class="nav nav-pills">
-              <li data-id="home" role="presentation"><a data-navigate-to="home">Home</a></li>
-              <li data-id="2" role="presentation"><a data-navigate-to="2">Q2</a></li>
-              <li data-id="3" role="presentation"><a data-navigate-to="3">Q3</a></li>
-              <li data-id="4" role="presentation"><a data-navigate-to="4">Q4</a></li>
-              <li data-id="video" role="presentation"><a data-navigate-to="video">Video</a></li>
-              <li data-id="tshirt" role="presentation"><a data-navigate-to="tshirt">T-Shirt</a></li>
+                <li data-id="home"><a>Home</a></li>
+                <li data-id="2"><a>Q2</a></li>
+                <li data-id="3"><a>Q3</a></li>
+                <li data-id="4"><a>Q4</a></li>
             </ul>
         </div>
         <div id="page-container"></div>
@@ -79,7 +78,23 @@
         <!-- FOOTER -->
         <div id="footer" class="footer clearfix">
             <div class="gift-icon"></div>
-            <p>If you have a gift code<br><a class="red" data-navigate-to="tshirt">enter it here</a><br><span class="serif-italic">or</span><br><a class="red">register here</a><br>for the give away</p>
+            <p>If you have a gift code<br>
+            <span class="red">enter it here</span></p>
+            <form id="gift-code-form">
+                <p>
+                    <input name="code" id="gift-code" type="text" placeholder="gift code" />
+                    <input type="submit" />
+                </p>
+            </form>
+            <p><span class="serif-italic">or</span></p>
+            <p><span class="red">register here</span><br>for the give away</p>
+            <form id="give-away-form">
+                <p>
+                <input name="name" type="text" placeholder="name" />
+                <input name="email" type="text" placeholder="email" />
+                <input type="submit" />
+                </p>
+            </form>
         </div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

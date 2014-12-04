@@ -43,6 +43,8 @@ define([
 
                 t.model.set("selection", ci);
             });
+
+            t.model.attributes.selection = "";
         },
         deactivate:function(){
             this.$el.find("li a").off("click");

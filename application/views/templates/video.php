@@ -21,6 +21,6 @@
         </div>
     </div>
     <div class="start-over-holder c-half clearfix">
-        <a class="form-btn start-over-btn">Start Over</a>
+        <a class="form-btn start-over-btn" data-navigate-to="home">Start Over</a>
     </div>
 </section>

@@ -6,22 +6,32 @@ define([
     var QuestionPage = Backbone.View.extend({
         el:"#page-container",
         model:null,
-        html:null,
         initialize: function () {
             this.model = new Backbone.Model({id:this.id});
+            
             if(this.collection) this.collection.add(this.model);
-            this.html = this.template();
         },
         render: function () {
             console.log("--rendering " + this.id);
 
-            this.$el.html( this.html );
+            this.append();
+
+            //---------Page Navigation-----------//
+            this.$el.find("a[data-navigate-to]").unbind("click").click(function(){
+                navigateto( $(this).attr("data-navigate-to") );
+            });
+
             this.activate();
+        },
+        append:function(){
+            this.$el.html( this.template() );
         },
         activate:function(){
             //override
         },
         remove:function(){
+            this.$el.find("a[data-navigate-to]").unbind("click");
+
             console.log("--removing " + this.id);
 
             this.deactivate();

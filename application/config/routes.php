@@ -41,9 +41,19 @@
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 
-$route['share/(:any)'] = 'home/share/$1';
-$route['template/(:any).php'] = 'template/index/$1';
-$route['(:any)'] = 'home/index/$1';
+// ORDERS
+$route['orders'] 						= 'orders/index';
+$route['orders/add'] 					= 'orders/add';
+
+//CLIENTS
+$route['clients'] 						= 'clients/index';
+$route['clients/createcodes'] 			= 'clients/createcodes';
+$route['clients/code'] 					= 'clients/code';
+$route['clients/code/(:any)'] 			= 'clients/code/$1';
+
+$route['share/(:any)'] 					= 'home/share/$1';
+$route['template/(:any).php'] 			= 'template/index/$1';
+$route['(:any)'] 						= 'home/index/$1';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

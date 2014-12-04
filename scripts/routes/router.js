@@ -24,7 +24,8 @@ define([
 
             t.page_models = new Backbone.Collection();
             t.page_models.data = {
-                video_path_id:1 
+                video_path_id:1,
+                client:null
             };
 
             t.main_nav = $("#main-nav-container .nav").eq(0);
@@ -95,6 +96,21 @@ define([
             console.log( this.page_models.at( this.currentpage.index + 1 ).id );
 
             this.initchangepage( this.page_models.at( this.currentpage.index + 1 ).id );
+        },
+        prevpage:function(){
+            console.log("prev page");
+
+            if(this.currentpage.index == 0) return null;
+            console.log( this.page_models.at( this.currentpage.index - 1 ).id );
+
+            this.initchangepage( this.page_models.at( this.currentpage.index - 1 ).id );
+        },
+        setclient:function(_client){
+            if(this.page_models){
+                this.page_models.data.client = _client;
+            }
+
+            console.log( this.page_models.data.client );
         }
     });
 
