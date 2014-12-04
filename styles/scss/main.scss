@@ -38,9 +38,7 @@ a, a:visited{
     max-width: 1200px;
     margin:0 auto;
 
-    @media(min-width: 481px) {
-        padding-top:10px;
-    }
+    @media(min-width: 481px) { padding-top:10px; }
 
     .video-wrapper{
         width: 100%;
@@ -192,7 +190,7 @@ ul.answer-list{
 ul.tshirt-slides{
     position:relative;
     width: 400%;
-    // @include transition(margin-left 0.2s ease-in-out);
+
     @include prefix(margin-left, 0.2s ease-in-out);
 
     @media(min-width:$tablet-width){
@@ -217,3 +215,5 @@ ul.tshirt-slides{
 @import 'charles/tshirt.scss';
 @import 'charles/tshirt-form.scss';
 @import 'charles/header-svg.scss';
+// THUMBS
+@import 'charles/thumbs.scss';
