@@ -41,7 +41,8 @@
             <!-- NEW SVGS -->
             <div class="demo bg"></div>
             <div class="svg-holder clearfix">
-                <div class="happy-all bg"></div>
+                <!-- <div class="happy-all bg"></div> -->
+                <div class="new-header bg"></div>
             </div>
 
             <!--  OLD SNOW NO ANIMATION -->
