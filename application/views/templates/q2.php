@@ -7,9 +7,9 @@
 	--></ul>
 </section>
 <section class="path-section" data-path-id="2">
-	<h1>Do You Like Surprises?</h1>
+	<h1>Which would you rather do first?</h1>
 	<ul class="answer-list"><!--
-		--><li data-selection-id="surprise_yes"><a><section class="question-label"><div class="question-label-inner"><h4>Yes</h4></div></section></a></li><!--
-		--><li data-selection-id="surprise_no"><a><section class="question-label"><div class="question-label-inner"><h4>No</h4></div></section></a></li><!--
+		--><li data-selection-id="dinner"><a><section class="question-label"><div class="question-label-inner"><h4>Eat Dinner</h4></div></section></a></li><!--
+		--><li data-selection-id="gifts"><a><section class="question-label"><div class="question-label-inner"><h4>Open Gifts</h4></div></section></a></li><!--
 	--></ul>
 </section>
