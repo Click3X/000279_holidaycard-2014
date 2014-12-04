@@ -12,8 +12,6 @@ define([
             if(this.collection) this.collection.add(this.model);
         },
         render: function () {
-            console.log("--rendering " + this.id);
-
             this.append();
 
             //---------Page Navigation-----------//
@@ -31,8 +29,6 @@ define([
         },
         remove:function(){
             this.$el.find("a[data-navigate-to]").unbind("click");
-
-            console.log("--removing " + this.id);
 
             this.deactivate();
         },

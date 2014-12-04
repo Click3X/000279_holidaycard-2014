@@ -1,6 +1,7 @@
 // THUMBS
-.answer-list {
+.answer-list,.tshirt-slides {
 	li a {
+		background-color:white;
 		background-size: cover;
 		background-position: 50% 50%;
 		background-repeat: no-repeat;
@@ -22,5 +23,7 @@
 	li[data-selection-id="takeout"] a { background-image:url('../../images/thumbs/takeout.jpg'); }
 	li[data-selection-id="timessquare"] a { background-image:url('../../images/thumbs/timessquare.jpg'); }
 	li[data-selection-id="vacation"] a { background-image:url('../../images/thumbs/vacation.jpg'); }
-
+	li[data-selection-id="tshirt_1"] a { background-image:url('../../images/thumbs/tshirt_1.jpg'); }
+	li[data-selection-id="tshirt_2"] a { background-image:url('../../images/thumbs/tshirt_2.jpg'); }
+	li[data-selection-id="tshirt_3"] a { background-image:url('../../images/thumbs/tshirt_3.jpg'); }
 }

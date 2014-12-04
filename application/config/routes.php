@@ -51,7 +51,7 @@ $route['clients/createcodes'] 			= 'clients/createcodes';
 $route['clients/code'] 					= 'clients/code';
 $route['clients/code/(:any)'] 			= 'clients/code/$1';
 
-$route['share/(:any)'] 					= 'home/share/$1';
+$route['video/(:any)'] 					= 'home/video/$1';
 $route['template/(:any).php'] 			= 'template/index/$1';
 $route['(:any)'] 						= 'home/index/$1';
 

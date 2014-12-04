@@ -4,10 +4,9 @@
 	<div class="form-txt">Choose a design</div>
 	<div class="slider-wrapper slider">
 		<ul class="tshirt-slides slides"><!--
-			--><li class="slide active"><a><!-- <section class="question-label"><div class="question-label-inner"><h4>T-Shirt one</h4></div></section> --></a></li><!--
-			--><li class="slide"><a><!-- <section class="question-label"><div class="question-label-inner"><h4>T-Shirt two</h4></div></section> --></a></li><!--
-			--><li class="slide"><a><!-- <section class="question-label"><div class="question-label-inner"><h4>T-Shirt three</h4></div></section> --></a></li><!--
-			--><li class="slide"><a><!-- <section class="question-label"><div class="question-label-inner"><h4>T-Shirt four</h4></div></section> --></a></li><!--
+			--><li data-selection-id="tshirt_1" class="slide active"><a></a></li><!--
+			--><li data-selection-id="tshirt_2" class="slide active"><a></a></li><!--
+			--><li data-selection-id="tshirt_3" class="slide active"><a></a></li><!--
 		--></ul>
 		<ul class="slider-nav-arrows"><li data-id="prev" class="prev-btn"><a>Prev</a></li><li data-id="next" class="next-btn"><a>Next</a></li></ul>
 		<div class="slider-nav-dots-holder clearfix">
@@ -15,7 +14,6 @@
 				<li data-id="0" class="slider-nav-dot active"></li>
 				<li data-id="1" class="slider-nav-dot"></li>
 				<li data-id="2" class="slider-nav-dot"></li>
-				<li data-id="3" class="slider-nav-dot"></li>
 			</ul>
 		</div>
 	</div>

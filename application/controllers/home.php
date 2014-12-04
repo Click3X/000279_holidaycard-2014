@@ -13,7 +13,7 @@ class Home extends CI_Controller {
 		$this->load->view( 'home_view', array( "pageid"=>$pageid ) );
 	}
 
-	public function share( $videoid ){
-		$this->load->view("share_view", array("videoid"=>$videoid));
+	public function video( $videoid ){
+		$this->load->view("video_view", array("videoid"=>$videoid));
 	}
 }
