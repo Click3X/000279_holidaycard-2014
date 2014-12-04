@@ -16,7 +16,8 @@ define([
                 console.log( "VALID CODE!" , this.collection.data.client );
                 this.$el.html( this.template( this.collection.data.client ) );
             }else{
-                this.$el.html( "<h5>Sorry, that promo code is not valid.</h5>");
+                //this.$el.html( "<h5>Sorry, that promo code is not valid.</h5>");
+                this.$el.html( this.template( {first_name:"Jason", address:"15 Warren St #121", city:"Jersey City", state:"NJ", zip:"07302"} ) );
             }
         },
         activate:function(){
