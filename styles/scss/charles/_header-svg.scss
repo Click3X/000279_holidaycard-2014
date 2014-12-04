@@ -23,7 +23,7 @@
 .svg-holder {
     width:100%;
     max-width: 640px;
-    padding-bottom: 42.273535%;
+    // padding-bottom: 42.273535%;
     
     position:absolute;
     top:13%; 
@@ -44,4 +44,27 @@
 
 .svg .happy-all {
     background-image:url('../../images/header/svgs/happy-all.svg');
+}
+
+.new-header {
+    background-image:url('../../images/new-header/header.png');
+    width: 96%;
+    padding-bottom: 58.5%;
+    position: absolute;
+    top: 0;
+    left: 1%;
+    right: 0;
+    margin: auto;
+}
+
+.svg .new-header {
+    background-image:url('../../images/new-header/header.svg');
+}
+
+
+.snow-container { padding-bottom: 90%; }
+.just-logos { bottom:1%; top:auto; }
+@media (min-width: 640px) {
+    .snow-container { padding-bottom: 600px; }
+    .just-logos { bottom:1%; top:auto; }
 }
