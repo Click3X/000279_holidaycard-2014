@@ -1,8 +1,8 @@
 /*global define*/
 
 define([
-    'views/page',
-    'modules/slider/slider_view',
+    'pages/page',
+    'modules/slider_view',
     'text!template/tshirt.php'
 ], function (PageTemplate, SliderView, T) {
     'use strict';
@@ -12,13 +12,13 @@ define([
         slider:null,
         order_form:null,
         append:function(){
-            if(this.collection.data.client != null){
-                console.log( "VALID CODE!" , this.collection.data.client );
-                this.$el.html( this.template( this.collection.data.client ) );
-            }else{
+            // if(this.collection.data.client != null){
+            //     console.log( "VALID CODE!" , this.collection.data.client );
+            //     this.$el.html( this.template( this.collection.data.client ) );
+            // }else{
                 //this.$el.html( "<h5>Sorry, that promo code is not valid.</h5>");
                 this.$el.html( this.template( {first_name:"Jason", address:"15 Warren St #121", city:"Jersey City", state:"NJ", zip:"07302"} ) );
-            }
+            // }
         },
         activate:function(){
             console.log("activate " + this.id);

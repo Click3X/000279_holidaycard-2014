@@ -3,56 +3,34 @@
 define([
     'jquery',
     'backbone',
-    'views/home',
-    'views/q2',
-    'views/q3',
-    'views/q4',
-    'views/video',
-    'views/tshirt'
-], function ($, Backbone, Home, Q2, Q3, Q4, Video, TShirt) {
+    'pages/home',
+    'pages/video',
+    'pages/tshirt',
+    'models/session'
+], function ($, Backbone, Home, Video, TShirt, Session) {
     'use strict';
 
     var RouterRouter = Backbone.Router.extend({
-        page_views:[],
-        main_nav:null,
-        selections:null,
-        currentpage:{index:0,model:null,page:null},
+        session:null,
+        giftcode_form:null,
     	initialize:function(){
     		console.log("initialize router");
+            var _t = this;
 
-            var t = this;
+            _t.session              = new Session();
+           
+            var page_collection     = _t.session.get("pages"),
+            home                    = new Home( {id:"home", session:_t.session, collection:page_collection } ),
+            video                   = new Video( {id:"video", session:_t.session, collection:page_collection} ),
+            tshirt                  = new TShirt( {id:"tshirt", session:_t.session, collection:page_collection } );
 
-            t.page_models = new Backbone.Collection();
-            t.page_models.data = {
-                video_path_id:1,
-                client:null
-            };
-
-            t.main_nav = $("#main-nav-container .nav").eq(0);
-
-            t.page_views.push( new Home( {id:"home", collection:t.page_models} ));
-            t.page_views.push( new Q2( {id:"2", collection:t.page_models} ));
-            t.page_views.push( new Q3( {id:"3", collection:t.page_models} ));
-            t.page_views.push( new Q4( {id:"4", collection:t.page_models} ));
-            t.page_views.push( new Video( {id:"video", collection:t.page_models} ));
-            t.page_views.push( new TShirt( {id:"tshirt", collection:t.page_models} ));
-
-            t.page_models.on("change:selection", function(model){
-                console.log("selection changed", model.id, model.get("selection"));
-
-                t.nextpage();
+            _t.giftcode_form = 
+            $("form#giftcode").eq(0).submit(function(e){
+                e.preventDefault();
+                _t.submitgiftcode();
             });
 
-            t.page_models.on("change:path-id", function(cmodel){
-                console.log("path-id changed", cmodel.id, newpathid);
-
-                var newpathid = cmodel.get("path-id");
-                t.page_models.data.video_path_id = newpathid;
-            });
-
-            console.log(t.page_models);
-
-            t.start();
+            _t.start();
     	},
     	start:function(){
     		Backbone.history.start( {pushState: true, hashChange:true, silent:false, root:root_dir} );
@@ -64,54 +42,60 @@ define([
         initchangepage:function(_pageid){
             this.navigate(_pageid, true);
         },
+        initnextpage:function(){
+            var nindex = this.session.getactivepageindex()+1;
+
+            if(nindex > this.session.getnumpages()-1) return null;
+
+            this.initchangepage( this.session.getpageidbyindex(nindex) );
+        },
+        initprevpage:function(){
+            var pindex = this.session.getactivepageindex()-1;
+
+            if(pindex < 0) return null;
+
+            this.initchangepage( this.session.getpageidbyindex(pindex) );
+        },
         onchangepage:function(_pageid){
             !_pageid ? _pageid = "home" : null;
 
         	console.log("Page change:", _pageid);
 
-            //activate correct nav button;
-            $("#main-nav-container .nav li.active").removeClass("active");
-            $("#main-nav-container .nav li[data-id=" + _pageid + "]").addClass("active");
-
-            //remove current page
-            if(this.currentpage.page) 
-                this.currentpage.page.remove();
-
-            this.currentpage.model  = this.page_models.get( _pageid );
-            this.currentpage.index  = this.page_models.indexOf( this.currentpage.model );
-            this.currentpage.page   = this.page_views[this.currentpage.index];
-
-            console.log(this.currentpage);
-
             //update body tag with page class
             $("body").removeClass().addClass("page-" + _pageid);
 
-            //render new page
-            this.currentpage.page.render();
+            this.session.activatepagebyid(_pageid);
 	    },
         nextpage:function(){
-            console.log("next page", this.page_views.length);
-
-            if(this.currentpage.index == this.page_views.length-1) return null;
-            console.log( this.page_models.at( this.currentpage.index + 1 ).id );
-
-            this.initchangepage( this.page_models.at( this.currentpage.index + 1 ).id );
+            this.session.activatenextpage();
         },
         prevpage:function(){
-            console.log("prev page");
-
-            if(this.currentpage.index == 0) return null;
-            console.log( this.page_models.at( this.currentpage.index - 1 ).id );
-
-            this.initchangepage( this.page_models.at( this.currentpage.index - 1 ).id );
+            this.session.activateprevpage();
         },
-        setclient:function(_client){
-            if(this.page_models){
-                this.page_models.data.client = _client;
-            }
+        submitgiftcode:function(){
+            var _t = this;
 
-            console.log( this.page_models.data.client );
-        }
+            $.ajax({
+                type: 'POST',
+                url: base_url + 'clients/code',
+                data: _t.giftcode_form.serialize(),
+                dataType:'json'
+            }).done(function(result){ 
+                console.log("get code complete: ", result.success);
+
+                if(result.success == true){
+                    _t.session.setclient(result.data);
+
+                    router.navigate("tshirt", true);
+                } else {
+                    console.log(result);
+
+                    _t.giftcode_form.find(".error").html(result.error);
+                }
+            }).error(function(er){
+                console.log(er.responseText);
+            });
+        },
     });
 
     return RouterRouter;

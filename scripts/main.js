@@ -19,8 +19,9 @@ require.config({
         bootstrap:  'scripts/vendor/sass-bootstrap/dist/js/bootstrap',
         text:       'scripts/vendor/require/text.min',
         routes:     'scripts/routes',
-        views:      'scripts/views',
-        modules:    'scripts/modules'
+        pages:      'scripts/pages',
+        modules:    'scripts/modules',
+        models:     'scripts/models'
     }
 });
 
@@ -28,12 +29,11 @@ require.config({
 /*=============PUBLIC METHODS============*/
 /*===============================*/
 
-function navigateto(_pageid){
-    if(router){
-        if(_pageid == "back") router.prevpage();
-        else router.navigate(_pageid, true );
-    }
-}
+// function navigateto(_pageid){
+//     if(router){
+//        router.navigate(_pageid, true );
+//     }
+// }
 /*===============================*/
 /*=============ROUTER============*/
 /*===============================*/
@@ -42,34 +42,29 @@ require([
     'routes/router'
 ], function(Router) {
     router            = new Router();
+    
     console.log(base_url, root_dir);
 
     //========MASTER CLICK EVENTS=========//
+    // $("#footer form#gift-code-form").submit(function(e){
+    //     e.preventDefault();
 
-    //---------Page Navigation-----------//
-    $("#main-nav-container a[data-navigate-to]").click(function(){
-        navigateto( $(this).attr("data-navigate-to") );
-    });
+    //     var _form = $(this);
 
-    $("#footer form#gift-code-form").submit(function(e){
-        e.preventDefault();
-
-        var _form = $(this);
-
-        console.log("submit gift code", _form);
+    //     console.log("submit gift code", _form);
         
-        $.ajax({
-          type: 'POST',
-          url: base_url + 'clients/code',
-          data: _form.serialize(),
-          dataType:'json'
-        }).done(function(result){ 
-            console.log("get code complete: ", result);
+    //     $.ajax({
+    //       type: 'POST',
+    //       url: base_url + 'clients/code',
+    //       data: _form.serialize(),
+    //       dataType:'json'
+    //     }).done(function(result){ 
+    //         console.log("get code complete: ", result);
             
-            router.setclient( result );
-            navigateto("tshirt");
-        }).error(function(er){
-            console.log(er.responseText);
-        });
-    });
+    //         router.setclient( result );
+    //         navigateto("tshirt");
+    //     }).error(function(er){
+    //         console.log(er.responseText);
+    //     });
+    // });
 });

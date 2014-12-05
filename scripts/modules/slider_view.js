@@ -1,5 +1,3 @@
-/*global define*/
-
 define([
 	'backbone'
 ], function (Backbone) {
@@ -7,8 +5,6 @@ define([
 
     var SliderView = Backbone.View.extend({
         initialize:function(){
-        	console.log("initialize slider view");
-
         	var t = this;
 
         	t.model = new Backbone.Model({
@@ -33,8 +29,6 @@ define([
             });
 
             this.checkarrows();
-
-        	console.log(t.model);
         },
         showslidebyid:function(_slideid){
             this.model.set("current_slide",_slideid);

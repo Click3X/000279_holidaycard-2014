@@ -59,6 +59,7 @@ body { padding-top:0; }
 #main-nav-container {
     text-align: center;
     height: 70px;
+    margin-bottom: 40px;
 
     ul.nav-pills {
         display: inline-block;
@@ -92,7 +93,6 @@ body { padding-top:0; }
             margin: 0 auto;
 
             box-sizing: border-box;
-            cursor: default;
             display: block;
 
             position: relative;
@@ -112,9 +112,9 @@ body { padding-top:0; }
             display: block;
             width:2.75em;
             border-radius: 50%;
-            background-color:$grey;
+            background-color:$darkblue;
             font-family: Georgia, serif;
-            color:$darkblue;
+            color:#FFF;
             font-style: italic;
             margin:auto;
             text-align: center;
@@ -132,10 +132,16 @@ body { padding-top:0; }
             @include prefix(transition, all 300ms);
 
         }
-        // a:hover:before {
-        //     color:#fff;
-        //     background-color:$blue;
-        // }
+
+        li.disabled a:before{
+            background-color:$grey;
+            color: #DDD;
+            cursor: default;
+        }
+
+        li.disabled a:before, li.active a:before{
+            cursor: default;
+        }
     }   
 }
 
@@ -243,6 +249,16 @@ body { padding-top:0; }
             height: 0;
             font-size: .8em;
         }
+    }
+
+    .error{
+        font-family: Georgia, serif;
+        font-style: italic;
+        text-transform: none;
+        margin-top: 4px;
+        display: block;
+        font-size: .6em;
+        letter-spacing: -.01em;
     }
 }
 

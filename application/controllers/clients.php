@@ -21,10 +21,21 @@ class Clients extends CI_Controller {
 			$gift_code = $post["code"];
 		}
 
-		$client = $this->client_model->get(array("gift_code"=>$gift_code));
-		$client = $client[0];
+		$response = $this->client_model->get(array("gift_code"=>$gift_code));
+
+		if( !empty($response) && count($response) > 0 ){
+			$response = array(
+				"success"=>true,
+				"data"=>$response[0]
+			);
+		}else{
+			$response = array(
+				"success"=>false,
+				"error"=>"Sorry, that's not a valid gift code."
+			);
+		}
 		
-		echo json_encode($client);
+		echo json_encode($response);
 	}
 
 	public function createcodes(){

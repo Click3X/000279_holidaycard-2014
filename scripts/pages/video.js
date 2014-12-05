@@ -1,7 +1,7 @@
 /*global define*/
 
 define([
-    'views/page',
+    'pages/page',
     'text!template/video.php'
 ], function (PageTemplate, T) {
     'use strict';

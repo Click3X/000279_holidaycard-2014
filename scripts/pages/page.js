@@ -3,20 +3,31 @@ define([
 ], function (Backbone) {
     'use strict';
 
-    var QuestionPage = Backbone.View.extend({
+    var Page = Backbone.View.extend({
         el:"#page-container",
         model:null,
-        initialize: function () {
-            this.model = new Backbone.Model({id:this.id});
+        initialize: function(options){
+            var _t = this;
+
+            _t.session = options.session;
+
+            _t.model = new Backbone.Model( { id:_t.id, active:false } );
+            _t.model.on("change:active",function(){
+                if(_t.model.attributes.active == true){
+                    _t.render();
+                } else {
+                    _t.remove();
+                }
+            });
             
-            if(this.collection) this.collection.add(this.model);
+            _t.collection.push( _t.model );
         },
         render: function () {
             this.append();
 
             //---------Page Navigation-----------//
             this.$el.find("a[data-navigate-to]").unbind("click").click(function(){
-                navigateto( $(this).attr("data-navigate-to") );
+                router.navigate( $(this).attr("data-navigate-to"), true );
             });
 
             this.activate();
@@ -37,5 +48,5 @@ define([
         }
     });
 
-    return QuestionPage;
+    return Page;
 });

@@ -65,23 +65,17 @@ a, a:visited{
 /******************************************************************
 Page specific
 ******************************************************************/
-body.page-home{
-    a.back-btn{
-        display: none;
-    }
-}
+// body.page-video, body.page-tshirt{
+//     .directions,#main-nav-container,.get-started{
+//         display: none;
+//     }
+// }
 
-body.page-video, body.page-tshirt{
-    .directions,#main-nav-container,.get-started{
-        display: none;
-    }
-}
-
-body.page-tshirt{
-    #footer{
-        display: none;
-    }
-}
+// body.page-tshirt{
+//     #footer{
+//         display: none;
+//     }
+// }
 
 /******************************************************************
 Answer List and Tshirt Slider
