@@ -124,12 +124,12 @@ body { padding-top:0; }
 .btn-holder:hover {
     &:after { background-color: $red; }
 
-    .back-arrow { background-image: url("../../images/ui/white-arrow.png"); }
+    // .back-arrow { background-image: url("../../images/ui/white-arrow.png"); }
 }
 
-.svg .btn-holder:hover {
-    .back-arrow { background-image: url("../../images/ui/white-arrow.svg"); }
-}
+// .svg .btn-holder:hover {
+//     .back-arrow { background-image: url("../../images/ui/white-arrow.svg"); }
+// }
 
 //MAIN NAV
 #main-nav-container {
@@ -359,14 +359,6 @@ body { padding-top:0; }
 .start-over-holder {
     margin:1em auto;
     text-align: center;
-
-    // .start-over {
-    //     width:90%;
-    //     max-width:251px;
-    //     height: 60px;
-    //     // background-image:url('../../images/ui/start-over.png');
-    //     margin:0 auto;
-    // }
 
     .start-over-btn {
         display: inline-block;
