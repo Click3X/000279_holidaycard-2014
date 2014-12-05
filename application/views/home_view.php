@@ -81,20 +81,23 @@
             <div class="gift-icon"></div>
             <p>If you have a gift code<br>
             <span class="red">enter it here</span></p>
-            <form id="gift-code-form">
-                <p>
+            <form id="gift-code-form" class="gift-code-form">
+                <div class="txt-holder clearfix">
+                    <label for="code" class="form-txt"></label>
                     <input name="code" id="gift-code" type="text" placeholder="gift code" />
-                    <input type="submit" />
-                </p>
+                    <input type="submit" class="form-btn" value="submit" />
+                </div>
             </form>
             <p><span class="serif-italic">or</span></p>
             <p><span class="red">register here</span><br>for the give away</p>
-            <form id="give-away-form">
-                <p>
-                <input name="name" type="text" placeholder="name" />
-                <input name="email" type="text" placeholder="email" />
-                <input type="submit" />
-                </p>
+            <form id="give-away-form" class="give-away-form">
+                <div class="txt-holder clearfix">
+                    <label for="name" class="form-txt"></label>
+                    <input name="name" type="text" placeholder="name" />
+                    <label for="email" class="form-txt"></label>
+                    <input name="email" type="text" placeholder="email" />
+                    <input type="submit" class="form-btn" value="submit" />
+                </div>
             </form>
         </div>
 

@@ -1,0 +1,9 @@
+// NEW FORMS
+.give-away-form,
+.gift-code-form {
+    input[type="submit"] {
+        display: block;
+        padding:0 2em;
+        margin:.5em auto;
+    }
+}
