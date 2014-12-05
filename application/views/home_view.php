@@ -28,7 +28,7 @@
 
         <!-- HEADER CONTAINER -->
         <div id="header-container" class="header-container clearfix">
-            <!-- ANIMATED SNOW TRY 2 -->
+            <!-- ANIMATED SNOW -->
             <div class="snow-container">
                 <div class="snow foreground"></div>
                 <div class="snow foreground layered"></div>
@@ -41,13 +41,9 @@
             <!-- NEW SVGS -->
             <div class="demo bg"></div>
             <div class="svg-holder clearfix">
-                <!-- <div class="happy-all bg"></div> -->
                 <div class="new-header bg"></div>
             </div>
 
-            <!--  OLD SNOW NO ANIMATION -->
-            <!-- <div class="bg-img snow"></div>  -->
-            <!-- <div class="bg-img happy-holidays"></div> -->
             <div class="bg-img just-logos"></div>
         </div>
 
