@@ -42,11 +42,13 @@
                 <div class="snow background"></div>
                 <div class="snow background layered"></div>
             </div>
+
             <!-- NEW SVGS -->
             <div class="demo bg"></div>
             <div class="svg-holder clearfix">
                 <div class="new-header bg"></div>
             </div>
+
             <div class="bg-img just-logos"></div>
         </div>
 
@@ -57,12 +59,13 @@
         <div id="footer" class="footer clearfix">
             <div class="gift-icon"></div>
             <p>If you have a gift code<br><span class="red">enter it here</span></p>
-            <form id="giftcode">
-                <p>
+            <form id="giftcode" class="gift-code-form">
+                <div class="txt-holder clearfix">
+                    <label for="code" class="form-txt"></label>
                     <input name="code" id="gift-code" type="text" placeholder="gift code" />
-                    <input type="submit" />
+                    <input type="submit" class="form-btn" value="submit" />
                     <span class="error"></span>
-                </p>
+                </div>
             </form>
         </div>
 

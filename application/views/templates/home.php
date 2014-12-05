@@ -5,7 +5,11 @@
 </div>
 
 <div id="main-nav-container">
-    <a class="back-btn"><span class="arrow-left"></span><span class="serif-italic">Back</span></a>
+    <div data-id="back" class="back-btn-holder clearfix">
+        <div class="btn-holder">
+            <a class="back-arrow"></a>
+        </div>
+    </div>
     <ul class="nav nav-pills">
         <li data-question-id="q1"><a>Q1</a></li>
         <li data-question-id="q2"><a>Q2</a></li>

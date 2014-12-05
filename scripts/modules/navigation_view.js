@@ -7,12 +7,12 @@ define([
     	back_button:null,
         events:{
             "click li": "buttonclicked",
-            "click a.back-btn": "backclicked"
+            "click div.back-btn-holder": "backclicked"
         },
         initialize:function(){
         	var _t = this;
 
-        	_t.back_button = _t.$el.find("a.back-btn").eq(0);
+        	_t.back_button = _t.$el.find("div.back-btn-holder").eq(0);
 
         	this.collection.on( "change:active", function(_model){
         		_t.activatebuttonbyid( _model.id ); 
