@@ -62,20 +62,6 @@ a, a:visited{
     @include arrow(18px,18px,left,$darkblue);
 }
 
-.back-btn-holder {
-    display: inline-block;
-}
-.back-arrow {
-    background-image: url("../../images/ui/blue-arrow.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 50% 50%;
-    display: block;
-    width: 22px;
-    height: 34px;
-
-    @include prefix(transform, rotate(180deg));
-}
 
 /******************************************************************
 Page specific
@@ -198,6 +184,7 @@ ul.answer-list{
         @media(min-width:$tablet-width){
             width: 50%;
             padding:2px;
+            float: left;
         }
     }
 }

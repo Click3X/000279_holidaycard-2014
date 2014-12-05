@@ -153,13 +153,14 @@ input[type=radio] {
 		border-radius:6px;
 		border:1px solid $submitgrey;
         padding-left:.5em;
+        font-weight: normal;
 
-		font-size: 1.5em;
-		line-height: 1.5em;
+		// font-size: 1.5em; line-height: 1.5em;
+        font-size: 1em; line-height: 2.5em;
 
 		@media(min-width: 481px) {
-			font-size: 2em;
-			line-height: 2em;
+			font-size: 1.5em;
+			// line-height: 2em;
 		}
 	}
 

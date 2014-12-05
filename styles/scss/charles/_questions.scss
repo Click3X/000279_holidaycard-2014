@@ -83,7 +83,7 @@ ul.answer-list, ul.tshirt-slides {
         position: absolute;
         top: -.25em; 
         left: 0; right: 0;
-        z-index: 1;
+        z-index: 2;
 
         line-height: 1.1em;
         font-size: 1.4em;
@@ -117,4 +117,24 @@ ul.answer-list, ul.tshirt-slides {
         margin: .67em auto; 
         font-size: 1.5em;
     }
+}
+
+// ANSWER HOVER STATE
+.answer-list li:after {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    @include prefix( transition, all 250ms);
+}
+
+.answer-list li:hover:after { opacity: 1; }
+.question-label-inner {
+    position: relative;
+    z-index: 1;
 }

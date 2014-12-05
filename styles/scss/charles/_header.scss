@@ -150,6 +150,13 @@ body { padding-top:0; }
             }
         }
 
+        .active ~ li {
+            a:before {
+                color:white;
+                opacity: .5;
+            }
+        }
+
         li { 
             counter-increment: nav-counter; 
             width:58px;
