@@ -65,7 +65,12 @@
         </script>
 
         <div id="main-nav-container">
-            <a class="back-btn" data-navigate-to="back"><span class="arrow-left"></span><span class="serif-italic">Back</span></a>
+            <!-- <a class="back-btn" data-navigate-to="back"><span class="arrow-left"></span><span class="serif-italic">Back</span></a> -->
+            <div data-id="back" class="back-btn-holder clearfix">
+                <div class="btn-holder">
+                    <a class="back-arrow" data-navigate-to="back"></a>
+                </div>
+            </div>
             <ul class="nav nav-pills">
                 <li data-id="home"><a>Home</a></li>
                 <li data-id="2"><a>Q2</a></li>

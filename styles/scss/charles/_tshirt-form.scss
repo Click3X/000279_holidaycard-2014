@@ -153,7 +153,7 @@ input[type=radio] {
 		border-radius:6px;
 		border:1px solid $submitgrey;
         padding-left:.5em;
-        
+
 		font-size: 1.5em;
 		line-height: 1.5em;
 
@@ -188,6 +188,7 @@ input[type=radio] {
 		}
 
 		select.state {
+            background-color: transparent;
 			-webkit-appearance: none;  /*Removes default chrome and safari style*/
 			-moz-appearance: none; /* Removes Default Firefox style*/
 			appearance: none;
