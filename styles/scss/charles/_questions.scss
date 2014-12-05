@@ -120,21 +120,21 @@ ul.answer-list, ul.tshirt-slides {
 }
 
 // ANSWER HOVER STATE
-.answer-list li:after {
-    content: "";
-    display: block;
-    width: 100%;
-    padding-bottom: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0,0,0,0.5);
-    opacity: 0;
-    @include prefix( transition, all 250ms);
-}
+// .answer-list li:after {
+//     content: "";
+//     display: block;
+//     width: 100%;
+//     padding-bottom: 100%;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     background: rgba(0,0,0,0.5);
+//     opacity: 0;
+//     @include prefix( transition, all 250ms);
+// }
 
-.answer-list li:hover:after { opacity: 1; }
-.question-label-inner {
-    position: relative;
-    z-index: 1;
-}
+// .answer-list li:hover:after { opacity: 1; }
+// .question-label-inner {
+//     position: relative;
+//     z-index: 1;
+// }
