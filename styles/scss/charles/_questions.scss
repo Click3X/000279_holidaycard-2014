@@ -117,6 +117,8 @@ ul.answer-list, ul.tshirt-slides {
         margin: .67em auto; 
         font-size: 1.5em;
     }
+
+    @media(min-width: 640px) { font-size:1.75em; }
 }
 
 // ANSWER HOVER STATE

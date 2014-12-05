@@ -68,9 +68,7 @@ body { padding-top:0; }
         cursor:pointer;
     }
     
-    @media(min-width: 481px) { 
-        width: 82px; 
-    }
+    @media(min-width: 481px) { width: 82px; }
 }
 
 .btn-holder:after {
@@ -328,8 +326,15 @@ body { padding-top:0; }
 }
 
 .fb, .tw {
-    width: 87px;
-    height: 88px;
+    margin: 14px;
+    width: 67px;
+    height: 68px;
+
+    @media(min-width: 481px) {
+        margin:0;
+        width: 87px;
+        height: 88px;
+    }
 }
 
 .fb { background-image:url('../../images/ui/fb.png'); }

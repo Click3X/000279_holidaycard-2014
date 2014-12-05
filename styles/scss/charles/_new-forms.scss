@@ -7,3 +7,39 @@
         margin:.5em auto;
     }
 }
+
+.gift-code-form {
+    text-align: center;
+    input[type="text"] {
+        text-align: center;
+        padding-left:1em;
+        color:$blue;
+        letter-spacing: 1em;
+        -webkit-text-security: disc;
+        text-security: disc;
+
+        max-width: 360px;
+        margin:0 auto;
+    }
+
+    ::-webkit-input-placeholder { letter-spacing: normal; text-align: left; }
+    :-moz-placeholder { /* Firefox 18- */ letter-spacing: normal; text-align: left;   }
+    ::-moz-placeholder {  /* Firefox 19+ */ letter-spacing: normal; text-align: left;   }
+    :-ms-input-placeholder {   letter-spacing: normal; text-align: left;   }
+}
+
+.give-away-form {
+    text-align: center;
+    input[type="text"] {
+        max-width: 360px;
+        margin:0 auto;
+        color: #000;       
+    }
+
+}
+
+// STYLE PLACE HOLDER TEXT FOR INPUTS
+::-webkit-input-placeholder { color: #b2b3b4; }
+:-moz-placeholder { /* Firefox 18- */ color: #b2b3b4;   }
+::-moz-placeholder {  /* Firefox 19+ */ color: #b2b3b4;   }
+:-ms-input-placeholder {   color: #b2b3b4;   }
