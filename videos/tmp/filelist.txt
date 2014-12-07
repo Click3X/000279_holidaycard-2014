@@ -1,5 +1,4 @@
 file 'http://holidaycard.dev/videos/src/mp4/intro.mp4'
 file 'http://holidaycard.dev/videos/src/mp4/vacation.mp4'
 file 'http://holidaycard.dev/videos/src/mp4/slopes.mp4'
-file 'http://holidaycard.dev/videos/src/mp4/santa.mp4'
 file 'http://holidaycard.dev/videos/src/mp4/outro.mp4'

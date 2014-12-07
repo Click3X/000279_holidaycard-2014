@@ -71,12 +71,14 @@ class Encoder extends CI_Controller {
 		
 		// build the ffmpeg command and exec
 		$outputfilename 		= implode("-", $selections).".".$ext;
-		$audio 					= FCPATH."video/".$ext."/audio.".$ext;
-		$tmppath 				= FCPATH."video/tmp/".$outputfilename;
-		$outputpath 			= FCPATH."video/output/".$outputfilename;
-		$output_http_location 	= base_url()."video/output/".$outputfilename;
+		$audio 					= FCPATH."videos/".$ext."/audio.".$ext;
+		$tmppath 				= FCPATH."videos/tmp/".$outputfilename;
+		$outputpath 			= FCPATH."videos/output/".$outputfilename;
+		$output_http_location 	= base_url()."videos/output/".$outputfilename;
 
 		$response = (object) "response";
+
+		$response->tmppath = $tmppath;
 
 		//check if this combo already exists. if not build it.
 		if( file_exists($outputpath) ){
