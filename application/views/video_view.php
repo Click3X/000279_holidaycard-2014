@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="<?= base_url();?>styles/css/main.css">
 
-        <meta property="og:url" content="http://samples.ogp.me/136756249803614" /> 
+        <meta property="og:url" content="<?= base_url(); ?>video/1234" /> 
         <meta property="og:title" content="My Custom Click 3X Holiday Video" />
         <meta property="og:description" content="This is awesome!" /> 
         <meta property="og:image" content="<?= base_url(); ?>images/thumbs/vacation.jpg"/> 
