@@ -15,7 +15,7 @@
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@click3x">
-        <!-- <meta name="twitter:creator" content="@jaytord"> -->
+        <meta name="twitter:creator" content="@jaytord">
         <meta name="twitter:title" content="My Custom Click 3X Holiday Video">
         <meta name="twitter:description" content="This is awesome!">
         <meta name="twitter:image:src" content="<?= base_url(); ?>images/thumbs/vacation.jpg">
