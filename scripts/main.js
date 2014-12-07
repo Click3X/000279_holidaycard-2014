@@ -99,7 +99,7 @@ require.config({
         }
     },
     paths: {
-        jquery:     'scripts/vendor/jquery/jquery',
+        jquery:     'scripts/vendor/jquery/jquery.min',
         backbone:   'scripts/vendor/backbone/backbone',
         underscore: 'scripts/vendor/underscore/underscore-min',
         bootstrap:  'scripts/vendor/sass-bootstrap/dist/js/bootstrap',
