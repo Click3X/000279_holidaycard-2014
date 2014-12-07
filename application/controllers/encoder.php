@@ -38,8 +38,6 @@ class Encoder extends CI_Controller {
 	}
 
 	public function combine(){
-		header('Access-Control-Allow-Origin: *');
-		
 		$post = $this->input->post();
 		$selections = json_decode($post["selections"]);
 
@@ -52,6 +50,12 @@ class Encoder extends CI_Controller {
 		$res->mp4 	= $mp4;
 		$res->webm 	= $webm;
 
+		$this->output->set_header("Access-Control-Allow-Origin: *");
+		$this->output->set_header("Access-Control-Expose-Headers: Access-Control-Allow-Origin");
+		$this->output->set_status_header(200);
+		$this->output->set_content_type('application/json');
+		$this->output->_display();
+		
 		echo json_encode($res);
  	}
 
