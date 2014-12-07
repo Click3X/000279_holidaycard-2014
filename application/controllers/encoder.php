@@ -20,8 +20,6 @@ class Encoder extends CI_Controller {
 	public function index()
 	{
 		echo "Call the combine method to concatenate your videos.";
-
-		header('Access-Control-Allow-Origin: *');
 	}
 
 	public function testcombine($_selections){
@@ -40,6 +38,8 @@ class Encoder extends CI_Controller {
 	}
 
 	public function combine(){
+		header('Access-Control-Allow-Origin: *');
+		
 		$post = $this->input->post();
 		$selections = json_decode($post["selections"]);
 
