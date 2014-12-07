@@ -37,7 +37,7 @@ class Encoder extends CI_Controller {
 		print_r($res);
 	}
 
-	public function combine($_selections = ""){
+	public function combine(){
 		$post = $this->input->post();
 		$selections = json_decode($post["selections"]);
 
