@@ -42,6 +42,7 @@ $route['default_controller'] = "home";
 $route['404_override'] = '';
 
 $route['encoder'] 									= 'encoder/test';
+$route['encoder/combine'] 							= 'encoder/combine';
 $route['encoder/testcombine/(:any)'] 				= 'encoder/testcombine/$1';
 
 // ORDERS
