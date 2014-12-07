@@ -1,13 +1,14 @@
 <h5>It's ready!</h5>
 <section>
 	<h1>HERE IS YOUR HOLIDAY STORY</h1>
-	<p id="video-debug"></p>
 	<div class="video-wrapper">
-		<video width="960" height="540" controls>
-		  <source src="" type="video/mp4">
-		  <source src="" type="video/webm">
-			Your browser does not support video.
-		</video>
+        <div class="video-container">
+            <div class="poster"></div>
+            <div class="video-player">
+                <video class="mobile-video" width="960" height="540" controls></video>
+        		<video class="video" width="960" height="540" controls></video>
+            </div>
+        </div>
 	</div>
 </section>
 
@@ -16,7 +17,7 @@
     <div class="c-half clearfix">
         <div class="social-buttons">
             <a class="fb"></a>
-            <a class="tw"></a>
+            <a class="tw twitter-share-button" target="_blank" href="https://twitter.com/share"></a>
             <span class="share-it">Now share it!</span>
         </div>
     </div>

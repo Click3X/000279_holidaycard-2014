@@ -61,8 +61,10 @@ define([
 
         	console.log("Page change:", _pageid);
 
-            //update body tag with page class
-            $("body").removeClass().addClass("page-" + _pageid);
+            /*--- update body tags --*/
+            setbodytags();
+            
+            $("body").addClass("page-" + _pageid);
 
             this.session.activatepagebyid(_pageid);
 	    },

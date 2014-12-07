@@ -29,69 +29,72 @@
 	bottom: 0;
 	left: 0;
 	pointer-events: none;
+
 	-webkit-transform: translate3d(0, -100%, 0);
-					transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
 	-webkit-animation: snow linear infinite;
-					animation: snow linear infinite;
+	animation: snow linear infinite;
 }
+
 .snow.foreground {
 	background-image: url("../../images/snow/snow-red-1.png");
 
-	@media(max-width: 499px) {
-		background-size:cover;
-	}
+	@media(max-width: 499px){ background-size:cover; }
+
 	-webkit-animation-duration: 15s;
-					animation-duration: 15s;
+	animation-duration: 15s;
 }
+
 .snow.foreground.layered {
 	-webkit-animation-delay: 7.5s;
-					animation-delay: 7.5s;
+	animation-delay: 7.5s;
 }
+
 .snow.middleground {
 	background-image: url("../../images/snow/snow-red-2.png");
 
-	@media(max-width: 499px) {
-		background-size:cover;
-	}
+	@media(max-width: 499px){ background-size:cover; }
+
 	-webkit-animation-duration: 35s;
-					animation-duration: 35s;
+	animation-duration: 35s;
 }
+
 .snow.middleground.layered {
 	-webkit-animation-delay: 17.5s;
-					animation-delay: 17.5s;
+	animation-delay: 17.5s;
 }
+
 .snow.background {
 	background-image: url("../../images/snow/snow-red-3.png");
 
-	@media(max-width: 499px) {
-		background-size:cover;
-	}
+	@media(max-width: 499px){ background-size:cover; }
+
 	-webkit-animation-duration: 55s;
-					animation-duration: 55s;
+	animation-duration: 55s;
 }
 .snow.background.layered {
 	-webkit-animation-delay: 27.5s;
-					animation-delay: 27.5s;
+	animation-delay: 27.5s;
 }
 
 @-webkit-keyframes snow {
 	0% {
 		-webkit-transform: translate3d(0, -100%, 0);
-						transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
 	}
 	100% {
 		-webkit-transform: translate3d(5%, 100%, 0);
-						transform: translate3d(5%, 100%, 0);
+		transform: translate3d(5%, 100%, 0);
 	}
 }
 
 @keyframes snow {
 	0% {
 		-webkit-transform: translate3d(0, -100%, 0);
-						transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
 	}
 	100% {
 		-webkit-transform: translate3d(5%, 100%, 0);
-						transform: translate3d(5%, 100%, 0);
+		transform: translate3d(5%, 100%, 0);
 	}
 }

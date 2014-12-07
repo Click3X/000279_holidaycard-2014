@@ -14,8 +14,6 @@
 
         <link rel="icon" type="image/png" href="favicon.png">
 
-        <script src="<?= base_url(); ?>scripts/vendor/modernizr/modernizr.js"></script>
-
         <!-- TYPE KIT FONT JS CODE -->
         <script src="//use.typekit.net/ali5dgb.js"></script>
         <script>try{Typekit.load();}catch(e){}</script>
@@ -25,11 +23,15 @@
             var base_url = "<?=base_url(); ?>";
             var root_dir = "<?= $this->config->item('root_directory'); ?>";
         </script>
-    </head>
-    <body class="page-home">
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/ie8.css" />
         <![endif]-->
+    </head>
+        <!--[if IE 8 ]><body class="ie8"><![endif]-->
+        <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
 
         <!-- HEADER -->
         <div id="header-container" class="header-container clearfix">
@@ -48,8 +50,6 @@
             <div class="svg-holder clearfix">
                 <div class="new-header bg"></div>
             </div>
-
-            <div class="bg-img just-logos"></div>
         </div>
 
         <!-- PAGE CONTAINER -->
@@ -62,7 +62,7 @@
             <form id="giftcode" class="gift-code-form">
                 <div class="txt-holder clearfix">
                     <label for="code" class="form-txt"></label>
-                    <input name="code" id="gift-code" type="text" placeholder="gift code" />
+                    <input name="code" id="gift-code" type="text" placeholder="Gift code" />
                     <input type="submit" class="form-btn" value="submit" />
                     <span class="error"></span>
                 </div>

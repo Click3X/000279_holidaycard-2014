@@ -5,31 +5,6 @@
   }
 }
 
-@mixin arrow($width:20px,$height:20px,$direction:right, $color:#FFF){
-	width: 0; 
-	height: 0;
-	position: absolute;
-	margin-left: $width/2;
-
-	@if $direction == up {
-	 	border-right: $width solid transparent;
-		border-left: $width solid transparent;
-		border-bottom: $height solid $color;
-	} @else if $direction == right {
-	 	border-top: $height solid transparent;
-		border-bottom: $height solid transparent;
-		border-left: $width solid $color;
-	} @else if $direction == down {
-	  	border-right: $width solid transparent;
-		border-left: $width solid transparent;
-		border-top: $height solid $color;
-	} @else {
-	  	border-top: $height solid transparent;
-		border-bottom: $height solid transparent;
-		border-right: $width solid $color;
-	}
-}
-
 // COLOR VARS
 $lightblue: #45adf5;
 $blue: #3b86ba;
@@ -54,3 +29,6 @@ $tshirt-color-2: #f3efef;
 // NAV DOTS TSHIRT
 $dotblue: $lightblue;
 $dotgrey: $grey;
+
+$tablet-width:680px;
+$desktop-width:960px;

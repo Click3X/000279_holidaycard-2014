@@ -7,7 +7,18 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="<?= base_url();?>styles/css/main.css">
-        <script src="<?= base_url();?>scripts/vendor/modernizr/modernizr.js"></script>
+
+        <meta property="og:url" content="http://samples.ogp.me/136756249803614" /> 
+        <meta property="og:title" content="My Custom Click 3X Holiday Video" />
+        <meta property="og:description" content="This is awesome!" /> 
+        <meta property="og:image" content="<?= base_url(); ?>images/thumbs/vacation.jpg"/> 
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@click3x">
+        <!-- <meta name="twitter:creator" content="@jaytord"> -->
+        <meta name="twitter:title" content="My Custom Click 3X Holiday Video">
+        <meta name="twitter:description" content="This is awesome!">
+        <meta name="twitter:image:src" content="<?= base_url(); ?>images/thumbs/vacation.jpg">
     </head>
     <body>
         <!--[if lt IE 10]>

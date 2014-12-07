@@ -4,20 +4,14 @@
     font-family: Georgia, serif;
     font-style: italic;
     text-align: center;
-    line-height: 1em;
-    margin:2em auto 1em;
+    margin:1em 0 .5em 0;
     font-size: 1.2em;
 
     @media(min-width: 481px) { 
-        margin: 2.4em auto 1.2em;
         font-size: 1.8em;
     }
 
     &:first-of-type {
-        margin:1em auto .5em;
-        @media(min-width: 481px) { 
-            margin: 1.2em auto .67em;
-        }
     }
 }
 
@@ -34,25 +28,11 @@ label.form-txt {
 
     &:first-of-type {
         margin:.75em auto .25em;
+
         @media(min-width: 481px) { 
             margin: .67em auto .25em;
         }
     }
-}
-
-.name {
-	font-family: "proxima-nova-alt-ext-cond",sans-serif;
-	color:$darkblue;
-	text-transform: uppercase;
-    font-weight: 800;
-    text-align: center;
-    font-size:1.8em; 
-    line-height: 1em;
-    letter-spacing: .05em;
-    margin-bottom: .4em;
-
-    @media(min-width: 460px) { font-size: 2.6em; }
-    @media(min-width: 640px) { font-size: 4.3em; }
 }
 
 // SIZE
@@ -72,9 +52,11 @@ label.form-txt {
     	font-size: 2em; 
     	line-height: 1.6em;
     }
-    @media(min-width: 640px) { font-size: 3.1em; }
+    
+    @media(min-width: 640px){ 
+    	font-size: 3.1em; 
+    }
 }
-
 
 // HIDE RADIO BUTTONS TO STYLES LABELS
 input[type=radio] {
@@ -84,6 +66,7 @@ input[type=radio] {
 
 .tshirt-form { 
 	text-align: center; 
+
 	input[type=radio] + label {
 		cursor: pointer;
 		margin:0 .075em;
@@ -110,37 +93,8 @@ input[type=radio] {
 	}
 }
 
-// COLOR 
-.color-1,
-.color-2 {
-	padding: 0 1.3em;
-	color: transparent;
-	text-shadow:none;
-
-	@include prefix(transition, all 200ms);
-	&:hover { border-color:$btn-blue; }
-}
-
-.tshirt-color-holder {
-	input[type=radio]:checked + label {
-		border-color:$darkblue;
-		border-width:2px;
-	}
-}
-
-.color-1 { background-color: $tshirt-color-1; }
-.color-2 { background-color: $tshirt-color-2; }
-
-.tshirt-color-holder,
-.txt-holder {
-	width:90%;
-	max-width: 560px;
-	margin: 0 auto;
-}
-
 // ADDRESS, CITY, STATE, ZIP
 .txt-holder {
-
 	label {
 		clear: both;
 		display: block;
@@ -157,34 +111,26 @@ input[type=radio] {
         font-size: 1em; line-height: 3em;
         color: #b2b3b4;
 
-        // -moz-box-shadow:    inset 0 1px 2px rgba(0,0,0,0.25);
-        // -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.25);
-        // box-shadow:         inset 0 1px 2px rgba(0,0,0,0.25);
-
         @include prefix( box-shadow, inset 0 1px 2px rgba(0,0,0,0.25) );
 
 		@media(min-width: 481px) { font-size: 1.5em; }
 	}
 
 	.state-zip-holder {
-		.zip-holder,
-		.state-holder {
+		.zip-holder, .state-holder {
 			width:50%;
 			float: left;
 		}
 
 		.zip-holder {
-			.zip,
-			input[type=text] {
+			.zip, input[type=text] {
 				width: 90%;
 				float:right;
 			}
 		}
 
 		.state-holder {
-
-			.form-txt,
-			.state {
+			.form-txt, .state {
 				width:90%;
 				float:left;
 			}
@@ -199,8 +145,7 @@ input[type=radio] {
 			padding:1px 1px 1px .5em;
 			border:1px solid $submitgrey;
 			border-radius:6px;
-			font-size: 1.5em;
-			line-height: 1.5em;
+			font-size: 1em; line-height: 3em;
 
             @include prefix( box-shadow, inset 0 1px 2px rgba(0,0,0,0.25) );
 
@@ -212,15 +157,12 @@ input[type=radio] {
 	}
 }
 
-input[type=submit] {
+input[type=submit] { 
 	font-weight: 600;
 	background-color:$submitblue;
-}
-
-
-input[type=submit] { 
 	margin:1em auto;
 	padding:0 2em;
+
 	@include prefix(transition, all 200ms);
 
 	&:hover {
