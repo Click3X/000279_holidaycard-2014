@@ -26,15 +26,15 @@ class Encoder extends CI_Controller {
 		$selections = explode("-", $_selections);
 
 		$mp4 = $this->concatByExtension( $selections, "mp4" );
-		//$webm = $this->concatByExtension( $selections, "webm" );
+		$webm = $this->concatByExtension( $selections, "webm" );
 
 		$res = (object) "response";
-		$res->status = ($mp4->status == "success" /*&& $webm->status == "success"*/) ? "success" : "error";
+		$res->status = ($mp4->status == "success" && $webm->status == "success") ? "success" : "error";
 
 		$res->mp4 	= $mp4;
-		// $res->webm 	= $webm;
+		$res->webm 	= $webm;
 
-		echo json_encode($res);
+		print_r($res);
 	}
 
 	public function combine($_selections = ""){
@@ -42,13 +42,13 @@ class Encoder extends CI_Controller {
 		$selections = json_decode($post["selections"]);
 
 		$mp4 = $this->concatByExtension( $selections, "mp4" );
-		//$webm = $this->concatByExtension( $selections, "webm" );
+		$webm = $this->concatByExtension( $selections, "webm" );
 
 		$res = (object) "response";
 		$res->status = ($mp4->status == "success" && $webm->status == "success") ? "success" : "error";
 
 		$res->mp4 	= $mp4;
-		// $res->webm 	= $webm;
+		$res->webm 	= $webm;
 
 		echo json_encode($res);
  	}
@@ -71,14 +71,12 @@ class Encoder extends CI_Controller {
 		
 		// build the ffmpeg command and exec
 		$outputfilename 		= implode("-", $selections).".".$ext;
-		$audio 					= FCPATH."videos/".$ext."/audio.".$ext;
+		$audio 					= FCPATH."videos/src/".$ext."/audio.".$ext;
 		$tmppath 				= FCPATH."videos/tmp/".$outputfilename;
 		$outputpath 			= FCPATH."videos/output/".$outputfilename;
 		$output_http_location 	= base_url()."videos/output/".$outputfilename;
 
 		$response = (object) "response";
-
-		$response->tmppath = $tmppath;
 
 		//check if this combo already exists. if not build it.
 		if( file_exists($outputpath) ){
