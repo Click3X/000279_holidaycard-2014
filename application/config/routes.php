@@ -41,6 +41,9 @@
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 
+$route['encoder'] 									= 'encoder/test';
+$route['encoder/testcombine/(:any)'] 				= 'encoder/testcombine/$1';
+
 // ORDERS
 $route['orders'] 						= 'orders/index';
 $route['orders/add'] 					= 'orders/add';
@@ -53,6 +56,7 @@ $route['clients/code/(:any)'] 			= 'clients/code/$1';
 
 $route['video/(:any)'] 					= 'home/video/$1';
 $route['template/(:any).php'] 			= 'template/index/$1';
+
 $route['(:any)'] 						= 'home/index/$1';
 
 /* End of file routes.php */

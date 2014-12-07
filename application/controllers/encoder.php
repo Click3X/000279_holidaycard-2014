@@ -22,51 +22,33 @@ class Encoder extends CI_Controller {
 		echo "Call the combine method to concatenate your videos.";
 	}
 
-	public function testimage($_selections){
-		$selections = explode("-", $_selections);
-		$this->load->library("image_builder");
-
-		$file_path = $this->image_builder->composite($selections);
-
-		//header('Content-Type: image/jpg');
-		echo "<img src='".$file_path."' />";
-	}
-
 	public function testcombine($_selections){
 		$selections = explode("-", $_selections);
 
-		$this->load->library("image_builder");
-
 		$mp4 = $this->concatByExtension( $selections, "mp4" );
-		$webm = $this->concatByExtension( $selections, "webm" );
-		$img = $this->image_builder->composite($selections);
+		//$webm = $this->concatByExtension( $selections, "webm" );
 
 		$res = (object) "response";
-		$res->status = ($mp4->status == "success" && $webm->status == "success" && $image->status == "success") ? "success" : "error";
+		$res->status = ($mp4->status == "success" && $webm->status == "success") ? "success" : "error";
 
 		$res->mp4 	= $mp4;
-		$res->webm 	= $webm;
-		$res->img 	= $img;
+		// $res->webm 	= $webm;
 
 		echo json_encode($res);
 	}
 
-	public function combine(){
-		$this->load->library("image_builder");
-
+	public function combine($_selections = ""){
 		$post = $this->input->post();
 		$selections = json_decode($post["selections"]);
 
 		$mp4 = $this->concatByExtension( $selections, "mp4" );
-		$webm = $this->concatByExtension( $selections, "webm" );
-		$img = $this->image_builder->composite($selections);
+		//$webm = $this->concatByExtension( $selections, "webm" );
 
 		$res = (object) "response";
-		$res->status = ($mp4->status == "success" && $webm->status == "success" && $img->status == "success") ? "success" : "error";
+		$res->status = ($mp4->status == "success" && $webm->status == "success") ? "success" : "error";
 
 		$res->mp4 	= $mp4;
-		$res->webm 	= $webm;
-		$res->image = $img;
+		// $res->webm 	= $webm;
 
 		echo json_encode($res);
  	}
@@ -74,24 +56,25 @@ class Encoder extends CI_Controller {
 	public function concatByExtension($selections, $ext = "mp4"){
 		$files = array();
 
+		array_push( $files, "'".base_url()."videos/src/".$ext."/intro.".$ext."'" );
+
 		//write the file names to txt file
-		$files[0] = "'".base_url().$ext."/intro.".$ext."'";
-		$files[1] = "'".base_url().$ext."/2_".$selections[0].".".$ext."'";
-		$files[2] = "'".base_url().$ext."/0_".$selections[1].".".$ext."'";
-		$files[3] = "'".base_url().$ext."/1_".$selections[2].".".$ext."'";
-		$files[4] = "'".base_url().$ext."/4_".$selections[3].".".$ext."'";
-		$files[5] = "'".base_url().$ext."/outro.".$ext."'";
+		foreach ($selections as $key => $selection) {
+			array_push($files, "'".base_url()."videos/src/".$ext."/".$selection.".".$ext."'" );
+		}
+
+		array_push( $files, "'".base_url()."videos/src/".$ext."/outro.".$ext."'" );
 
 		$sources 	= "file ".implode("\nfile ", $files);
-		$filelist 	= FCPATH."filelist.txt";
+		$filelist 	= FCPATH."videos/tmp/filelist.txt";
 		$savefile 	= file_put_contents($filelist, $sources);
-
-		//build the ffmpeg command and exec
+		
+		// build the ffmpeg command and exec
 		$outputfilename 		= implode("-", $selections).".".$ext;
-		$audio 					= FCPATH.$ext."/audio.".$ext;
-		$tmppath 				= FCPATH."tmp/".$outputfilename;
-		$outputpath 			= FCPATH."output/".$outputfilename;
-		$output_http_location 	= base_url()."output/".$outputfilename;
+		$audio 					= FCPATH."video/".$ext."/audio.".$ext;
+		$tmppath 				= FCPATH."video/tmp/".$outputfilename;
+		$outputpath 			= FCPATH."video/output/".$outputfilename;
+		$output_http_location 	= base_url()."video/output/".$outputfilename;
 
 		$response = (object) "response";
 
