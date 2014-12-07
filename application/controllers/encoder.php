@@ -29,7 +29,7 @@ class Encoder extends CI_Controller {
 		//$webm = $this->concatByExtension( $selections, "webm" );
 
 		$res = (object) "response";
-		$res->status = ($mp4->status == "success" && $webm->status == "success") ? "success" : "error";
+		$res->status = ($mp4->status == "success" /*&& $webm->status == "success"*/) ? "success" : "error";
 
 		$res->mp4 	= $mp4;
 		// $res->webm 	= $webm;
