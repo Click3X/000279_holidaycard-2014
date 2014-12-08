@@ -8,27 +8,46 @@ define([
         mobile_video:null,
         poster:null,
         initialize:function(){
-            this.poster         = this.$el.find( "div.poster" ).eq(0);
-            this.video          = this.$el.find( ".video" ).eq(0);
-            this.mobile_video   = this.$el.find( ".mobile-video" ).eq(0);
+            var _t = this;
 
-            console.log(this.poster);
-
-            //todo switch to webm if mp4 is not supported.
-            //todo create poster frame with play button. Hide on mobile.
+            _t.poster         = _t.$el.find( "div.poster" ).eq(0);
+            _t.video          = _t.$el.find( ".video" )[0];
+            _t.mobile_video   = _t.$el.find( ".mobile-video" )[0];
         },
-        load:function(_url, _type, _thumb){
-            this.poster.attr( "style", "background-image:url(" + base_url + "images/thumbs/" + _thumb + ")" );
+        play:function(){
+            this.poster.css("display","none");
 
             if(mobile){
-                this.video.remove();
-                this.mobile_video.attr( "type","video/" + _type );
-                this.mobile_video.attr( "src", _url );
-            } else {
-                this.mobile_video.remove();
-                this.video.attr( "type","video/" + _type );
-                this.video.attr( "src",_url );
+                $(this.mobile_video).css("opacity","1");
+                this.mobile_video.play();
+            } else{
+                this.video.play();
             }
+        },
+        pause:function(){
+            if(mobile) this.mobile_video.pause();
+            else this.video.pause();
+        },
+        load:function(_url, _type, _thumb){
+            var _t = this;
+
+            _t.poster.attr( "style", "background-image:url(" + base_url + "images/thumbs/" + _thumb + ")" );
+
+            if(mobile){
+                $( _t.video ).remove();
+                $( _t.mobile_video ).attr( "type", "video/" + _type );
+                $( _t.mobile_video ).attr( "src", _url );
+            } else {
+                $( _t.mobile_video ).remove();
+                $( _t.video ).attr( "type", "video/" + _type );
+                $( _t.video ).attr( "src", _url );
+            }
+
+            _t.poster.click(function(){
+                console.log("poster clicked");
+
+                _t.play();
+            });
         }
     });
 

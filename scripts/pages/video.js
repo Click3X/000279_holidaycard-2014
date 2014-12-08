@@ -47,7 +47,7 @@ define([
 
             $.ajax({
                 type: 'POST',
-                url: base_url + "encoder/combine",
+                url: endcoder_url,
                 data: { "selections": JSON.stringify( selections )},
                 dataType: "json",
                 success: function(response){

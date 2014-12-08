@@ -22,6 +22,7 @@
             var router;
             var base_url = "<?=base_url(); ?>";
             var root_dir = "<?= $this->config->item('root_directory'); ?>";
+            var endcoder_url = "<?= $this->config->item('encoder_url'); ?>";
         </script>
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

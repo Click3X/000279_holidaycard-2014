@@ -16,6 +16,7 @@
 */
 $config['base_url']	= '';
 $config['root_directory'] = '';
+$config['encoder_url'] =  "http://holidays.click3x.com/2014/encoder/combine";
 
 /*
 |--------------------------------------------------------------------------
