@@ -48,7 +48,8 @@
             <!-- NEW SVGS -->
             <div class="demo bg"></div>
             <div class="svg-holder clearfix">
-                <div class="new-header bg"></div>
+                <!-- <div class="new-header bg"></div> -->
+                <?php include ('images/new-header/inline/header.svg'); ?>
             </div>
         </div>
 
