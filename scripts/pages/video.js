@@ -39,7 +39,7 @@ define([
 
             $.ajax({
                 type: 'POST',
-                url: "http://holidays.click3x.com/2014/encoder/combine",
+                url: base_url + "encoder/combine",
                 data: { "selections": JSON.stringify( selections )},
                 dataType: "json",
                 success: function(response){
