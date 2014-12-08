@@ -15,6 +15,13 @@ define([
 
             var _t = this;
 
+            _t.selections = [];
+            _.each(_t.session.attributes.questions.models, function(_model){
+                _t.selections.push(_model.attributes.selection);
+            });
+
+            console.log("SELECTIONS: ", _t.selections);
+
             _t.videoplayer = new VideoPlayerView({
                 el:_t.$el.find(".video-player")[0],
                 collection:_t.session.attributes.questions
@@ -23,9 +30,9 @@ define([
             _t.getCombinedVideo( function(response){
                 console.log("start video :", response);
 
-                _t.videoplayer.load(response.mp4.video, "mp4", "vacation.jpg");
-
                 if(response.status == "success"){
+                     _t.videoplayer.load(response.mp4.video, mp4 ? "mp4" : "webm", "vacation.jpg");
+
                     _t.$el.find(".social-buttons a.fb").click( _t.shareonfacebook );
                     _t.$el.find(".social-buttons a.tw").click( _t.shareontwitter );
                 }

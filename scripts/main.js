@@ -1,7 +1,7 @@
 'use strict';
 
 /*----- user agent ------*/
-var i,ie8,svg,mobile,retina,
+var i,ie8,svg,mobile,retina,mp4,
 uagent = navigator.userAgent.toLowerCase(),
 search_strings = [ "iphone","ipod","ipad","series60","symbian","android","windows ce","windows7phone","w7p","blackberry","palm" ];
 
@@ -9,11 +9,14 @@ for(i in search_strings){
     if( uagent.search( search_strings[i] ) > -1 ) mobile = true;
 }
 
+/*---mp4------*/
+var mp4 = (!!document.createElement('video').canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2'));
+
 /*---retina display------*/
-if( window.devicePixelRatio > 1 ) retina = true;
+retina = (window.devicePixelRatio > 1);
 
 /*--------svg---------*/
-if( document.implementation.hasFeature( "http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1" ) ) svg = true;
+svg = (document.implementation.hasFeature( "http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1" ));
 
 /*-----add console log if needed----- */
 if( typeof console == "undefined" ) {
@@ -66,6 +69,7 @@ function setbodytags(){
     if(retina) document.body.className+=" retina";
     if(ie8) document.body.className+=" ie8";
     if(svg) document.body.className+=" svg";
+    if(mp4) document.body.className+=" mp4";
 }
 
 /*--------set default pop window parameters---------*/

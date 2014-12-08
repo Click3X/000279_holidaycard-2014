@@ -16,14 +16,14 @@
 
         <!-- TYPE KIT FONT JS CODE -->
         <script src="//use.typekit.net/ali5dgb.js"></script>
-        <script>try{Typekit.load();}catch(e){}</script>
+        <script>try{Typekit.load();}catch(e){console.log(e);}</script>
 
         <script type="text/javascript">
             var router;
             var base_url = "<?=base_url(); ?>";
             var root_dir = "<?= $this->config->item('root_directory'); ?>";
         </script>
-        
+
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -35,7 +35,7 @@
         <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
 
         <!-- HEADER -->
-        <div id="header-container" class="header-container clearfix">
+        <div id="header-container" class="header-container clearfix">   
             <!-- ANIMATED SNOW -->
             <div class="snow-container">
                 <div class="snow foreground"></div>
