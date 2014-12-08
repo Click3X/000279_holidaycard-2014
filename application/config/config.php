@@ -16,7 +16,7 @@
 */
 $config['base_url']	= '';
 $config['root_directory'] = '2014';
-$config['encoder_url'] =  $this->config_item("base_url")."encoder/combine";
+$config['encoder_url'] =  '2014/encoder/combine';
 
 /*
 |--------------------------------------------------------------------------
