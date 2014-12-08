@@ -23,7 +23,7 @@ define([
             if(mobile){
                 this.video.remove();
                 this.mobile_video.attr( "type","video/" + _type );
-                this.mobile_video.attr( "src",_url );
+                this.mobile_video.attr( "src", _url );
             } else {
                 this.mobile_video.remove();
                 this.video.attr( "type","video/" + _type );
