@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Holidaycard2014</title>
+        <title>Happy Holidays from Click 3X</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
         <link rel="stylesheet" href="<?= base_url();?>styles/css/main.css">
@@ -23,6 +23,7 @@
             var base_url = "<?=base_url(); ?>";
             var root_dir = "<?= $this->config->item('root_directory'); ?>";
         </script>
+        
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
