@@ -3,9 +3,9 @@
 	<h1>HERE IS YOUR HOLIDAY STORY</h1>
 	<div class="video-wrapper">
         <div class="video-container">
-            <div class="poster"></div>
             <div class="video-player">
                 <video class="mobile-video" width="960" height="540" controls></video>
+                <div class="poster"></div>
         		<video class="video" width="960" height="540" controls></video>
             </div>
         </div>

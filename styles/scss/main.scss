@@ -54,10 +54,31 @@ a, a:visited{
             height: 0;
             position: relative;
 
-            video{
+            .video-player{
                 width: 100%;
                 height: 100%;
-                position: absolute;
+
+                video{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    z-index: 1;
+                }
+
+                video.mobile-video{
+                    opacity: 0;
+                    z-index: 3;
+                }
+
+                div.poster{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    background-size:cover;
+                    background-position:center center;
+                    background-repeat:no-repeat;
+                    z-index: 2;
+                }
             }
         }
     }

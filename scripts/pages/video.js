@@ -13,30 +13,36 @@ define([
         activate:function(){
             console.log("activate video");
 
-            this.getCombinedVideo( function(response){
+            var _t = this;
+
+            _t.videoplayer = new VideoPlayerView({
+                el:_t.$el.find(".video-player")[0],
+                collection:_t.session.attributes.questions
+            });
+
+            _t.getCombinedVideo( function(response){
                 console.log("start video :", response);
 
-                // this.videoplayer = new VideoPlayerView({
-                //     el:this.$el.find(".video-player")[0],
-                //     collection:this.session.attributes.questions
-                // });
+                _t.videoplayer.load(response.mp4.video, "mp4", "vacation.jpg");
 
-                // this.$el.find(".social-buttons a.fb").click( this.shareonfacebook );
-                // this.$el.find(".social-buttons a.tw").click( this.shareontwitter );
-            } );
+                if(response.status == "success"){
+                    _t.$el.find(".social-buttons a.fb").click( _t.shareonfacebook );
+                    _t.$el.find(".social-buttons a.tw").click( _t.shareontwitter );
+                }
+            });
         },
         deactivate:function(){
             console.log("deactivate video");
         },
         getCombinedVideo:function(callback){
-            var selections = ["vacation","slopes"];
+            var selections = ["slopes","vacation"];
 
             $.ajax({
                 type: 'POST',
                 url: "http://holidays.click3x.com/2014/encoder/combine",
                 data: { "selections": JSON.stringify( selections )},
                 dataType: "json",
-                success: function(response) {
+                success: function(response){
                     console.log(response);
 
                     callback(response);
