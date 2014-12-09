@@ -38,21 +38,21 @@ class Encoder extends CI_Controller {
 	}
 
 	public function combine(){
+		$this->load->model("video_model");
+
 		$post = $this->input->post();
 		$selections = json_decode($post["selections"]);
-
-		$this->load->model("video_model");
+		$selections_str = implode("-", $selections);
 
 		$mp4 = $this->concatByExtension( $selections, "mp4" );
 		$webm = $this->concatByExtension( $selections, "webm" );
 
 		$response = (object) "response";
+
 		$response->status = ($mp4->status == "success" && $webm->status == "success") ? "success" : "error";
-
 		$response->mp4 	= $mp4;
-		$response->webm 	= $webm;
-
-		$response->video_id = $this->video_model->add( array( "video_id"=>implode("-", $selections) ) );
+		$response->webm = $webm;
+		$response->id = $this->video_model->add( array( "video_id"=>$selections_str ) );
 
 		$this->output->set_header("Access-Control-Allow-Origin: *");
 		$this->output->set_header("Access-Control-Expose-Headers: Access-Control-Allow-Origin");

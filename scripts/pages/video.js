@@ -10,7 +10,7 @@ define([
     var Video = PageTemplate.extend({
         template: _.template( T ),
         videoplayer:null,
-        saved_video_id:null,
+        saved_video_key:null,
         activate:function(){
             console.log("activate video");
 
@@ -41,7 +41,7 @@ define([
                 dataType: "json",
                 success: function(response){
                     if(response.status == "success"){
-                        _t.saved_video_id = response.video_id;
+                        _t.saved_video_key = response.id;
 
                         var _type = mp4 ? "mp4" : "webm";
                         _t.videoplayer.load( response[_type].video, _type, base_url + "images/thumbs/vacation.jpg" );
@@ -62,7 +62,7 @@ define([
 
             FB.ui({
               method: 'share',
-              href: base_url + 'video/' + _t.saved_video_id,
+              href: base_url + 'video/' + _t.saved_video_key,
             }, function(response){
                 console.log("facebook sharing complete: ", response);
             });
@@ -70,7 +70,7 @@ define([
         shareontwitter:function(e){
             e.preventDefault();
             
-            openpopup( "https://twitter.com/share?url=" base_url + 'video/' + _t.saved_video_id , "Share on Twitter", 530, 240 );
+            openpopup( "https://twitter.com/share?url=" base_url + 'video/' + _t.saved_video_key , "Share on Twitter", 530, 240 );
         },
     });
 
