@@ -33,7 +33,7 @@ class Clients extends CI_Controller {
 				$response = array("success"=>true, "data"=>$client);
 			}
 		}else{
-			$response = array("success"=>"Sorry, that's not a valid gift code.");
+			$response = array("error"=>"Sorry, that's not a valid gift code.");
 		}
 		
 		echo json_encode($response);

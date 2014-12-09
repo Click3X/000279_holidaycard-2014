@@ -61,8 +61,8 @@
                 <div class="txt-holder clearfix">
                     <label for="code" class="form-txt"></label>
                     <input name="code" id="gift-code" type="text" placeholder="Gift code" />
-                    <input type="submit" class="form-btn" value="submit" />
                     <span class="error"></span>
+                    <input type="submit" class="form-btn" value="submit" />
                 </div>
             </form>
         </div>

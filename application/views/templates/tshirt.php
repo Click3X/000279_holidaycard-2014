@@ -65,13 +65,9 @@
 						<input type="text" name="zip" id="zip" value="<%= zip %>">
 					</div>
 				</div>
-				<input type="submit" class="form-btn" value="submit">
 				<span class="error"></span>
+				<input type="submit" class="form-btn" value="submit">
 			</div>
 		</form>
 	</div>
 </section>
-
-<!--<% if (typeof(date) != "undefined") { %>
-    <span class="date"><%= date %></span>
-<% } %>-->

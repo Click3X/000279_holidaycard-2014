@@ -1,7 +1,7 @@
 'use strict';
 
 /*----- user agent ------*/
-var i,ie8,svg,mobile,retina,mp4,
+var i,svg,mobile,retina,mp4,
 uagent = navigator.userAgent.toLowerCase(),
 search_strings = [ "iphone","ipod","ipad","series60","symbian","android","windows ce","windows7phone","w7p","blackberry","palm" ];
 
@@ -64,7 +64,6 @@ function setbodytags(){
     document.body.className = "noselect";
     if(mobile) document.body.className+=" mobile";
     if(retina) document.body.className+=" retina";
-    if(ie8) document.body.className+=" ie8";
     // if(svg) document.body.className+=" svg";
     // if(mp4) document.body.className+=" mp4";
 }
