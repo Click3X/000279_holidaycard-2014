@@ -7,7 +7,7 @@
 #
 # Host: localhost (MySQL 5.6.16)
 # Database: holidaycard-2014
-# Generation Time: 2014-12-07 17:10:33 +0000
+# Generation Time: 2014-12-09 18:14:58 +0000
 # ************************************************************
 
 
@@ -158,54 +158,17 @@ DROP TABLE IF EXISTS `orders`;
 CREATE TABLE `orders` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `ref_client_id` tinyint(3) DEFAULT NULL,
-  `color` varchar(11) DEFAULT NULL,
   `state` varchar(3) DEFAULT NULL,
   `size` varchar(11) DEFAULT NULL,
-  `design` varchar(11) DEFAULT NULL,
+  `design` varchar(20) DEFAULT NULL,
   `status` tinyint(1) DEFAULT NULL,
   `address` varchar(200) DEFAULT NULL,
   `city` varchar(50) DEFAULT NULL,
   `zip` varchar(20) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-LOCK TABLES `orders` WRITE;
-/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-
-INSERT INTO `orders` (`id`, `ref_client_id`, `color`, `state`, `size`, `design`, `status`, `address`, `city`, `zip`)
-VALUES
-	(1,1,'color-1','AL','med','one',NULL,'','',''),
-	(2,1,'color-1','AL','med','one',NULL,'','',''),
-	(3,1,'color-1','AL','med','one',NULL,'','',''),
-	(4,1,'color-1','AL','med','one',NULL,'','',''),
-	(5,1,'color-1','AL','med','one',NULL,'','',''),
-	(6,1,'color-1','AL','med','one',NULL,'','',''),
-	(7,1,'color-1','AL','med','one',NULL,'','',''),
-	(8,1,'color-1','AL','med','one',NULL,'','',''),
-	(9,1,'color-1','AL','med','one',NULL,'','',''),
-	(10,1,'color-1','AL','med','one',NULL,'','',''),
-	(11,1,'color-1','AL','med','one',NULL,'','',''),
-	(12,1,'color-1','AL','med','one',NULL,'','',''),
-	(13,1,'color-1','AL','med','one',NULL,'','',''),
-	(14,1,'color-1','AL','med','one',NULL,'','',''),
-	(15,1,'color-1','AL','med','one',NULL,'','',''),
-	(16,1,'color-1','AL','med','one',NULL,'','',''),
-	(17,1,'color-1','AL','med','one',NULL,'','',''),
-	(18,1,'color-1','AL','med','one',NULL,'','',''),
-	(19,1,'color-1','AL','med','one',NULL,'','',''),
-	(20,1,'color-1','AL','med','one',NULL,'','',''),
-	(21,1,'color-1','AL','med','one',NULL,'','',''),
-	(22,1,'color-1','AL','med','one',NULL,'','',''),
-	(23,1,'color-1','AL','med','one',NULL,'','',''),
-	(24,1,'color-1','AL','med','one',NULL,'','',''),
-	(25,1,'color-1','AL','med','one',NULL,'15 Warren St #121','Jersey City','07302'),
-	(26,1,'color-1','AL','med','one',NULL,'15 Warren St #121','Jersey City','07302'),
-	(27,1,'color-1','AL','med','one',NULL,'15 Warren St #121','Jersey City','07302'),
-	(28,1,'color-1','AL','med','one',NULL,'15 Warren St #121','Jersey City','07302'),
-	(29,1,'color-1','AL','med','one',NULL,'15 Warren St #121','Jersey City','07302');
-
-/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump of table states
@@ -281,19 +244,55 @@ VALUES
 UNLOCK TABLES;
 
 
-# Dump of table uploads
+# Dump of table tshirts
 # ------------------------------------------------------------
 
-DROP TABLE IF EXISTS `uploads`;
+DROP TABLE IF EXISTS `tshirts`;
 
-CREATE TABLE `uploads` (
+CREATE TABLE `tshirts` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `ref_client_id` int(11) DEFAULT NULL,
-  `filename` varchar(100) DEFAULT NULL,
+  `design_id` varchar(20) DEFAULT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+LOCK TABLES `tshirts` WRITE;
+/*!40000 ALTER TABLE `tshirts` DISABLE KEYS */;
+
+INSERT INTO `tshirts` (`id`, `design_id`, `name`)
+VALUES
+	(1,'skyline_blue','Skyline Blue'),
+	(2,'skyline_white','Skyline White'),
+	(3,'2015_blue','2015 Blue'),
+	(4,'2015_white','2015 White'),
+	(5,'selfie_blue','Selfie Blue'),
+	(6,'selfie_white','Selfie White');
+
+/*!40000 ALTER TABLE `tshirts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump of table videos
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `videos`;
+
+CREATE TABLE `videos` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `video_id` varchar(200) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+LOCK TABLES `videos` WRITE;
+/*!40000 ALTER TABLE `videos` DISABLE KEYS */;
+
+INSERT INTO `videos` (`id`, `video_id`, `created_at`)
+VALUES
+	(1,'vacation-slopes','2014-12-09 13:08:12');
+
+/*!40000 ALTER TABLE `videos` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 

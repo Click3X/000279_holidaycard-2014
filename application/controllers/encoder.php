@@ -41,14 +41,18 @@ class Encoder extends CI_Controller {
 		$post = $this->input->post();
 		$selections = json_decode($post["selections"]);
 
+		$this->load->model("video_model");
+
 		$mp4 = $this->concatByExtension( $selections, "mp4" );
 		$webm = $this->concatByExtension( $selections, "webm" );
 
-		$res = (object) "response";
-		$res->status = ($mp4->status == "success" && $webm->status == "success") ? "success" : "error";
+		$response = (object) "response";
+		$response->status = ($mp4->status == "success" && $webm->status == "success") ? "success" : "error";
 
-		$res->mp4 	= $mp4;
-		$res->webm 	= $webm;
+		$response->mp4 	= $mp4;
+		$response->webm 	= $webm;
+
+		$response->video_id = $this->video_model->add( array( "video_id"=>implode("-", $selections) ) );
 
 		$this->output->set_header("Access-Control-Allow-Origin: *");
 		$this->output->set_header("Access-Control-Expose-Headers: Access-Control-Allow-Origin");
@@ -56,7 +60,7 @@ class Encoder extends CI_Controller {
 		$this->output->set_content_type('application/json');
 		$this->output->_display();
 		
-		echo json_encode($res);
+		echo json_encode($response);
  	}
 
 	public function concatByExtension($selections, $ext = "mp4"){

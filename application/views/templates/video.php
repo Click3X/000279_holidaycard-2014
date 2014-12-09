@@ -17,7 +17,7 @@
     <div class="c-half clearfix">
         <div class="social-buttons">
             <a class="fb"></a>
-            <a class="tw twitter-share-button" target="_blank" href="https://twitter.com/share"></a>
+            <a class="tw twitter-share-button" target="_blank"></a>
             <span class="share-it">Now share it!</span>
         </div>
     </div>
