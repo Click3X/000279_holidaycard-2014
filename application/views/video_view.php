@@ -84,7 +84,7 @@
             <!-- SOCIAL LINKS -->
             <section class="button-holder clearfix">
                 <div class="start-over-holder clearfix">
-                    <a class="form-btn start-over-btn" data-navigate-to="home">Create your own!</a>
+                    <a class="form-btn start-over-btn" href="<?= base_url(); ?>">Create your own!</a>
                 </div>
             </section>
         </div>
