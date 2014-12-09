@@ -50,8 +50,14 @@ define([
                         var _type = mp4 ? "mp4" : "webm";
                         _t.videoplayer.load( response[_type].video, _type, base_url + "images/thumbs/vacation.jpg" );
 
-                        _t.$el.find(".social-buttons a.fb").click( function(){_t.shareonfacebook()} );
-                        _t.$el.find(".social-buttons a.tw").click( function(){_t.shareontwitter()} );
+                        _t.$el.find(".social-buttons a.fb").click( function(){
+                            _t.shareonfacebook();
+                        });
+
+                        _t.$el.find(".social-buttons a.tw").click( function(e){ 
+                            e.preventDefault(); 
+                            _t.shareontwitter();
+                        });
                     }
                 },
                 error:function(error){
@@ -69,9 +75,7 @@ define([
                 console.log("facebook sharing complete: ", response);
             });
         },
-        shareontwitter:function(e){
-            e.preventDefault();
-
+        shareontwitter:function(){
             var _t = this;
             
             openpopup( "https://twitter.com/share?url=" + base_url + 'video/' + _t.saved_video_key , "Share on Twitter", 530, 240 );
