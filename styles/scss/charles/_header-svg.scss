@@ -19,6 +19,7 @@
     margin: auto;
 }
 
+
 .svg .new-header{
     background-size: cover; 
     background-image:url('../../images/new-header/header.svg'); 
@@ -29,9 +30,7 @@
 }
 
 @media (min-width: 640px) {
-    .snow-container { 
-        padding-bottom: 418px; 
-    }
+    .snow-container { padding-bottom: 418px; }
 }
 
 // DIRECTIONS ARROW
@@ -65,4 +64,10 @@
     &:first-of-type {
         padding:0 1em;
     }
+}
+
+// MAKE NEW INLINESVG RESPONSIVE
+svg#Layer_1 {
+    width: 100%;
+    height: 100%;
 }
