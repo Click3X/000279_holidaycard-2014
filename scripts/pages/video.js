@@ -31,8 +31,12 @@ define([
         deactivate:function(){
             console.log("deactivate video");
         },
-        getCombinedVideo:function(callback){
+        getCombinedVideo:function(){
             var _t = this;
+
+            console.log(JSON.stringify( _t.selections ));
+            //fake out
+            _t.selections = ["vacation","slopes"];
 
             $.ajax({
                 type: 'POST',
@@ -69,8 +73,10 @@ define([
         },
         shareontwitter:function(e){
             e.preventDefault();
+
+            var _t = this;
             
-            openpopup( "https://twitter.com/share?url=" base_url + 'video/' + _t.saved_video_key , "Share on Twitter", 530, 240 );
+            openpopup( "https://twitter.com/share?url=" + base_url + 'video/' + _t.saved_video_key , "Share on Twitter", 530, 240 );
         },
     });
 
