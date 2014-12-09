@@ -10,14 +10,10 @@ for(i in search_strings){
 }
 
 /*---mp4------*/
-var hasvideo = document.createElement('video');
-var mp4 = ( hasvideo && hasvideo.canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2') );
+var mp4 = ( Modernizr.video && document.createElement('video').canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2') );
 
 /*---retina display------*/
 retina = (window.devicePixelRatio > 1);
-
-/*--------svg---------*/
-svg = (document.implementation.hasFeature( "http://www.w3.org/TR/SVG11/feature#BasicStructure", "1.1" ));
 
 /*-----add console log if needed----- */
 if( typeof console == "undefined" ) {
@@ -69,8 +65,8 @@ function setbodytags(){
     if(mobile) document.body.className+=" mobile";
     if(retina) document.body.className+=" retina";
     if(ie8) document.body.className+=" ie8";
-    if(svg) document.body.className+=" svg";
-    if(mp4) document.body.className+=" mp4";
+    // if(svg) document.body.className+=" svg";
+    // if(mp4) document.body.className+=" mp4";
 }
 
 /*--------set default pop window parameters---------*/

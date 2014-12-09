@@ -26,11 +26,11 @@
             var default_twitter_status = 'Check out my Holiday Video from @Click3x and make your own here: holidays.click3x.com/2014! #Clickthehalls';
         </script>
 
+        <script src="<?= base_url();?>scripts/vendor/modernizr/modernizr.min.js"></script>
+
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-          <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/ie8.css" />
         <![endif]-->
     </head>
         <!--[if IE 8 ]><body class="ie8"><![endif]-->
