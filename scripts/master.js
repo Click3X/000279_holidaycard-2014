@@ -10,7 +10,8 @@ for(i in search_strings){
 }
 
 /*---mp4------*/
-var mp4 = (!!document.createElement('video').canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2'));
+var hasvideo = document.createElement('video');
+var mp4 = ( hasvideo && hasvideo.canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2') );
 
 /*---retina display------*/
 retina = (window.devicePixelRatio > 1);

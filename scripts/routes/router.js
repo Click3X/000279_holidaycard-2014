@@ -35,7 +35,7 @@ define([
             _t.start();
     	},
     	start:function(){
-    		Backbone.history.start( {pushState: true, hashChange:true, silent:false, root:root_dir} );
+    		Backbone.history.start( {pushState: id8 ? false : true, hashChange:true, silent:false, root:root_dir} );
     	},
         routes: {
         	':pageid'                           : 'onchangepage',
