@@ -15,15 +15,15 @@
         <link rel="icon" type="image/png" href="favicon.png">
 
         <meta property="og:url" content="<?= base_url(); ?>video/1234" /> 
-        <meta property="og:title" content="My Custom Click 3X Holiday Video" />
-        <meta property="og:description" content="This is awesome!" /> 
+        <meta property="og:title" content="Happy Holidays from Click3x!" />
+        <meta property="og:description" content="Check out my Holiday Video and make your own at holidays.click3x.com/2014!" /> 
         <meta property="og:image" content="<?= base_url(); ?>images/thumbs/vacation.jpg"/> 
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@click3x">
-        <meta name="twitter:creator" content="@cfmdev">
-        <meta name="twitter:title" content="My Custom Click 3X Holiday Video">
-        <meta name="twitter:description" content="This is awesome!">
+        <!-- <meta name="twitter:creator" content="@cfmdev"> -->
+        <meta name="twitter:title" content="Happy Holidays from Click3x!">
+        <meta name="twitter:description" content="Check out my Holiday Video and make your own at holidays.click3x.com/2014!">
         <meta name="twitter:image:src" content="<?= base_url(); ?>images/thumbs/vacation.jpg">
 
         <!-- TYPE KIT FONT JS CODE -->

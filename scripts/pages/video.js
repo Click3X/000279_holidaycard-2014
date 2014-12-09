@@ -78,7 +78,7 @@ define([
         shareontwitter:function(){
             var _t = this;
             
-            openpopup( "https://twitter.com/share?url=" + base_url + 'video/' + _t.saved_video_key , "Share on Twitter", 530, 240 );
+            openpopup( "https://twitter.com/share?url=" + base_url + 'video/' + _t.saved_video_key + "&text=" + encodeURIComponent( default_twitter_status ) , "Share on Twitter", 530, 240 );
         },
     });
 

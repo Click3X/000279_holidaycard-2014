@@ -23,6 +23,7 @@
             var base_url = "<?=base_url(); ?>";
             var root_dir = "<?= $this->config->item('root_directory'); ?>";
             var endcoder_url = "<?= $this->config->item('encoder_url'); ?>";
+            var default_twitter_status = 'Check out my Holiday Video from @Click3x and make your own here: holidays.click3x.com/2014! #Clickthehalls';
         </script>
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
