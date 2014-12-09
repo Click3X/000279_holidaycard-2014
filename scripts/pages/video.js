@@ -50,8 +50,8 @@ define([
                         var _type = mp4 ? "mp4" : "webm";
                         _t.videoplayer.load( response[_type].video, _type, base_url + "images/thumbs/vacation.jpg" );
 
-                        _t.$el.find(".social-buttons a.fb").click( _t.shareonfacebook );
-                        _t.$el.find(".social-buttons a.tw").click( _t.shareontwitter );
+                        _t.$el.find(".social-buttons a.fb").click( function(){_t.shareonfacebook()} );
+                        _t.$el.find(".social-buttons a.tw").click( function(){_t.shareontwitter()} );
                     }
                 },
                 error:function(error){
@@ -60,8 +60,6 @@ define([
             });
         },
         shareonfacebook:function(){
-            console.log("sharing on facebook...");
-
             var _t = this;
 
             FB.ui({
