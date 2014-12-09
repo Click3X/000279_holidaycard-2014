@@ -5,44 +5,74 @@ define([
 
     var SliderView = Backbone.View.extend({
         initialize:function(){
-        	var t = this;
+        	var _t = this;
 
-        	t.model = new Backbone.Model({
-        		"current_slide":0,
-        		"slides_length":0
-        	});
+            _t.collection = new Backbone.Collection();
 
-        	t.slides_ul = t.$el.find("ul.slides").eq(0);
-
-        	t.model.set("slides_length", t.slides_ul.find("li.slide").length );
-
-        	t.model.on("change:current_slide", function(){
-        		t.slides_ul.css("margin-left","-" + t.model.get("current_slide")*100 + "%");
-        	});
-
-        	t.$el.find("ul.slider-nav-arrows li").click(function(){
-        		t["show"+$(this).attr("data-id")+"slide"]();
-        	});
-
-            t.$el.find("ul.slider-nav-dots li").click(function(){
-                t.showslidebyid( $(this).attr("data-id") );
+        	_t.slides_ul = _t.$el.find("ul.slides").eq(0);
+            
+            //build slide models            
+        	_t.slides_ul.find("li.slide").each(function(){
+                var li = $(this),
+                model = new Backbone.Model({
+                    id:li.attr("data-slide-id"),
+                    index:li.index()
+                });
+                _t.collection.push(model);
             });
 
-            this.checkarrows();
-        },
-        showslidebyid:function(_slideid){
-            this.model.set("current_slide",_slideid);
+        	_t.collection.on("change:active", function(_model){
+                if(_model.get("active") == true){
+                    var _index = _t.collection.indexOf(_model);
 
-            //select dot
-            this.$el.find("ul.slider-nav-dots li.active").removeClass("active");
-            this.$el.find("ul.slider-nav-dots li[data-id='" + _slideid + "']").addClass("active");
+                    _t.slides_ul.css("margin-left","-" + _index*100 + "%");
+                    _t.selectdotbyid(_model.id);
+                    _t.checkarrows(_index);
+                }
+        	});
 
-            this.checkarrows();
+        	_t.$el.find("ul.slider-nav-arrows li").click(function(){
+        		_t["show"+$(this).attr("data-id")+"slide"]();
+        	});
+
+            _t.$el.find("ul.slider-nav-dots li").click(function(){
+                _t.activateslidebyid( $(this).attr("data-slide-id") );
+            });
+
+            
         },
-        checkarrows:function(){
+        activateslidebyindex:function(_index){
+            var _model = this.collection.at(_index);
+            if(_model) this.activateslidebyid( _model.id );
+        },
+        activateslidebyid:function(_id){
+            _.each(this.collection.models, function(_model){
+                _model.set("active",_id == _model.id);
+            });
+
+            this.trigger("slidechanged", _id);
+        },
+        selectdotbyid:function(_id){
+            this.$el.find("ul.slider-nav-dots li.active").removeClass("active")  ;
+            this.$el.find("ul.slider-nav-dots li[data-slide-id='" + _id + "']").addClass("active");
+        },
+        shownextslide:function(){
+            var nextindex = this.getactivemodel().get("index") + 1,
+            next_model = this.collection.at( nextindex );
+
+			if(next_model) this.activateslidebyid( next_model.id );
+        },
+        showprevslide:function(){
+        	var previndex = this.getactivemodel().get("index") - 1,
+            prev_model = this.collection.at( previndex );
+
+            if(prev_model) this.activateslidebyid( prev_model.id );
+        },
+        checkarrows:function(_active_index){
             this.$el.find("ul.slider-nav-arrows li.hidden").removeClass("hidden");
-            if( this.lastslide() ) this.hidenextarrow();
-            else if(this.firstslide()) this.hideprevarrow();
+
+            if( _active_index == this.collection.length-1 ) this.hidenextarrow();
+            else if(_active_index == 0) this.hideprevarrow();
         },
         hidenextarrow:function(){
             var li = this.$el.find("ul.slider-nav-arrows li[data-id='next']").eq(0);
@@ -52,24 +82,11 @@ define([
             var li = this.$el.find("ul.slider-nav-arrows li[data-id='prev']").eq(0);
             if( !li.hasClass("hidden") ) li.addClass("hidden");
         },
-        firstslide:function(){
-            return ( this.model.get("current_slide") == 0 );
+        getactivemodel:function(){
+            return this.collection.where( {"active":true} )[0];
         },
-        lastslide:function(){
-            return ( this.model.get("current_slide") == this.model.get("slides_length")-1 );
-        },
-        shownextslide:function(){
-        	var curr = this.model.get("current_slide"),
-        	next = curr + 1,
-        	max = this.model.get("slides_length")-1;
-
-			if(next <= max) this.showslidebyid(next);
-        },
-        showprevslide:function(){
-        	var curr = this.model.get("current_slide"),
-        	prev = curr - 1;
-
-			if(prev >= 0) this.showslidebyid(prev);
+        disable:function(){
+            this.$el.addClass("disabled");
         }
     });
 

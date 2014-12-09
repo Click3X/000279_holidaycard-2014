@@ -32,7 +32,7 @@ define([
 
                 if(response.status == "success"){
                     var _type = mp4 ? "mp4" : "webm";
-                     _t.videoplayer.load( response[_type].video, _type, "vacation.jpg");
+                    _t.videoplayer.load( response[_type].video, _type, base_url + "images/thumbs/vacation.jpg" );
 
                     _t.$el.find(".social-buttons a.fb").click( _t.shareonfacebook );
                     _t.$el.find(".social-buttons a.tw").click( _t.shareontwitter );

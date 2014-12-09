@@ -16,7 +16,8 @@ class Order_Model extends C3X_Model
             'address'                   => array("shown"=>true,     "label"=>"Address"),
             'state'                     => array("shown"=>true,     "label"=>"State"),
             'city'                      => array("shown"=>true,     "label"=>"City"),
-            'zip'                       => array("shown"=>true,     "label"=>"Zip")
+            'zip'                       => array("shown"=>true,     "label"=>"Zip"),
+            'created_at'                => array("shown"=>true,     "label"=>"Created At")
 		);
 	}
 }

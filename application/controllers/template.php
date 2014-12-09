@@ -4,10 +4,17 @@ class Template extends CI_Controller {
 
 	public function index( $templateid = "home" )
 	{
-		$this->load->model("state_model"); 
-	    $this->states = $this->state_model->get();
+		$data = array();
 
-		$this->load->view( "templates/".$templateid, array("states"=>$this->states) );
+		if($templateid == "tshirt"){
+			$this->load->model("state_model"); 
+		    $data["states"] = $this->state_model->get();
+
+		    $this->load->model("tshirt_model");
+			$data["tshirts"] = $this->tshirt_model->get();
+		}
+
+		$this->load->view( "templates/".$templateid, $data );
 	}
 	
 }

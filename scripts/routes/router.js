@@ -6,8 +6,9 @@ define([
     'pages/home',
     'pages/video',
     'pages/tshirt',
+    'pages/complete',
     'models/session'
-], function ($, Backbone, Home, Video, TShirt, Session) {
+], function ($, Backbone, Home, Video, TShirt, Complete, Session) {
     'use strict';
 
     var RouterRouter = Backbone.Router.extend({
@@ -22,7 +23,8 @@ define([
             var page_collection     = _t.session.get("pages"),
             home                    = new Home( {id:"home", session:_t.session, collection:page_collection } ),
             video                   = new Video( {id:"video", session:_t.session, collection:page_collection} ),
-            tshirt                  = new TShirt( {id:"tshirt", session:_t.session, collection:page_collection } );
+            tshirt                  = new TShirt( {id:"tshirt", session:_t.session, collection:page_collection } ),
+            complete                = new Complete( {id:"complete", session:_t.session, collection:page_collection } );
 
             _t.giftcode_form = 
             $("form#giftcode").eq(0).submit(function(e){

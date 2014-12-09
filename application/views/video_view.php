@@ -31,9 +31,9 @@
         <script>try{Typekit.load();}catch(e){}</script>
 
         <script type="text/javascript">
-            var router;
             var base_url = "<?=base_url(); ?>";
-            var root_dir = "<?= $this->config->item('root_directory'); ?>";
+            var video_id = "<?= $video->video_id; ?>";
+            var thumb = "<?= base_url(); ?>images/thumbs/vacation.jpg";
         </script>
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -45,15 +45,37 @@
     </head>
     <!--[if IE 8 ]><body class="ie8"><![endif]-->
     <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
+
+        <!-- HEADER -->
+        <div id="header-container" class="header-container clearfix">   
+            <!-- ANIMATED SNOW -->
+            <div class="snow-container">
+                <div class="snow foreground"></div>
+                <div class="snow foreground layered"></div>
+                <div class="snow middleground"></div>
+                <div class="snow middleground layered"></div>
+                <div class="snow background"></div>
+                <div class="snow background layered"></div>
+            </div>
+
+            <!-- NEW SVGS -->
+            <div class="demo bg"></div>
+            <div class="svg-holder clearfix">
+                <!-- <div class="new-header bg"></div> -->
+                <?php $this->load->view("header_svg_view"); ?>
+            </div>
+        </div>
+
+        <!-- PAGE CONTAINER -->
         <div id="page-container">
             <section>
-                <h1>MY HOLIDAY STORY: <?php echo $videoid; ?></h1>
+                <h1>MY HOLIDAY STORY: <?php echo $video->video_id; ?></h1>
                 <div class="video-wrapper">
                     <div class="video-container">
                         <div class="video-player">
-                            <!-- <video class="mobile-video" width="960" height="540" controls></video> -->
-                            <div class="poster" style="background-image:url('<?php echo base_url(); ?>images/thumbs/vacation.jpg')"></div>
-                            <video class="video" width="960" height="540" type="video/mp4" src="<?php echo base_url(); ?>videos/output/vacation-slopes.mp4" controls></video>
+                            <video class="mobile-video" width="960" height="540" controls></video>
+                            <div class="poster"></div>
+                            <video class="video" width="960" height="540" controls></video>
                         </div>
                     </div>
                 </div>
@@ -76,5 +98,8 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
+
+        <script src="<?= base_url();?>scripts/master.js"></script>
+        <script data-main="<?= base_url();?>scripts/video_main" src="<?= base_url();?>scripts/vendor/require/require.min.js"></script>
 </body>
 </html>

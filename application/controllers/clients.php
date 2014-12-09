@@ -15,24 +15,25 @@ class Clients extends CI_Controller {
 		var_dump($clients);
 	}
 
-	public function code($gift_code = ""){
-		if( empty($gift_code) ){
-			$post = $this->input->post();
-			$gift_code = $post["code"];
-		}
+	public function code(){
+		$post = $this->input->post();
 
-		$response = $this->client_model->get(array("gift_code"=>$gift_code));
+		$client = $this->client_model->get( array("gift_code"=>$post["code"]) );
+		$response = array();
 
-		if( !empty($response) && count($response) > 0 ){
-			$response = array(
-				"success"=>true,
-				"data"=>$response[0]
-			);
+		if( !empty($client) && count($client) > 0 ){
+			$client = $client[0];
+
+			$this->load->model("order_model");
+			$already_ordered = $this->order_model->get( array("ref_client_id"=>$client->id, "count"=>true) );
+
+			if( $already_ordered && $already_ordered > 0 ){
+				$response = array("error"=>"Sorry, that gift code has already ben used.");
+			}else{
+				$response = array("success"=>true, "data"=>$client);
+			}
 		}else{
-			$response = array(
-				"success"=>false,
-				"error"=>"Sorry, that's not a valid gift code."
-			);
+			$response = array("success"=>"Sorry, that's not a valid gift code.");
 		}
 		
 		echo json_encode($response);
@@ -42,7 +43,7 @@ class Clients extends CI_Controller {
 		$clients = $this->client_model->get();
 
 		foreach ($clients as $client) {
-			$code = crypt(uniqid(rand(),1)); 
+			$code = crypt( uniqid(rand(),1) ); 	
 			$code = strip_tags(stripslashes($code)); 
 			$code = str_replace(".","",$code); 
 			$code = strrev(str_replace("/","",$code)); 

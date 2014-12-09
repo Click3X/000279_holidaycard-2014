@@ -51,7 +51,7 @@
             <div class="demo bg"></div>
             <div class="svg-holder clearfix">
                 <!-- <div class="new-header bg"></div> -->
-                <?php include ('images/new-header/inline/header.svg'); ?>
+                <?php $this->load->view("header_svg_view"); ?>
             </div>
         </div>
 
@@ -82,24 +82,7 @@
             ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
 
-        <script data-main="scripts/main" src="<?= base_url();?>scripts/vendor/require/require.min.js"></script>
-
-        <?php
-            // CHARLES DEV - OUTLINE DEBUG TOOL -- CONDITIONALLY LOAD OUTLINE SCRIPT
-            $server = $_SERVER['REMOTE_ADDR'];
-            // IF SERVER IS LOCAL, ADD OUTLINE BUTTON
-            if($server == '127.0.0.1') {
-                echo "
-                <script src='//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
-                <script>
-                    jQuery('head').append('<style>#outline {position:fixed;z-index:1000;bottom:50px;right:50px;} .outlines {outline:1px solid rgba(255, 0, 0, 0.3);}</style>');
-                    jQuery('body').append('<input id=\"outline\" type=\"button\">');
-
-                    jQuery('#outline').click(function() {
-                        jQuery('*').toggleClass('outlines');
-                   });
-                </script>";
-            }
-        ?>
+        <script src="<?= base_url();?>scripts/master.js"></script>
+        <script data-main="<?= base_url();?>scripts/main" src="<?= base_url();?>scripts/vendor/require/require.min.js"></script>
 </body>
 </html>

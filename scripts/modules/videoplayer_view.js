@@ -31,16 +31,16 @@ define([
         load:function(_url, _type, _thumb){
             var _t = this;
 
-            _t.poster.attr( "style", "background-image:url(" + base_url + "images/thumbs/" + _thumb + ")" );
+            if(_thumb) _t.poster.attr( "style", "background-image:url(" + _thumb + ")" );
 
             if(mobile){
                 $( _t.video ).remove();
-                $( _t.mobile_video ).attr( "type", "video/" + _type );
-                $( _t.mobile_video ).attr( "src", _url );
+                if(_type) $( _t.mobile_video ).attr( "type", "video/" + _type );
+                if(_url) $( _t.mobile_video ).attr( "src", _url );
             } else {
                 $( _t.mobile_video ).remove();
-                $( _t.video ).attr( "type", "video/" + _type );
-                $( _t.video ).attr( "src", _url );
+                if(_type) $( _t.video ).attr( "type", "video/" + _type );
+                if(_url) $( _t.video ).attr( "src", _url );
             }
 
             _t.poster.click(function(){

@@ -64,6 +64,21 @@ input[type=radio] {
 	visibility: hidden;
 }
 
+.sending form{
+	opacity:.5;
+}
+
+.success form{
+	display:none;
+}
+
+#order-complete{
+	display:none;
+}
+.success #order-complete{
+	display:block;
+}
+
 .tshirt-form { 
 	text-align: center; 
 
@@ -160,7 +175,7 @@ input[type=radio] {
 input[type=submit] { 
 	font-weight: 600;
 	background-color:$submitblue;
-	margin:1em auto;
+	margin:40px auto 20px auto;
 	padding:0 2em;
 
 	@include prefix(transition, all 200ms);
