@@ -27,14 +27,8 @@
         </script>
 
         <script src="<?= base_url();?>scripts/vendor/modernizr/modernizr.min.js"></script>
-
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head>
-        <!--[if IE 8 ]><body class="ie8"><![endif]-->
-        <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
+        <body>
 
         <!-- HEADER -->
         <div id="header-container" class="header-container clearfix">   

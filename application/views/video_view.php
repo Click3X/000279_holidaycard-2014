@@ -21,7 +21,6 @@
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:site" content="@click3x">
-        <!-- <meta name="twitter:creator" content="@cfmdev"> -->
         <meta name="twitter:title" content="Happy Holidays from Click3x!">
         <meta name="twitter:description" content="Check out my Holiday Video and make your own at holidays.click3x.com/2014!">
         <meta name="twitter:image:src" content="<?= base_url(); ?>images/thumbs/vacation.jpg">
@@ -36,16 +35,9 @@
             var thumb = "<?= base_url(); ?>images/thumbs/vacation.jpg";
         </script>
 
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-          <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>css/ie8.css" />
-        <![endif]-->
+        <script src="<?= base_url();?>scripts/vendor/modernizr/modernizr.min.js"></script>
     </head>
-    <!--[if IE 8 ]><body class="ie8"><![endif]-->
-    <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
-
+    <body>
         <!-- HEADER -->
         <div id="header-container" class="header-container clearfix">   
             <!-- ANIMATED SNOW -->
