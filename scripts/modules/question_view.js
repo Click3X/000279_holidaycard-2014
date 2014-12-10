@@ -1,12 +1,10 @@
 define([
-	'backbone'
-], function (Backbone) {
+	'backbone',
+    'modules/answer_view'
+], function (Backbone, AnswerView) {
     'use strict';
 
     var QuestionView = Backbone.View.extend({
-        events:{
-            "click li": "onanswerclicked"
-        },
         initialize:function(){
         	var _t = this;
 
@@ -19,11 +17,18 @@ define([
                     id:_t.id,
             		selection:null,
                     active:false,
-                    story_path:"a"
+                    story_path:"a",
+                    answers:new Backbone.Collection(),
+                    answers_ready:false
             	});
 
                 _t.collection.push(_t.model);
             }
+
+            _t.$el.find("li.answer").each(function(){ 
+                var answer = new AnswerView( {el:this} );
+                _t.model.get("answers").push( answer.model ); 
+            });
 
             _t.model.on("change:story_path",function(){
                 _t.updatestorypath();
@@ -32,6 +37,12 @@ define([
             _t.model.on("change:active",function(){
                 _t.updateactivestate();
             });
+
+            _t.model.get("answers").on("change:ready", function(_answer){
+                if( this.where({"ready":true}).length == this.length ){
+                    _t.model.set("answers_ready",true);
+                }
+            });
             
             _t.updatestorypath();
             _t.updateactivestate();
@@ -39,11 +50,11 @@ define([
         updateactivestate:function(){
             console.log("updateactivestate", this.model.get("active"));
 
-            if( this.model.get("active") == true ){
-                this.$el.removeClass("hidden");
+            if( this.model.get("active") == false ){
+                this.$el.removeClass("active");
             } else {
-                if( !this.$el.hasClass("hidden") )
-                    this.$el.addClass("hidden");
+                if( !this.$el.hasClass("active") )
+                    this.$el.addClass("active");
             }
         },
         updatestorypath:function(){

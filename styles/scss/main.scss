@@ -57,6 +57,16 @@ body.page-tshirt, body.page-complete{
 
     @media(min-width: 481px) { padding-top:10px; }
 
+    .page-content{
+        opacity:0;
+
+        @include transition(opacity .2s ease-in-out);
+
+        &.ready{
+            opacity:1;
+        }
+    }
+
     .video-wrapper{
         max-width: 960px;
         margin: 0 auto;
@@ -102,6 +112,16 @@ body.page-tshirt, body.page-complete{
 /******************************************************************
 Answer List and Tshirt Slider
 ******************************************************************/
+div.question{
+    opacity: 0;
+    display: none;
+
+    &.active{
+        opacity: 1;
+        display: block;
+    }
+}
+
 ul.answer-list{
     margin:0 0 0 0;
     padding:0 0 0 0;
@@ -171,6 +191,7 @@ ul.answer-list{
     }
 }
 
+@import 'charles/loader.scss';
 @import 'charles/header.scss';
 @import 'charles/questions.scss';
 @import 'charles/snow.scss';

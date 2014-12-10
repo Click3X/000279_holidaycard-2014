@@ -8,22 +8,20 @@ define([
 
     var Home = PageTemplate.extend({
         template: _.template( T ),
-        question_views:[],
-        navigation:null,
         activate:function(){
-            var _t = this;
+            var _t = this, question_views = [], navigation_view;
 
             //build question views
             _t.$el.find(".question").each(function(){
-                var question = new QuestionView({ 
-                    el:this, 
-                    collection:_t.session.get("questions") 
-                }).on("answerclicked", function(_id){
-                    _t.initnextquestion();
-                });
+                question_views.push( 
+                    new QuestionView({ 
+                        el:this, 
+                        collection:_t.session.get("questions") 
+                    })
+                );
             });
 
-            _t.navigation = new Navigationview({
+            navigation_view = new Navigationview({
                 el:_t.$el.find("#main-nav-container")[0],
                 collection:_t.session.get("questions")
             }).on("buttonclicked", function(_id){
@@ -32,7 +30,20 @@ define([
                 _t.initprevquestion();
             });
 
-            _t.session.activatequestionbyindex(0);
+            _t.model.set("navigation_view", navigation_view);
+            _t.model.set("question_views", question_views);
+
+            _t.session.get("questions").on("change:answers_ready", function(_question){
+                if( this.where({"answers_ready":true}).length == this.length ){
+                    _t.ready();
+                    _t.transitionin();
+                }
+            });
+        },
+        transitionin:function(){
+            console.log("transition in");
+
+            this.session.activatequestionbyindex(0);
         },
         initnextquestion:function(){
             var nindex = this.session.getactivequestionindex()+1;

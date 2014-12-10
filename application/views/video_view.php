@@ -30,9 +30,9 @@
         <script>try{Typekit.load();}catch(e){}</script>
 
         <script type="text/javascript">
-            var base_url = "<?=base_url(); ?>";
-            var video_id = "<?= $video->video_id; ?>";
-            var thumb = "<?= base_url(); ?>images/thumbs/vacation.jpg";
+            var base_url    = "<?=base_url(); ?>";
+            var video_id    = "<?= $video->video_id; ?>";
+            var thumb       = "<?= base_url(); ?>images/thumbs/vacation.jpg";
         </script>
 
         <script src="<?= base_url();?>scripts/vendor/modernizr/modernizr.min.js"></script>

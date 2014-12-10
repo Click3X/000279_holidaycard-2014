@@ -220,6 +220,11 @@
 // FOOTER 
 .footer {
     padding: 0 .5em;
+    opacity: 0;
+
+    &.ready{
+        opacity: 1;
+    }
 
     input,input[type=submit]{
         margin:0;
@@ -267,8 +272,6 @@
             font-size: .8em;
         }
     }
-
-    
 }
 
 .red { color:$red; }
