@@ -8,26 +8,7 @@
     margin:0 auto;
 }
 
-// .new-header {
-//     background-image:url('../../images/new-header/header.png');
-//     width: 100%;
-//     padding-bottom: 61.5%;
-//     position: absolute;
-//     top: 0;
-//     left:0;
-//     right: 0;
-//     margin: auto;
-// }
-
-
-// .svg .new-header{
-//     background-size: cover; 
-//     background-image:url('../../images/new-header/header.svg'); 
-// }
-
-.snow-container { 
-    padding-bottom:65.5%; 
-}
+.snow-container {  padding-bottom:65.5%; }
 
 @media (min-width: 640px) {
     .snow-container { padding-bottom: 418px; }
