@@ -73,6 +73,6 @@ svg#Layer_1 {
 }
 
 // HIDE BG SVG IF NOT IE
-.svg-holder > .new-header {
+#header-container .svg-holder > .new-header {
     display: none;
 }
