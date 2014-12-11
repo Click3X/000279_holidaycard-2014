@@ -7,10 +7,14 @@ require.config({
         bootstrap: {
             deps:       ['jquery'],
             exports:    'jquery'
+        },
+        easing: {
+            deps: ['jquery']
         }
     },
     paths: {
         jquery:     'scripts/vendor/jquery/jquery.min',
+        easing:     'scripts/vendor/jquery/jquery.easing',
         backbone:   'scripts/vendor/backbone/backbone',
         underscore: 'scripts/vendor/underscore/underscore-min',
         bootstrap:  'scripts/vendor/sass-bootstrap/dist/js/bootstrap',

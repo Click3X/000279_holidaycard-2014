@@ -37,7 +37,12 @@ define([
             _t.session.get("questions").on("change:answers_ready", function(_question){
                 _t.checkready();
             }).on("change:selection", function(_question){
-                setTimeout( function(){ _t.initnextquestion() }, 400);
+                setTimeout( function(){ 
+                    $('body').animate({scrollTop: "600px"}, {duration:400, easing: "easeInOutQuart", complete:function(){
+                        console.log("animation complete");
+                        _t.initnextquestion();
+                    }});
+                }, 200);
             }).on("change:story_path", function(_changed_model){
                 var newpath =  _changed_model.get("story_path");
 

@@ -51,6 +51,11 @@ define([
             console.log("updateactivestate", this.model.get("active"));
 
             if( this.model.get("active") == false ){
+                //hide answers
+                _.each(this.model.get("answers").models, function(_model){
+                    _model.set("visible",false);
+                });
+
                 this.$el.removeClass("active");
             } else {
                 if( !this.$el.hasClass("active") )

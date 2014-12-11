@@ -2,13 +2,14 @@
 
 define([
     'jquery',
+    'easing',
     'backbone',
     'pages/home',
     'pages/video',
     'pages/tshirt',
     'pages/complete',
     'models/session'
-], function ($, Backbone, Home, Video, TShirt, Complete, Session) {
+], function ($, E, Backbone, Home, Video, TShirt, Complete, Session) {
     'use strict';
 
     var RouterRouter = Backbone.Router.extend({
