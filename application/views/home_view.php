@@ -45,7 +45,7 @@
             <!-- NEW SVGS -->
             <div class="demo bg"></div>
             <div class="svg-holder clearfix">
-                <!-- <div class="new-header bg"></div> -->
+                <div class="new-header bg"></div>
                 <?php $this->load->view("header_svg_view"); ?>
             </div>
         </div>
