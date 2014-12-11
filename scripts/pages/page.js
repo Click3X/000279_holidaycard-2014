@@ -28,6 +28,8 @@ define([
             console.log(_t.page_content);
         },
         render: function () {
+            var _t = this;
+
             this.append();
 
             this.model.set("page_content_el", this.$el.find(".page-content").eq(0) );
@@ -38,7 +40,7 @@ define([
                 router.navigate( $(this).attr("data-navigate-to"), true );
             });
 
-            this.activate();
+            _t.activate();
         },
         append:function(){
             this.$el.html( this.template() );

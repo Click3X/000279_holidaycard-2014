@@ -21,12 +21,14 @@ define([
                 _t.selections.push(_model.attributes.selection);
             });
 
-            _t.videoplayer = new VideoPlayerView({
-                el:_t.$el.find(".video-player")[0],
-                collection:_t.session.attributes.questions
-            });
+            $('body').animate({scrollTop:0}, {duration:400, easing: "easeInOutQuart", complete:function(){
+                _t.videoplayer = new VideoPlayerView({
+                    el:_t.$el.find(".video-player")[0],
+                    collection:_t.session.attributes.questions
+                });
 
-            _t.getCombinedVideo();
+                _t.getCombinedVideo();
+            }});
         },
         deactivate:function(){
             console.log("deactivate video");
