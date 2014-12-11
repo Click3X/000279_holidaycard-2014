@@ -51,7 +51,11 @@ define([
 
             if( _t.session.get("questions").where({"answers_ready":true}).length == _t.session.get("questions").length ){
                 _t.ready();
-                this.session.activatequestionbyindex(0);
+
+                setTimeout( function(){ 
+                    _t.session.activatequestionbyindex(0);
+                    _t.showfooter();
+                }, 400 );
             }
         },
         initnextquestion:function(){

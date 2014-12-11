@@ -51,6 +51,8 @@ define([
 
             this.model.get("page_content_el").addClass("ready");
             this.model.get("page_loader_el").remove();
+        },
+        showfooter:function(){
             if( !$("#footer").hasClass("ready") ) $("#footer").addClass("ready");
         },
         remove:function(){

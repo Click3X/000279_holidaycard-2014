@@ -11,16 +11,16 @@
 	    <div id="get-started" class="get-started">Get Started</div>
 	</div>
 	<div id="main-nav-container">
-	    <div data-id="back" class="back-btn-holder clearfix">
+	    <div data-id="back" class="back-btn-holder clearfix hidden">
 	        <div class="btn-holder">
 	            <a class="back-arrow"></a>
 	        </div>
 	    </div>
 	    <ul class="nav nav-pills">
-	        <li data-question-id="q1"><a>Q1</a></li>
-	        <li data-question-id="q2"><a>Q2</a></li>
-	        <li data-question-id="q3"><a>Q3</a></li>
-	        <li data-question-id="q4"><a>Q4</a></li>
+	        <li data-question-id="q1" class="active"><a>Q1</a></li>
+	        <li data-question-id="q2" class="disabled"><a>Q2</a></li>
+	        <li data-question-id="q3" class="disabled"><a>Q3</a></li>
+	        <li data-question-id="q4" class="disabled"><a>Q4</a></li>
 	    </ul>
 	</div>
 	<div class="question-container">
