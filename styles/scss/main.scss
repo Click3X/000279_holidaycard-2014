@@ -131,6 +131,9 @@ ul.answer-list{
         width: 100%;
         vertical-align: top;
         line-height: 0;
+        opacity: 0;
+
+        @include transition(opacity .4s ease-in-out);
 
         @media(min-width: 680px) { width:50%; }
 

@@ -51,10 +51,12 @@ define([
 
             this.model.get("page_content_el").addClass("ready");
             this.model.get("page_loader_el").remove();
+            if( !$("#footer").hasClass("ready") ) $("#footer").addClass("ready");
         },
         remove:function(){
             this.$el.find("a[data-navigate-to]").unbind("click");
 
+            $("#footer").removeClass("ready");
             this.deactivate();
         },
         deactivate:function(){

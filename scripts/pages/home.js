@@ -37,7 +37,7 @@ define([
             _t.session.get("questions").on("change:answers_ready", function(_question){
                 _t.checkready();
             }).on("change:selection", function(_question){
-                setTimeout( function(){ _t.initnextquestion() }, 300);
+                setTimeout( function(){ _t.initnextquestion() }, 400);
             }).on("change:story_path", function(_changed_model){
                 var newpath =  _changed_model.get("story_path");
 
@@ -51,13 +51,8 @@ define([
 
             if( _t.session.get("questions").where({"answers_ready":true}).length == _t.session.get("questions").length ){
                 _t.ready();
-                _t.transitionin();
+                this.session.activatequestionbyindex(0);
             }
-        },
-        transitionin:function(){
-            console.log("transition in");
-
-            this.session.activatequestionbyindex(0);
         },
         initnextquestion:function(){
             var nindex = this.session.getactivequestionindex()+1;

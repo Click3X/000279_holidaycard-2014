@@ -15,9 +15,22 @@ define([
         	_t.model = new Backbone.Model({
         		"id": _t.$el.attr("data-selection-id"),
         		"image": _t.$el.find("a").eq(0).attr("data-image"),
-        		"ready": false
+        		"ready": false,
+        		"visible": false
         	}).on("change:active", function(){
         		_t.onactivechanged();
+        	}).on("change:visible", function(){
+        		var i = _t.collection.indexOf(_t.model);
+
+        		if( this.get("visible") == true ){
+		    		setTimeout(function(){
+		    			_t.$el.css("opacity",1);
+		    		}, 200+(200*i) );
+        		} else{
+        			setTimeout(function(){
+		    			_t.$el.css("opacity",0);
+		    		}, 200+(200*(this.length-1)-i) );
+        		}
         	});
 
         	_t.collection.push(_t.model);
