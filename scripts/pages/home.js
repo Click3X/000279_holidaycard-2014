@@ -11,6 +11,10 @@ define([
         activate:function(){
             var _t = this, question_views = [], navigation_view;
 
+            _t.session.resetquestions();
+
+            console.log(_t.session.get("questions"));
+
             //build question views
             _t.$el.find(".question").each(function(){
                 question_views.push( 
@@ -30,15 +34,25 @@ define([
                 _t.initprevquestion();
             });
 
-            _t.model.set("navigation_view", navigation_view);
-            _t.model.set("question_views", question_views);
-
             _t.session.get("questions").on("change:answers_ready", function(_question){
-                if( this.where({"answers_ready":true}).length == this.length ){
-                    _t.ready();
-                    _t.transitionin();
-                }
+                _t.checkready();
+            }).on("change:selection", function(_question){
+                setTimeout( function(){ _t.initnextquestion() }, 300);
+            }).on("change:story_path", function(_changed_model){
+                var newpath =  _changed_model.get("story_path");
+
+                _.each( this.models, function(_model){
+                    if(_model != _changed_model) _model.set( "story_path", newpath );
+                });
             });
+        },
+        checkready:function(){
+            var _t = this;
+
+            if( _t.session.get("questions").where({"answers_ready":true}).length == _t.session.get("questions").length ){
+                _t.ready();
+                _t.transitionin();
+            }
         },
         transitionin:function(){
             console.log("transition in");

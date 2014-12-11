@@ -9,16 +9,7 @@ define([
 
             _t.set( "questions", new Backbone.Collection() );
             _t.set( "pages", new Backbone.Collection() );
-            _t.set( "client", new Backbone.Model() );
-
-            //when one questions story version changes, change the rest to match.
-            _t.attributes.questions.on("change:story_path", function(_changed_model){
-                var newpath =  _changed_model.get("story_path");
-
-                _.each( _t.attributes.questions.models, function(_model){
-                    if(_model != _changed_model) _model.set( "story_path", newpath );
-                });
-            });
+            _t.set( "client", new Backbone.Model() );            
         },
         //PAGE WORKERS
         activatepagebyid:function(_id){
@@ -75,6 +66,9 @@ define([
             this.attributes.client.set(_data);
             console.log("client data set: ", this.get("client") );
         },
+        resetquestions:function(){
+            this.set( "questions", new Backbone.Collection() );
+        }
     });
 
     return Session;

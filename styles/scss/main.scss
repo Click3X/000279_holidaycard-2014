@@ -170,7 +170,7 @@ ul.answer-list{
         }
     }
 
-    li:hover{
+    li:hover, li.active{
         padding:0;
 
         .answer-inner{
@@ -187,6 +187,12 @@ ul.answer-list{
                     box-shadow: none;
                 }
             }
+        }
+    }
+
+    li.active{
+        .answer-inner{
+            border:6px solid $lightblue;
         }
     }
 }

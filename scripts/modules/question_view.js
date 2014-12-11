@@ -9,25 +9,20 @@ define([
         	var _t = this;
 
             _t.id = _t.$el.attr("id");
+           
+        	_t.model = new Backbone.Model({
+                id:_t.id,
+        		selection:null,
+                active:false,
+                story_path:"a",
+                answers:new Backbone.Collection(),
+                answers_ready:false
+        	});
 
-            if( _t.collection.get(_t.id) ){
-                _t.model = _t.collection.get(_t.id);
-            } else {
-            	_t.model = new Backbone.Model({
-                    id:_t.id,
-            		selection:null,
-                    active:false,
-                    story_path:"a",
-                    answers:new Backbone.Collection(),
-                    answers_ready:false
-            	});
-
-                _t.collection.push(_t.model);
-            }
+            _t.collection.push(_t.model);
 
             _t.$el.find("li.answer").each(function(){ 
-                var answer = new AnswerView( {el:this} );
-                _t.model.get("answers").push( answer.model ); 
+                var answer = new AnswerView( { el:this, collection:_t.model.get("answers") } );
             });
 
             _t.model.on("change:story_path",function(){
@@ -41,6 +36,11 @@ define([
             _t.model.get("answers").on("change:ready", function(_answer){
                 if( this.where({"ready":true}).length == this.length ){
                     _t.model.set("answers_ready",true);
+                }
+            }).on("change:active", function(_answer){
+                if( _answer.get("active") == true ){
+                    _t.model.attributes.selection = "";
+                    _t.model.set( "selection", _answer.id );
                 }
             });
             
