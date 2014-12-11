@@ -38,7 +38,7 @@ define([
                 _t.checkready();
             }).on("change:selection", function(_question){
                 setTimeout( function(){ 
-                    $('body').animate({scrollTop: "600px"}, {duration:400, easing: "easeInOutQuart", complete:function(){
+                    $('body').animate({scrollTop: ( navigation_view.$el.offset().top - 22 ) + "px"}, {duration:400, easing: "easeInOutQuart", complete:function(){
                         console.log("animation complete");
                         _t.initnextquestion();
                     }});
