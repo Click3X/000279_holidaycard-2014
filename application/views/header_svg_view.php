@@ -1,5 +1,7 @@
+<!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     width="612px" height="374px" viewBox="0 190.5 612 374" enable-background="new 0 190.5 612 374" xml:space="preserve"> -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="612px" height="374px" viewBox="0 190.5 612 374" enable-background="new 0 190.5 612 374" xml:space="preserve">
+     viewBox="0 190.5 612 374" enable-background="new 0 190.5 612 374" xml:space="preserve">
 <g id="Background" display="none">
     
         <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="395.5547" y1="257.9751" x2="395.5547" y2="489.5126" gradientTransform="matrix(0.7727 0 0 -0.7727 0.1136 772.4313)">
