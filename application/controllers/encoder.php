@@ -73,7 +73,7 @@ class Encoder extends CI_Controller {
 			array_push($files, "'".base_url()."videos/src/".$ext."/".$selection.".".$ext."'" );
 		}
 
-		array_push( $files, "'".base_url()."videos/src/".$ext."/outro.".$ext."'" );
+		array_push( $files, "'".base_url()."videos/src/".$ext."/outro_a.".$ext."'" );
 
 		$sources 	= "file ".implode("\nfile ", $files);
 		$filelist 	= FCPATH."videos/tmp/filelist.txt";
