@@ -15,7 +15,6 @@ define([
             var _t = this;
 
             console.log( "activate video" );
-            console.log( "video end : ",  );
 
             _t.selections = [];
             _.each(_t.session.attributes.questions.models, function(_model){
