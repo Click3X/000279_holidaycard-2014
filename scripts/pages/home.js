@@ -35,12 +35,14 @@ define([
             });
 
             _t.session.get("questions").on("change:ready", function(_question){
-                _t.ready();
+                if( this.where({"ready":true}).length == this.length ){
+                    _t.ready();
 
-                setTimeout( function(){ 
-                    _t.session.activatequestionbyindex(0);
-                    _t.showfooter();
-                }, 400 );
+                    setTimeout( function(){ 
+                        _t.session.activatequestionbyindex(0);
+                        _t.showfooter();
+                    }, 400 );
+                }
             }).on("change:selection", function(_question){
                 //scroll to top
                 setTimeout( function(){ 
