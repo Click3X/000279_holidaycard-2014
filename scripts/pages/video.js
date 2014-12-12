@@ -37,8 +37,6 @@ define([
             var _t = this;
 
             console.log(JSON.stringify( _t.selections ));
-            //fake out
-            _t.selections = ["vacation","slopes","party","movie"];
 
             $.ajax({
                 type: 'POST',
