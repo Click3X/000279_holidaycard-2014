@@ -9,7 +9,12 @@ define([
 
             _t.set( "questions", new Backbone.Collection() );
             _t.set( "pages", new Backbone.Collection() );
-            _t.set( "client", new Backbone.Model() );            
+            _t.set( "client", new Backbone.Model() );   
+
+            _t.set( "data", new Backbone.Model({
+                story_end:"a",
+                story_path:"a"
+            }));         
         },
         //PAGE WORKERS
         activatepagebyid:function(_id){

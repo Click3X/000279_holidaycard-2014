@@ -53,9 +53,15 @@ define([
             }).on("change:story_path", function(_changed_model){
                 var newpath =  _changed_model.get("story_path");
 
+                _t.session.get("data").set("story_path", newpath);
+
                 _.each( this.models, function(_model){
                     if(_model != _changed_model) _model.set( "story_path", newpath );
                 });
+            }).on("change:story_end", function(_changed_model){
+                var newend =  _changed_model.get("story_end");
+
+                _t.session.get("data").set("story_end", newend);
             });
         },
         initnextquestion:function(){

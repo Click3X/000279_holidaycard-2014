@@ -14,23 +14,34 @@ define([
                 id:_t.id,
         		selection:null,
                 active:false,
-                story_path:"a",
                 answers:new Backbone.Collection(),
-                ready:false
+                ready:false,
+                story_path:"a",
+                story_end:"a"
         	});
 
             _t.collection.push(_t.model);
 
             _t.$el.find("li.answer").each(function(){ 
                 var answer = new AnswerView( { el:this, collection:_t.model.get("answers") } );
-            });
+                answer.on("data-change-path",function(_id){
+                    //listening for story path event on answer
+                    //then set on model
+                    _t.model.set("story_path", _id);
+                });
 
-            _t.model.on("change:story_path",function(){
-                _t.updatestorypath();
+                answer.on("data-change-end",function(_id){
+                    //listen for story end event on anwser
+                    //then set on model
+                    _t.model.set("story_end", _id);
+                });
             });
 
             _t.model.on("change:active",function(){
                 _t.updateactivestate();
+            }).on("change:story_path", function(){
+                //listening for story path change on model
+                _t.updatestorypath();
             });
 
             _t.model.get("answers").on("change:ready", function(_answer){

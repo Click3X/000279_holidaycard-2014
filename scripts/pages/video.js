@@ -12,9 +12,10 @@ define([
         videoplayer:null,
         saved_video_key:null,
         activate:function(){
-            console.log("activate video");
-
             var _t = this;
+
+            console.log( "activate video" );
+            console.log( "video end : ",  );
 
             _t.selections = [];
             _.each(_t.session.attributes.questions.models, function(_model){
@@ -41,7 +42,7 @@ define([
             $.ajax({
                 type: 'POST',
                 url: endcoder_url,
-                data: { "selections": JSON.stringify( _t.selections )},
+                data: { "selections": JSON.stringify( _t.selections ), "ending": _t.session.get("data").get("story_end") },
                 dataType: "json",
                 success: function(response){
                     if(response.status == "success"){

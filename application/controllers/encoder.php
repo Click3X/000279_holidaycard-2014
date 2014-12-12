@@ -44,8 +44,8 @@ class Encoder extends CI_Controller {
 		$selections = json_decode($post["selections"]);
 		$selections_str = implode("-", $selections);
 
-		$mp4 = $this->concatByExtension( $selections, "mp4" );
-		$webm = $this->concatByExtension( $selections, "webm" );
+		$mp4 = $this->concatByExtension( $selections, $post["ending"], "mp4" );
+		$webm = $this->concatByExtension( $selections, $post["ending"], "webm" );
 
 		$response = (object) "response";
 
@@ -63,7 +63,7 @@ class Encoder extends CI_Controller {
 		echo json_encode($response);
  	}
 
-	public function concatByExtension($selections, $ext = "mp4"){
+	public function concatByExtension($selections, $ending, $ext = "mp4"){
 		$files = array();
 
 		array_push( $files, "'".base_url()."videos/src/".$ext."/intro.".$ext."'" );
@@ -73,7 +73,7 @@ class Encoder extends CI_Controller {
 			array_push($files, "'".base_url()."videos/src/".$ext."/".$selection.".".$ext."'" );
 		}
 
-		array_push( $files, "'".base_url()."videos/src/".$ext."/outro_a.".$ext."'" );
+		array_push( $files, "'".base_url()."videos/src/".$ext."/outro_".$ending.".".$ext."'" );
 
 		$sources 	= "file ".implode("\nfile ", $files);
 		$filelist 	= FCPATH."videos/tmp/filelist.txt";

@@ -16,7 +16,7 @@ define([
         		id: _t.$el.attr("data-selection-id"),
         		image: _t.$el.find("a").eq(0).attr("data-image"),
         		ready: false,
-        		visible: false
+        		visible: false,
         	}).on("change:active", function(){
         		_t.onactivechanged();
         	}).on("change:visible", function(){
@@ -52,7 +52,13 @@ define([
         		_answer.set("active",false);
         	});
 
-        	this.model.set("active", true);
+            if( this.$el.attr("data-change-path-id") )
+                this.trigger("data-change-path", this.$el.attr("data-change-path-id"));
+
+            if( this.$el.attr("data-change-end-id") )
+                this.trigger("data-change-end", this.$el.attr("data-change-end-id") );
+
+            this.model.set("active", true);
         },
         onactivechanged:function(){
         	if(this.model.get("active") == true){

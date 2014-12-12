@@ -29,7 +29,7 @@
 				<section class="path-section" data-path-id="a,b">
 					<h1>What Would You Like To Do This Holiday Season?</h1>
 					<ul class="answer-list"><!--
-						--><li class="answer" data-change-path-id="a" data-selection-id="vacation">
+						--><li class="answer" data-change-path-id="a" data-change-end-id="a" data-selection-id="vacation">
 							<div class="answer-inner">
 								<a data-image="<?php echo base_url(); ?>images/thumbs/vacation.jpg" >
 									<div class="question-label">
@@ -38,7 +38,7 @@
 								</a>
 							</div>
 						</li><!--
-						--><li class="answer" data-change-path-id="a" data-selection-id="roadtrip">
+						--><li class="answer" data-change-path-id="a" data-change-end-id="b" data-selection-id="roadtrip">
 							<div class="answer-inner">
 								<a data-image="<?php echo base_url(); ?>images/thumbs/roadtrip.jpg" >
 									<div class="question-label">
@@ -186,7 +186,7 @@
 				<section class="path-section" data-path-id="b">
 					<h1>What Are Your New Year’s Plans?</h1>
 					<ul class="answer-list"><!--
-						--><li class="answer" data-selection-id="timessquare">
+						--><li class="answer" data-change-end-id="c" data-selection-id="timessquare">
 							<div class="answer-inner">
 								<a data-image="<?php echo base_url(); ?>images/thumbs/timessquare.jpg" >
 									<div class="question-label">
@@ -195,7 +195,7 @@
 								</a>
 							</div>
 						</li><!--
-						--><li class="answer" data-selection-id="dickclark">
+						--><li class="answer" data-change-end-id="d" data-selection-id="dickclark">
 							<div class="answer-inner">
 								<a data-image="<?php echo base_url(); ?>images/thumbs/dickclark.jpg" >
 									<div class="question-label">
