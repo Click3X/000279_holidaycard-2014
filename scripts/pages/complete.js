@@ -9,7 +9,14 @@ define([
     var Complete = PageTemplate.extend({
         template: _.template( T ),
         activate:function(){
-            this.ready();
+            $('body').animate({scrollTop:0}, {duration:400, easing: "easeInOutQuart", complete:function(){
+                _t.videoplayer = new VideoPlayerView({
+                    el:_t.$el.find(".video-player")[0],
+                    collection:_t.session.attributes.questions
+                });
+
+                this.ready();
+            }});
         },
         append:function(){
             if( this.session.attributes.client.attributes.first_name ){
