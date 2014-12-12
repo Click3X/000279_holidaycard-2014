@@ -28,7 +28,7 @@ class Clients extends CI_Controller {
 			$already_ordered = $this->order_model->get( array("ref_client_id"=>intval($client->id), "count"=>true) );
 
 			if( $already_ordered && $already_ordered > 0 ){
-				$response = array("error"=>"Sorry, that gift code has already ben used.");
+				$response = array("error"=>"Sorry, that gift code has already been used.");
 			}else{
 				$response = array("success"=>true, "data"=>$client);
 			}
