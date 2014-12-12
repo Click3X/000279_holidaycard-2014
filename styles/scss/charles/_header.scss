@@ -75,7 +75,10 @@
 #main-nav-container {
     text-align: center;
     height: 70px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+
+    @media(min-width: 480px) {  margin-bottom: 40px; }
+    @media(min-width: 680px) {  margin-bottom: 50px; }
 
     ul.nav-pills {
         display: inline-block;
@@ -195,25 +198,25 @@
         font-weight: 800;
         font-family: "proxima-nova-alt-ext-cond",sans-serif;
         font-size: 1em;
-        margin-bottom: .75em;
+        margin-bottom: 0;
 
-        @media(min-width: 481px) { font-size: 1.5em; }
+        @media(min-width: 481px) { font-size: 1.5em; margin-bottom: .5em;}
         @media(min-width: 640px) { 
             font-size: 1.8em;
-            margin-bottom: 1em;
+            margin-bottom: .8em;
         }
 
-        &:after {
-            content: "";
-            display:block;
-            text-align: center;
-            width:1em; height: 1em;
-            margin:0 auto; margin-bottom: -.5em;
-            background-image:url('../../images/ui/red-arrow.png');
-            background-size:contain;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-        }
+        // &:after {
+        //     content: "";
+        //     display:block;
+        //     text-align: center;
+        //     width:1em; height: 1em;
+        //     margin:0 auto; margin-bottom: -.5em;
+        //     background-image:url('../../images/ui/red-arrow.png');
+        //     background-size:contain;
+        //     background-repeat: no-repeat;
+        //     background-position: 50% 50%;
+        // }
     }
 }
 

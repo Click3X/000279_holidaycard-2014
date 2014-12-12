@@ -27,7 +27,9 @@ define([
 		    			_t.$el.css("opacity",1);
 		    		}, 200+(200*i) );
         		} else{
-					_t.$el.css("opacity",0);
+					setTimeout(function(){
+                        _t.$el.css("opacity",0);
+                    }, 200*((_t.collection.length-1)-i) );
         		}
         	});
 

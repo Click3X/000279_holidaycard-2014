@@ -14,6 +14,9 @@ html{ overflow: auto; }
 ul{ list-style: none; }
 li{ display: inline-block; }
 html, body { overflow-x:hidden; }
+body{
+    padding-bottom:200px;
+}
 
 .noselect {
     -webkit-touch-callout: none;
@@ -68,7 +71,7 @@ body.page-tshirt, body.page-complete{
     }
 
     .video-wrapper{
-        max-width: 960px;
+        max-width: 800px;
         margin: 0 auto;
 
         .video-container{
@@ -125,6 +128,7 @@ div.question{
 ul.answer-list{
     margin:0 0 0 0;
     padding:0 0 0 0;
+    text-align:center;
 
     li{
         padding:0;
@@ -134,8 +138,9 @@ ul.answer-list{
         opacity: 0;
 
         @include transition(opacity .4s ease-in-out);
-
+        
         @media(min-width: 680px) { width:50%; }
+        @media(min-width: 920px) { width:40%; }
 
         .answer-inner{
             background-color:white;

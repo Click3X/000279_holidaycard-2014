@@ -44,12 +44,15 @@ define([
                     }, 400 );
                 }
             }).on("change:selection", function(_question){
+
+                console.log();
+
                 //scroll to top
-                setTimeout( function(){ 
-                    $('body').animate({scrollTop: ( navigation_view.$el.offset().top - 24 ) + "px"}, {duration:400, easing: "easeInOutQuart", complete:function(){
-                        _t.initnextquestion();
-                    }});
-                }, 400);
+                question_views[ _t.session.getactivequestionindex() ].hideanswers();
+
+                $('body').delay( _t.session.getactivequestion().get("answers").length*205 ).animate({scrollTop: ( navigation_view.$el.offset().top - 20 ) + "px"}, {duration:400, easing: "easeInOutQuart", complete:function(){
+                    _t.initnextquestion();
+                }});
             }).on("change:story_path", function(_changed_model){
                 var newpath =  _changed_model.get("story_path");
 

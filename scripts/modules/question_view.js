@@ -58,23 +58,23 @@ define([
             _t.updatestorypath();
             _t.updateactivestate();
         },
+        hideanswers:function(){
+            _.each(this.model.get("answers").models, function(_model){
+                _model.set( "visible",false );
+            });
+        },
         updateactivestate:function(){
             console.log("updateactivestate", this.model.get("active"));
 
             if( this.model.get("active") == false ){
-                //hide answers
-                _.each(this.model.get("answers").models, function(_model){
-                    _model.set("visible",false);
-                });
-
                 this.$el.removeClass("active");
             } else {
                 if( !this.$el.hasClass("active") )
                     this.$el.addClass("active");
 
                 //fade in answers
-                _.each(this.model.get("answers").models, function(_model){
-                    _model.set("visible",true);
+                _.each( this.model.get("answers").models, function(_model){
+                    _model.set( "visible",true );
                 });
             }
         },
