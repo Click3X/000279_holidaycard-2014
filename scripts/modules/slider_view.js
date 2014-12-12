@@ -1,6 +1,7 @@
 define([
-	'backbone'
-], function (Backbone) {
+	'backbone',
+    'modules/slide_view'
+], function (Backbone, SlideView) {
     'use strict';
 
     var SliderView = Backbone.View.extend({
@@ -8,28 +9,33 @@ define([
         	var _t = this;
 
             _t.collection = new Backbone.Collection();
+            _t.model = new Backbone.Model({
+                ready:false
+            });
 
         	_t.slides_ul = _t.$el.find("ul.slides").eq(0);
             
-            //build slide models            
+            //build slide views            
         	_t.slides_ul.find("li.slide").each(function(){
-                var li = $(this),
-                model = new Backbone.Model({
-                    id:li.attr("data-slide-id"),
-                    index:li.index()
+                var slide_view = new SlideView({
+                    el:this,
+                    collection:_t.collection
                 });
-                _t.collection.push(model);
             });
 
         	_t.collection.on("change:active", function(_model){
                 if(_model.get("active") == true){
-                    var _index = _t.collection.indexOf(_model);
+                    var _index = _model.get("index");
 
                     _t.slides_ul.css("margin-left","-" + _index*100 + "%");
                     _t.selectdotbyid(_model.id);
                     _t.checkarrows(_index);
                 }
-        	});
+        	}).on("change:ready", function(){
+                if( this.where({"ready":true}).length == this.length ){
+                    _t.model.set("ready",true);
+                }
+            });
 
         	_t.$el.find("ul.slider-nav-arrows li").click(function(){
         		_t["show"+$(this).attr("data-id")+"slide"]();
@@ -38,8 +44,6 @@ define([
             _t.$el.find("ul.slider-nav-dots li").click(function(){
                 _t.activateslidebyid( $(this).attr("data-slide-id") );
             });
-
-            
         },
         activateslidebyindex:function(_index){
             var _model = this.collection.at(_index);
@@ -50,7 +54,7 @@ define([
                 _model.set("active",_id == _model.id);
             });
 
-            this.trigger("slidechanged", _id);
+            // this.trigger("slidechanged", _id);
         },
         selectdotbyid:function(_id){
             this.$el.find("ul.slider-nav-dots li.active").removeClass("active")  ;

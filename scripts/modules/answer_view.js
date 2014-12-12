@@ -13,10 +13,10 @@ define([
         	var _t = this;
 
         	_t.model = new Backbone.Model({
-        		"id": _t.$el.attr("data-selection-id"),
-        		"image": _t.$el.find("a").eq(0).attr("data-image"),
-        		"ready": false,
-        		"visible": false
+        		id: _t.$el.attr("data-selection-id"),
+        		image: _t.$el.find("a").eq(0).attr("data-image"),
+        		ready: false,
+        		visible: false
         	}).on("change:active", function(){
         		_t.onactivechanged();
         	}).on("change:visible", function(){

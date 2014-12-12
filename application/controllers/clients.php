@@ -39,25 +39,25 @@ class Clients extends CI_Controller {
 		echo json_encode($response);
 	}
 
-	public function createcodes(){
-		$clients = $this->client_model->get();
+	// public function createcodes(){
+	// 	$clients = $this->client_model->get();
 
-		foreach ($clients as $client) {
-			$code = crypt( uniqid(rand(),1) ); 	
-			$code = strip_tags(stripslashes($code)); 
-			$code = str_replace(".","",$code); 
-			$code = strrev(str_replace("/","",$code)); 
-			$code = substr($code,0,4); 
-			$code = strtoupper($code);
+	// 	foreach ($clients as $client) {
+	// 		$code = crypt( uniqid(rand(),1) ); 	
+	// 		$code = strip_tags(stripslashes($code)); 
+	// 		$code = str_replace(".","",$code); 
+	// 		$code = strrev(str_replace("/","",$code)); 
+	// 		$code = substr($code,0,4); 
+	// 		$code = strtoupper($code);
 
-			$this->client_model->update(array(
-				"id"=>$client->id,
-				"gift_code"=>$code
-			));
-		}
+	// 		$this->client_model->update(array(
+	// 			"id"=>$client->id,
+	// 			"gift_code"=>$code
+	// 		));
+	// 	}
 
-		$duplicates = $this->client_model->duplicates("gift_code");
+	// 	$duplicates = $this->client_model->duplicates("gift_code");
 
-		echo $duplicates == 0 ? "NO DUPLICATES FOUND" : $duplicates. " DUPLICATE CODES FOUND";
-	}
+	// 	echo $duplicates == 0 ? "NO DUPLICATES FOUND" : $duplicates. " DUPLICATE CODES FOUND";
+	// }
 }

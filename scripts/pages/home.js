@@ -34,12 +34,17 @@ define([
                 _t.initprevquestion();
             });
 
-            _t.session.get("questions").on("change:answers_ready", function(_question){
-                _t.checkready();
+            _t.session.get("questions").on("change:ready", function(_question){
+                _t.ready();
+
+                setTimeout( function(){ 
+                    _t.session.activatequestionbyindex(0);
+                    _t.showfooter();
+                }, 400 );
             }).on("change:selection", function(_question){
+                //scroll to top
                 setTimeout( function(){ 
                     $('body').animate({scrollTop: ( navigation_view.$el.offset().top - 24 ) + "px"}, {duration:400, easing: "easeInOutQuart", complete:function(){
-                        console.log("animation complete");
                         _t.initnextquestion();
                     }});
                 }, 400);
@@ -50,18 +55,6 @@ define([
                     if(_model != _changed_model) _model.set( "story_path", newpath );
                 });
             });
-        },
-        checkready:function(){
-            var _t = this;
-
-            if( _t.session.get("questions").where({"answers_ready":true}).length == _t.session.get("questions").length ){
-                _t.ready();
-
-                setTimeout( function(){ 
-                    _t.session.activatequestionbyindex(0);
-                    _t.showfooter();
-                }, 400 );
-            }
         },
         initnextquestion:function(){
             var nindex = this.session.getactivequestionindex()+1;

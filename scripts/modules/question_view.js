@@ -16,7 +16,7 @@ define([
                 active:false,
                 story_path:"a",
                 answers:new Backbone.Collection(),
-                answers_ready:false
+                ready:false
         	});
 
             _t.collection.push(_t.model);
@@ -35,7 +35,7 @@ define([
 
             _t.model.get("answers").on("change:ready", function(_answer){
                 if( this.where({"ready":true}).length == this.length ){
-                    _t.model.set("answers_ready",true);
+                    _t.model.set("ready",true);
                 }
             }).on("change:active", function(_answer){
                 if( _answer.get("active") == true ){

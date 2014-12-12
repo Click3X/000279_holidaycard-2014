@@ -66,6 +66,9 @@ define([
                     console.log(error);
                 }
             });
+
+            _t.ready();
+            _t.showfooter();
         },
         shareonfacebook:function(){
             var _t = this;

@@ -8,6 +8,9 @@ define([
 
     var Complete = PageTemplate.extend({
         template: _.template( T ),
+        activate:function(){
+            this.ready();
+        },
         append:function(){
             if( this.session.attributes.client.attributes.first_name ){
                 this.$el.html( this.template( this.session.attributes.client.attributes ) );

@@ -1,14 +1,19 @@
-<section class="path-section">
+<div class="spinner">
+  <div class="cube cube0"></div>
+  <div class="cube cube1"></div>
+  <div class="cube cube2"></div>
+  <div class="cube cube3"></div>
+</div>
+<div class="page-content">
+	<section class="path-section">
 	<div class="name">Hello there, <%= first_name %></div>
 	<h1 id="title-message">Customize your free t-shirt</h1>
 	<div class="form-txt">Choose a design</div>
 	<div class="slider-wrapper slider">
 		<ul class="answer-list tshirt-slides slides"><!--
 			<?php foreach($tshirts as $key=>$tshirt): ?>
-			--><li data-slide-id="<?php echo $tshirt->design_id; ?>" class="slide">
-				<div class="answer-inner">
-					<a style="background-image:url('<?php echo base_url(); ?>images/thumbs/tshirts/<?php echo $tshirt->design_id; ?>.jpg');"></a>
-				</div>
+			--><li data-slide-image="<?php echo base_url(); ?>images/thumbs/tshirts/<?php echo $tshirt->design_id; ?>.jpg" data-slide-id="<?php echo $tshirt->design_id; ?>" class="slide">
+				<div class="answer-inner"><a></a></div>
 			</li><!--
 			<?php endforeach; ?>
 		--></ul>
@@ -71,3 +76,4 @@
 		</form>
 	</div>
 </section>
+</div>

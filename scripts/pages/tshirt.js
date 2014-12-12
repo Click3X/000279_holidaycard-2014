@@ -15,12 +15,12 @@ define([
         slide_input:null,
         error_span:null,
         append:function(){
-            if( this.session.attributes.client.attributes.first_name ){
-                this.$el.html( this.template( this.session.attributes.client.attributes ) );
-            }else{
-                this.$el.html( "<h5>Sorry, that's not a valid gift code.</h5>");
-                // this.$el.html( this.template( {first_name:"Jason", address:"15 Warren St #121", city:"Jersey City", state:"NJ", zip:"07302"} ) );
-            }
+            // if( this.session.attributes.client.attributes.first_name ){
+            //     this.$el.html( this.template( this.session.attributes.client.attributes ) );
+            // }else{
+            //  this.$el.html( "<h5>Sorry, that's not a valid gift code.</h5>");
+                this.$el.html( this.template( {id:"0", first_name:"Jason", address:"15 Warren St #121", city:"Jersey City", state:"NJ", zip:"07302"} ) );
+            // }
         },
         activate:function(){
             var _t = this;
@@ -37,13 +37,20 @@ define([
                 _t.slide_input.attr("value",_slide_id);
             });
 
+            _t.slider.model.on("change:ready", function(){
+                console.log("slider ready changed");
+
+                _t.ready();
+                _t.slider.activateslidebyindex(0);
+            });
+
+            console.log("slider model : ", _t.slider.model);
+
             _t.order_form.submit(function(e){
                 e.preventDefault();
 
                 _t.submitorder();
             });
-
-            _t.slider.activateslidebyindex(0);
         },
         deactivate:function(){
             console.log("deactivate " + this.id);
