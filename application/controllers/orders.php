@@ -18,7 +18,7 @@ class Orders extends CI_Controller {
 	public function add(){
 		$post = $this->input->post();
 
-		$already_ordered = $this->order_model->get( array("ref_client_id"=>$post["ref_client_id"], "count"=>true) );
+		$already_ordered = $this->order_model->get( array("ref_client_id"=>intval( $post["ref_client_id"] ), "count"=>true) );
 		$order_id = $this->order_model->add($post);
 
 		$response = array();
