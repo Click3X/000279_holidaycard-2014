@@ -9,8 +9,10 @@ define([
     var Complete = PageTemplate.extend({
         template: _.template( T ),
         activate:function(){
+            var _t = this;
+            
             $('body').animate({scrollTop:0}, {duration:400, easing: "easeInOutQuart", complete:function(){
-                this.ready();
+                _t.ready();
             }});
         },
         append:function(){
