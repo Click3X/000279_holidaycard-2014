@@ -1,6 +1,7 @@
 // ANIMATE HEADER
+
 // RED ORNAMENT
-@-webkit-keyframes rotateOrnament {
+@-webkit-keyframes rotateRedOrnament {
 	0% { @include prefix(transform, rotate(0deg)); }
 	5% { @include prefix(transform, rotate(1deg)); }
 	25% { @include prefix(transform, rotate(5deg)); }
@@ -10,7 +11,7 @@
 	100% { @include prefix(transform, rotate(0deg)); }
 }
 
-@-moz-keyframes rotateOrnament {
+@-moz-keyframes rotateRedOrnament {
 	0% { @include prefix(transform, rotate(0deg)); }
 	5% { @include prefix(transform, rotate(1deg)); }
 	25% { @include prefix(transform, rotate(5deg)); }
@@ -19,7 +20,7 @@
 	95% { @include prefix(transform, rotate(-1deg)); }
 	100% { @include prefix(transform, rotate(0deg)); }
 }
-@-o-keyframes rotateOrnament {
+@-o-keyframes rotateRedOrnament {
 	0% { @include prefix(transform, rotate(0deg)); }
 	5% { @include prefix(transform, rotate(1deg)); }
 	25% { @include prefix(transform, rotate(5deg)); }
@@ -28,7 +29,7 @@
 	95% { @include prefix(transform, rotate(-1deg)); }
 	100% { @include prefix(transform, rotate(0deg)); }
 }
-@keyframes rotateOrnament {
+@keyframes rotateRedOrnament {
 	0% { @include prefix(transform, rotate(0deg)); }
 	5% { @include prefix(transform, rotate(1deg)); }
 	25% { @include prefix(transform, rotate(5deg)); }
@@ -42,16 +43,16 @@
 
 	@include prefix(transform-origin, top);
 
-	-webkit-animation: rotateOrnament 3s infinite; /* Safari 4+ */
-	-moz-animation:    rotateOrnament 3s infinite; /* Fx 1+ */
-	-o-animation:      rotateOrnament 3s infinite; /* Opera 12+ */
-	animation:         rotateOrnament 3s infinite; /* IE 10+, Fx 29+ */
+	-webkit-animation: rotateRedOrnament 3s infinite; /* Safari 4+ */
+	-moz-animation:    rotateRedOrnament 3s infinite; /* Fx 1+ */
+	-o-animation:      rotateRedOrnament 3s infinite; /* Opera 12+ */
+	animation:         rotateRedOrnament 3s infinite; /* IE 10+, Fx 29+ */
 
 }
 
 
-// RED ORNAMENT
-@-webkit-keyframes rotateRedOrnament {
+// GREEN ORNAMENT
+@-webkit-keyframes rotateGreenOrnament {
 	0% { @include prefix(transform, rotate(0deg)); }
 	5% { @include prefix(transform, rotate(.5deg)); }
 	25% { @include prefix(transform, rotate(2.5deg)); }
@@ -61,7 +62,7 @@
 	100% { @include prefix(transform, rotate(0deg)); }
 }
 
-@-moz-keyframes rotateRedOrnament {
+@-moz-keyframes rotateGreenOrnament {
 	0% { @include prefix(transform, rotate(0deg)); }
 	5% { @include prefix(transform, rotate(.5deg)); }
 	25% { @include prefix(transform, rotate(2.5deg)); }
@@ -70,7 +71,7 @@
 	95% { @include prefix(transform, rotate(-.5deg)); }
 	100% { @include prefix(transform, rotate(0deg)); }
 }
-@-o-keyframes rotateRedOrnament {
+@-o-keyframes rotateGreenOrnament {
 	0% { @include prefix(transform, rotate(0deg)); }
 	5% { @include prefix(transform, rotate(.5deg)); }
 	25% { @include prefix(transform, rotate(2.5deg)); }
@@ -79,7 +80,7 @@
 	95% { @include prefix(transform, rotate(-.5deg)); }
 	100% { @include prefix(transform, rotate(0deg)); }
 }
-@keyframes rotateRedOrnament {
+@keyframes rotateGreenOrnament {
 	0% { @include prefix(transform, rotate(0deg)); }
 	5% { @include prefix(transform, rotate(.5deg)); }
 	25% { @include prefix(transform, rotate(2.5deg)); }
@@ -93,9 +94,266 @@
 
 	@include prefix(transform-origin, top);
 
-	-webkit-animation: rotateRedOrnament 5s infinite; /* Safari 4+ */
-	-moz-animation:    rotateRedOrnament 5s infinite; /* Fx 1+ */
-	-o-animation:      rotateRedOrnament 5s infinite; /* Opera 12+ */
-	animation:         rotateRedOrnament 5s infinite; /* IE 10+, Fx 29+ */
+	-webkit-animation: rotateGreenOrnament 5s infinite; /* Safari 4+ */
+	-moz-animation:    rotateGreenOrnament 5s infinite; /* Fx 1+ */
+	-o-animation:      rotateGreenOrnament 5s infinite; /* Opera 12+ */
+	animation:         rotateGreenOrnament 5s infinite; /* IE 10+, Fx 29+ */
+
+}
+
+// STAR ORNAMENT
+@-webkit-keyframes rotateStarOrnament {
+	0% { @include prefix(transform, rotate(0deg)); }
+	5% { @include prefix(transform, rotate(1.5deg)); }
+	25% { @include prefix(transform, rotate(3.5deg)); }
+	50% { @include prefix(transform, rotate(-1.5deg)); }
+	75% { @include prefix(transform, rotate(1.5deg)); }
+	90% { @include prefix(transform, rotate(-.5deg)); }
+	100% { @include prefix(transform, rotate(0deg)); }
+}
+
+@-moz-keyframes rotateStarOrnament {
+	0% { @include prefix(transform, rotate(0deg)); }
+	5% { @include prefix(transform, rotate(1.5deg)); }
+	25% { @include prefix(transform, rotate(3.5deg)); }
+	50% { @include prefix(transform, rotate(-1.5deg)); }
+	75% { @include prefix(transform, rotate(1.5deg)); }
+	90% { @include prefix(transform, rotate(-.5deg)); }
+	100% { @include prefix(transform, rotate(0deg)); }
+}
+@-o-keyframes rotateStarOrnament {
+	0% { @include prefix(transform, rotate(0deg)); }
+	5% { @include prefix(transform, rotate(1.5deg)); }
+	25% { @include prefix(transform, rotate(3.5deg)); }
+	50% { @include prefix(transform, rotate(-1.5deg)); }
+	75% { @include prefix(transform, rotate(1.5deg)); }
+	90% { @include prefix(transform, rotate(-.5deg)); }
+	100% { @include prefix(transform, rotate(0deg)); }
+}
+@keyframes rotateStarOrnament {
+	0% { @include prefix(transform, rotate(0deg)); }
+	5% { @include prefix(transform, rotate(1.5deg)); }
+	25% { @include prefix(transform, rotate(3.5deg)); }
+	50% { @include prefix(transform, rotate(-1.5deg)); }
+	75% { @include prefix(transform, rotate(1.5deg)); }
+	90% { @include prefix(transform, rotate(-.5deg)); }
+	100% { @include prefix(transform, rotate(0deg)); }
+}
+
+
+#star_ornament {
+
+	@include prefix(transform-origin, top);
+
+	-webkit-animation: rotateStarOrnament 5s infinite; /* Safari 4+ */
+	-moz-animation:    rotateStarOrnament 5s infinite; /* Fx 1+ */
+	-o-animation:      rotateStarOrnament 5s infinite; /* Opera 12+ */
+	animation:         rotateStarOrnament 5s infinite; /* IE 10+, Fx 29+ */
+
+}
+
+
+// ARM
+@-webkit-keyframes rotateArm {
+	0% { @include prefix(transform, rotate(0deg)); }
+	5% { @include prefix(transform, rotate(1.5deg)); }
+	25% { @include prefix(transform, rotate(9.5deg)); }
+	50% { @include prefix(transform, rotate(-1.5deg)); }
+	75% { @include prefix(transform, rotate(6.5deg)); }
+	90% { @include prefix(transform, rotate(-.5deg)); }
+	100% { @include prefix(transform, rotate(0deg)); }
+}
+
+@-moz-keyframes rotateArm {
+	0% { @include prefix(transform, rotate(0deg)); }
+	5% { @include prefix(transform, rotate(1.5deg)); }
+	25% { @include prefix(transform, rotate(9.5deg)); }
+	50% { @include prefix(transform, rotate(-1.5deg)); }
+	75% { @include prefix(transform, rotate(6.5deg)); }
+	90% { @include prefix(transform, rotate(-.5deg)); }
+	100% { @include prefix(transform, rotate(0deg)); }
+}
+@-o-keyframes rotateArm {
+	0% { @include prefix(transform, rotate(0deg)); }
+	5% { @include prefix(transform, rotate(1.5deg)); }
+	25% { @include prefix(transform, rotate(9.5deg)); }
+	50% { @include prefix(transform, rotate(-1.5deg)); }
+	75% { @include prefix(transform, rotate(6.5deg)); }
+	90% { @include prefix(transform, rotate(-.5deg)); }
+	100% { @include prefix(transform, rotate(0deg)); }
+}
+@keyframes rotateArm {
+	0% { @include prefix(transform, rotate(0deg)); }
+	5% { @include prefix(transform, rotate(1.5deg)); }
+	25% { @include prefix(transform, rotate(9.5deg)); }
+	50% { @include prefix(transform, rotate(-1.5deg)); }
+	75% { @include prefix(transform, rotate(6.5deg)); }
+	90% { @include prefix(transform, rotate(-.5deg)); }
+	100% { @include prefix(transform, rotate(0deg)); }
+}
+
+#arm {
+
+	@include prefix(transform-origin, left);
+
+	-webkit-animation: rotateArm 4s infinite; /* Safari 4+ */
+	-moz-animation:    rotateArm 4s infinite; /* Fx 1+ */
+	-o-animation:      rotateArm 4s infinite; /* Opera 12+ */
+	animation:         rotateArm 4s infinite; /* IE 10+, Fx 29+ */
+
+}
+
+
+// TAIL
+@-webkit-keyframes rotateTail {
+	0% { @include prefix(transform, rotate(0deg)); }
+	5% { @include prefix(transform, rotate(5.5deg)); }
+	25% { @include prefix(transform, rotate(16.5deg)); }
+	50% { @include prefix(transform, rotate(-5.5deg)); }
+	75% { @include prefix(transform, rotate(16.5deg)); }
+	90% { @include prefix(transform, rotate(-5.5deg)); }
+	100% { @include prefix(transform, rotate(0deg)); }
+}
+
+@-moz-keyframes rotateTail {
+	0% { @include prefix(transform, rotate(0deg)); }
+	5% { @include prefix(transform, rotate(5.5deg)); }
+	25% { @include prefix(transform, rotate(16.5deg)); }
+	50% { @include prefix(transform, rotate(-5.5deg)); }
+	75% { @include prefix(transform, rotate(16.5deg)); }
+	90% { @include prefix(transform, rotate(-5.5deg)); }
+	100% { @include prefix(transform, rotate(0deg)); }
+}
+@-o-keyframes rotateTail {
+	0% { @include prefix(transform, rotate(0deg)); }
+	5% { @include prefix(transform, rotate(5.5deg)); }
+	25% { @include prefix(transform, rotate(16.5deg)); }
+	50% { @include prefix(transform, rotate(-5.5deg)); }
+	75% { @include prefix(transform, rotate(16.5deg)); }
+	90% { @include prefix(transform, rotate(-5.5deg)); }
+	100% { @include prefix(transform, rotate(0deg)); }
+}
+@keyframes rotateTail {
+	0% { @include prefix(transform, rotate(0deg)); }
+	5% { @include prefix(transform, rotate(5.5deg)); }
+	25% { @include prefix(transform, rotate(16.5deg)); }
+	50% { @include prefix(transform, rotate(-5.5deg)); }
+	75% { @include prefix(transform, rotate(16.5deg)); }
+	90% { @include prefix(transform, rotate(-5.5deg)); }
+	100% { @include prefix(transform, rotate(0deg)); }
+}
+
+#tail {
+
+	@include prefix(transform-origin, right);
+
+	-webkit-animation: rotateTail 5s infinite; /* Safari 4+ */
+	-moz-animation:    rotateTail 5s infinite; /* Fx 1+ */
+	-o-animation:      rotateTail 5s infinite; /* Opera 12+ */
+	animation:         rotateTail 5s infinite; /* IE 10+, Fx 29+ */
+
+}
+
+// BALLON 1
+@-webkit-keyframes rotateBallonOne {
+	0% { @include prefix(transform, translate(0, 0)); }
+	50% { @include prefix(transform, translate(15px, -15px)); }
+	100% { @include prefix(transform, translate(0, 0)); }
+}
+
+@-moz-keyframes rotateBallonOne {
+	0% { @include prefix(transform, translate(0, 0)); }
+	50% { @include prefix(transform, translate(15px, -15px)); }
+	100% { @include prefix(transform, translate(0, 0)); }
+}
+@-o-keyframes rotateBallonOne {
+	0% { @include prefix(transform, translate(0, 0)); }
+	50% { @include prefix(transform, translate(15px, -15px)); }
+	100% { @include prefix(transform, translate(0, 0)); }
+}
+@keyframes rotateBallonOne {
+	0% { @include prefix(transform, translate(0, 0)); }
+	50% { @include prefix(transform, translate(15px, -15px)); }
+	100% { @include prefix(transform, translate(0, 0)); }
+}
+
+#balloon1 {
+
+	// @include prefix(transform-origin, right);
+
+	-webkit-animation: rotateBallonOne 6s infinite; /* Safari 4+ */
+	-moz-animation:    rotateBallonOne 6s infinite; /* Fx 1+ */
+	-o-animation:      rotateBallonOne 6s infinite; /* Opera 12+ */
+	animation:         rotateBallonOne 6s infinite; /* IE 10+, Fx 29+ */
+
+}
+
+// BALLON 2
+@-webkit-keyframes rotateBallonTwo {
+	0% { @include prefix(transform, translate(0, 0)); }
+	50% { @include prefix(transform, translate(15px, -5px)); }
+	100% { @include prefix(transform, translate(0, 0)); }
+}
+
+@-moz-keyframes rotateBallonTwo {
+	0% { @include prefix(transform, translate(0, 0)); }
+	50% { @include prefix(transform, translate(15px, -5px)); }
+	100% { @include prefix(transform, translate(0, 0)); }
+}
+@-o-keyframes rotateBallonTwo {
+	0% { @include prefix(transform, translate(0, 0)); }
+	50% { @include prefix(transform, translate(15px, -5px)); }
+	100% { @include prefix(transform, translate(0, 0)); }
+}
+@keyframes rotateBallonTwo {
+	0% { @include prefix(transform, translate(0, 0)); }
+	50% { @include prefix(transform, translate(15px, -5px)); }
+	100% { @include prefix(transform, translate(0, 0)); }
+}
+
+#balloon2 {
+
+	// @include prefix(transform-origin, right);
+
+	-webkit-animation: rotateBallonTwo 3.5s infinite; /* Safari 4+ */
+	-moz-animation:    rotateBallonTwo 3.5s infinite; /* Fx 1+ */
+	-o-animation:      rotateBallonTwo 3.5s infinite; /* Opera 12+ */
+	animation:         rotateBallonTwo 3.5s infinite; /* IE 10+, Fx 29+ */
+
+}
+
+
+
+// BALLON 3
+@-webkit-keyframes rotateBallonThree {
+	0% { @include prefix(transform, translate(0, 0)); }
+	50% { @include prefix(transform, translate(1px, -10px)); }
+	100% { @include prefix(transform, translate(0, 0)); }
+}
+
+@-moz-keyframes rotateBallonThree {
+	0% { @include prefix(transform, translate(0, 0)); }
+	50% { @include prefix(transform, translate(1px, -10px)); }
+	100% { @include prefix(transform, translate(0, 0)); }
+}
+@-o-keyframes rotateBallonThree {
+	0% { @include prefix(transform, translate(0, 0)); }
+	50% { @include prefix(transform, translate(1px, -10px)); }
+	100% { @include prefix(transform, translate(0, 0)); }
+}
+@keyframes rotateBallonThree {
+	0% { @include prefix(transform, translate(0, 0)); }
+	50% { @include prefix(transform, translate(1px, -10px)); }
+	100% { @include prefix(transform, translate(0, 0)); }
+}
+
+#balloon3 {
+
+	// @include prefix(transform-origin, right);
+
+	-webkit-animation: rotateBallonThree 3s infinite; /* Safari 4+ */
+	-moz-animation:    rotateBallonThree 3s infinite; /* Fx 1+ */
+	-o-animation:      rotateBallonThree 3s infinite; /* Opera 12+ */
+	animation:         rotateBallonThree 3s infinite; /* IE 10+, Fx 29+ */
 
 }
