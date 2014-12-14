@@ -25,11 +25,11 @@ define([
             });
         },
         play:function(){
-            if(mobile){
+            if(mobile == true){
                 $(this.mobile_video).css("opacity","1");
                 this.mobile_video.play();
             } else{
-                this.poster.hide();
+                this.poster.fadeOut(300);
                 this.video.play();
             }
         },

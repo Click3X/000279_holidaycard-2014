@@ -10,8 +10,6 @@ for(i in search_strings){
     else mobile = false;
 }
 
-alert(mobile + " " + uagent);
-
 /*---mp4------*/
 var mp4 = ( Modernizr.video && document.createElement('video').canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2') );
 
