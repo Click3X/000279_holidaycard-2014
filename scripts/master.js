@@ -9,7 +9,7 @@ for(i in search_strings){
     if( uagent.search( search_strings[i] ) > -1 ) mobile = true;
 }
 
-alert(mobile,uagent);
+alert(mobile + " " + uagent);
 
 /*---mp4------*/
 var mp4 = ( Modernizr.video && document.createElement('video').canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2') );
