@@ -88,7 +88,7 @@ input[type=radio] {
 		display: block;
 		text-transform: capitalize;
 
-		font-weight: normal; 
+		font-weight:300;
 		color:$darkblue;
 	    margin:.75em 0 .25em;
 	    font-size: 1.2em;
@@ -105,7 +105,7 @@ input[type=radio] {
 		border-radius:6px;
 		border:1px solid $submitgrey;
         padding:0 14px;
-        font-weight: 200;
+        font-weight: 300;
         font-size: 1.2em; line-height: 3.4em;
         color: #b2b3b4;
 

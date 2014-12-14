@@ -47,9 +47,10 @@ define([
                 //hide answers. takes 200ms per answer
                 question_views[ _t.session.getactivequestionindex() ].hideanswers();
 
+                console.log($("body").scrollTop() , navigation_view.$el.offset().top - 20)
                 //scroll to top
                 setTimeout(function(){
-                    if( $("body").css("scrollTop") < navigation_view.$el.offset().top - 20)
+                    if( $("body").scrollTop() > navigation_view.$el.offset().top - 20)
                         $("body").animate({scrollTop: ( navigation_view.$el.offset().top - 20 ) + "px"}, {duration:500, easing: "easeInOutCubic", complete:function(){
                             _t.initnextquestion();
                         }});
