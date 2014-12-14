@@ -5,11 +5,11 @@ var i,svg,mobile,retina,mp4,
 uagent = navigator.userAgent.toLowerCase(),
 search_strings = [ "iphone","ipod","series60","symbian","android","windows ce","windows7phone","w7p","blackberry","palm" ];
 
-alert(uagent);
-
 for(i in search_strings){
     if( uagent.search( search_strings[i] ) > -1 ) mobile = true;
 }
+
+alert(mobile,uagent);
 
 /*---mp4------*/
 var mp4 = ( Modernizr.video && document.createElement('video').canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2') );
