@@ -106,12 +106,13 @@ input[type=radio] {
 		border:1px solid $submitgrey;
         padding:0 14px;
         font-weight: 300;
-        font-size: 1.2em; line-height: 3.4em;
+        font-size: 1.2em; line-height: 3.4em; 
+        height: 3.4em;
         color: #b2b3b4;
 
         @include prefix( box-shadow, none );
 
-		@media(min-width: 600px) { font-size: 1.4em; line-height: 3.8em; }
+		@media(min-width: 600px) { font-size: 1.4em; line-height: 3.8em; height: 3.8em; }
 
 		&:focus, &:active{
 			border-color:$blue;

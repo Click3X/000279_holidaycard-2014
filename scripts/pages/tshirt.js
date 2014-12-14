@@ -33,21 +33,15 @@ define([
 
             _t.slider = new SliderView({ el:this.$el.find(".slider")[0] });
             _t.slider.on("slidechanged", function(_slide_id){
-                console.log("slidechanged", _slide_id);
-
                 _t.slide_input.attr("value",_slide_id);
             });
 
             _t.slider.model.on("change:ready", function(){
-                console.log("slider ready changed");
-
                 $('body').animate({scrollTop:0}, {duration:500, easing: "easeInOutCubic", complete:function(){
                     _t.ready();
                     _t.slider.activateslidebyindex(0);
                 }});
             });
-
-            console.log("slider model : ", _t.slider.model);
 
             _t.order_form.submit(function(e){
                 e.preventDefault();
@@ -55,20 +49,14 @@ define([
                 _t.submitorder();
             });
 
-            console.log(_t.state_select);
-
-            _t.state_select.children("option[value='"+this.session.attributes.client.attributes.state+"']").attr("selected","selected");
+            _t.state_select.val(this.session.attributes.client.attributes.state);
         },
         deactivate:function(){
-            console.log("deactivate " + this.id);
-
             this.$el.find("li a").off("click");
 
             this.slider.remove();
         },
         submitorder:function(){
-            console.log("submit order!");
-
             var _t = this;
 
             if(!_t.form_container.hasClass("sending")){

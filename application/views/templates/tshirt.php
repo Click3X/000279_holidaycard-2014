@@ -60,9 +60,9 @@
 					<div class="state-holder clearfix">
 						<div class="input-inner">
 							<label for="state" class="form-txt">state</label>
-							<select class="state" name="state">
+							<select class="state" name="state" autocomplete="off">
 								<?php foreach ($states as $key => $state): ?>
-								<option value="<?php echo $state->state_abbr; ?>"><?php echo $state->state_name; ?></option>
+								<option autocomplete="off" value="<?php echo $state->state_abbr; ?>"><?php echo $state->state_name; ?></option>
 								<?php endforeach; ?>
 							</select>
 						</div>
