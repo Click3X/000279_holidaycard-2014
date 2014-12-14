@@ -34,13 +34,13 @@ define([
             }
         },
         pause:function(){
-            if(mobile) this.mobile_video.pause();
+            if(mobile == true) this.mobile_video.pause();
             else this.video.pause();
         },
         load:function(_url, _type, _thumb){
             var _t = this;
 
-            if(mobile){
+            if(mobile == true){
                 $( _t.video ).remove();
                 if(_type) $( _t.mobile_video ).attr( "type", "video/" + _type );
                 if(_url) $( _t.mobile_video ).attr( "src", _url );
