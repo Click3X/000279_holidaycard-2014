@@ -19,7 +19,7 @@ define([
                 this.$el.html( this.template( this.session.attributes.client.attributes ) );
             }else{
                 this.$el.html( "<h5>Sorry, that's not a valid gift code.</h5>");
-                this.$el.html( this.template( {id:"0", first_name:"Jason", address:"15 Warren St #121", city:"Jersey City", state:"NJ", zip:"07302"} ) );
+                //this.$el.html( this.template( {id:"0", first_name:"Jason", address:"15 Warren St #121", city:"Jersey City", state:"NJ", zip:"07302"} ) );
             }
         },
         activate:function(){
