@@ -7,6 +7,7 @@ search_strings = [ "iphone","ipod","series60","symbian","android","windows ce","
 
 for(i in search_strings){
     if( uagent.search( search_strings[i] ) > -1 ) mobile = true;
+    else mobile = false;
 }
 
 alert(mobile + " " + uagent);
