@@ -58,16 +58,20 @@
 				<input type="text" name="city" id="city" value="<%= city %>" />
 				<div class="state-zip-holder clearfix">
 					<div class="state-holder clearfix">
-						<label for="state" class="form-txt">state</label>
-						<select class="state" name="state">
-							<?php foreach ($states as $key => $state): ?>
-							<option value="<?php echo $state->state_abbr; ?>"><?php echo $state->state_name; ?></option>
-							<?php endforeach; ?>
-						</select>
+						<div class="input-inner">
+							<label for="state" class="form-txt">state</label>
+							<select class="state" name="state">
+								<?php foreach ($states as $key => $state): ?>
+								<option value="<?php echo $state->state_abbr; ?>"><?php echo $state->state_name; ?></option>
+								<?php endforeach; ?>
+							</select>
+						</div>
 					</div>
 					<div class="zip-holder">
-						<label for="zip" class="form-txt zip">zip code</label>
-						<input type="text" name="zip" id="zip" value="<%= zip %>">
+						<div class="input-inner">
+							<label for="zip" class="form-txt zip">zip code</label>
+							<input type="text" name="zip" id="zip" value="<%= zip %>">
+						</div>
 					</div>
 				</div>
 				<span class="error"></span>

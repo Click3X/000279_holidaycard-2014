@@ -222,7 +222,7 @@
 
 // FOOTER 
 .footer {
-    padding: 0 .5em;
+    padding: 80px 20px;
     opacity: 0;
 
     &.ready{
@@ -278,79 +278,3 @@
 }
 
 .red { color:$red; }
-
-.fb, .tw, .start-over {
-    display: block;
-    background-size: contain;
-    background-repeat:no-repeat;
-}
-
-.fb, .tw {
-    margin: 14px;
-    width: 67px;
-    height: 68px;
-
-    @media(min-width: 481px) {
-        margin:0;
-        width: 87px;
-        height: 88px;
-    }
-}
-
-.fb { background-image:url('../../images/ui/fb.png'); }
-.tw { background-image:url('../../images/ui/tw.png'); }
-
-.fb {float: left;}
-.tw {float: right;}
-
-.social-buttons {
-    width: 100%;
-    max-width: 200px;
-    text-align:center;
-    margin:0 auto;
-    .share-it {
-        text-align: center;
-        text-transform: uppercase;
-        color: #41729d;
-        font-weight:700;
-        font-family: "proxima-nova-alt-ext-cond",sans-serif;
-        letter-spacing: 0.06em;
-        max-width: 15em;
-        font-size: 2.1em;
-        line-height: 1.5em;
-        display: inline-block;
-    }
-}
-
-.button-holder {
-    width: 100%;
-    max-width: 640px;
-    margin: 2em auto 0;
-}
-
-.start-over-holder {
-    margin:1em auto;
-    text-align: center;
-
-    .start-over-btn {
-        display: inline-block;
-        text-decoration: none;
-        font-weight: 600;
-        background-color:$submitblue;
-        padding:0 1em;
-        @include prefix(transition, all 200ms);
-
-        &:hover {
-            color:#ffffff;
-            background-color: $darkblue;
-        }
-    }
-}
-
-.c-half {
-    width: 100%;
-    @media(min-width:481px) {
-        width: 50%;
-        float:left;
-    }
-}

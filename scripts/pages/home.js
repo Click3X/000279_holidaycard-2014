@@ -16,10 +16,10 @@ define([
             console.log(_t.session.get("questions"));
 
             //build question views
-            _t.$el.find(".question").each(function(){
+            _t.$el.find(".question").each(function(i, _this){
                 question_views.push( 
                     new QuestionView({ 
-                        el:this, 
+                        el:_this, 
                         collection:_t.session.get("questions") 
                     })
                 );
@@ -44,15 +44,18 @@ define([
                     }, 400 );
                 }
             }).on("change:selection", function(_question){
-
-                console.log();
-
-                //scroll to top
+                //hide answers. takes 200ms per answer
                 question_views[ _t.session.getactivequestionindex() ].hideanswers();
 
-                $('body').delay( _t.session.getactivequestion().get("answers").length*205 ).animate({scrollTop: ( navigation_view.$el.offset().top - 20 ) + "px"}, {duration:400, easing: "easeInOutQuart", complete:function(){
-                    _t.initnextquestion();
-                }});
+                //scroll to top
+                setTimeout(function(){
+                    if( $("body").css("scrollTop") < navigation_view.$el.offset().top - 20)
+                        $("body").animate({scrollTop: ( navigation_view.$el.offset().top - 20 ) + "px"}, {duration:500, easing: "easeInOutCubic", complete:function(){
+                            _t.initnextquestion();
+                        }});
+                    else
+                        _t.initnextquestion();
+                }, _t.session.getactivequestion().get("answers").length*205 );
             }).on("change:story_path", function(_changed_model){
                 var newpath =  _changed_model.get("story_path");
 

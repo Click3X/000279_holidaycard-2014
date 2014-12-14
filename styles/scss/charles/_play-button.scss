@@ -1,0 +1,27 @@
+.play-button {
+    height: 160px;
+	width: 160px;
+	background-color: $submitblue;
+	border-radius: 80px;
+	position: absolute;
+	display:inline-block;
+	margin:-80px 0 0 -80px;
+	left:50%;
+	top:50%;
+}
+
+.play-button:after {
+    content: "";
+	display: block;
+	position: absolute;
+	top: 40px;
+	left: 58px;
+	margin: 0;
+	border-style: solid;
+	border-width: 40px 0 40px 60px;
+	border-color: transparent transparent transparent #fff;
+}
+
+div.poster:hover .play-button{
+	background-color: $darkblue;
+}

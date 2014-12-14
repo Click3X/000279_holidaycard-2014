@@ -6,9 +6,10 @@
     top:2%; 
     left:0; right:0;
     margin:0 auto;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
 }
 
-.snow-container {  padding-bottom:65.5%; }
+.snow-container {  padding-bottom:65.5%; box-shadow: 0 0 1px rgba(0, 0, 0, 0.05); }
 
 @media (min-width: 640px) {
     .snow-container { padding-bottom: 418px; }

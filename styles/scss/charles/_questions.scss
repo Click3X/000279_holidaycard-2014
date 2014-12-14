@@ -13,6 +13,7 @@
     margin-right:auto;
     max-width: 90%;
 
+
     @media(min-width: 460px) { font-size: 2.8em; max-width:440px; }
     @media(min-width: 700px) { font-size: 3.6em; max-width:700px; margin-bottom: 20px; margin-top:10px;}
     @media(min-width: 960px) { font-size: 4.0em; }
@@ -76,28 +77,38 @@ ul.answer-list, ul.tshirt-slides {
     li { counter-increment: list-counter; }
     
     .question-label { 
-        margin-top:1.5em; 
-        @media(min-width: 680px){ margin-top:2em; }
+        margin-top:1.0em; 
+        margin-bottom: 1em;
+
+        @media(min-width: 640px){ margin-top:1.5em; }
     }
 
     .question-label:before {
         content: counter(list-counter);
         display: block;
-        border-radius: 50%;
+        border-radius: 20px;
         background-color: $red;
         font-family: Georgia, serif;
         color:white;
         font-style: italic;
         margin:0 auto;
         text-align: center;
-        
+        padding:0;
         position: absolute;
         left: 0; right: 0;
         z-index: 2;
-
-        line-height: 1.1em;
-        font-size: 2em;
-        width: 1.6em; height: 1.6em;
+        vertical-align: middle;
+        line-height: 27px;
+        font-size: 1.8em;
+        width: 40px; height: 40px;
         border:2px solid #fff;
+
+        @media(min-width: 640px){ 
+            border-radius: 25px;
+            font-size: 2em;
+            line-height: 38px;
+            width: 50px; height: 50px;
+            margin-top: -5px;
+        }
     }
 }
