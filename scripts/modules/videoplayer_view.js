@@ -25,12 +25,11 @@ define([
             });
         },
         play:function(){
-            this.poster.css("display","none");
-
             if(mobile){
                 $(this.mobile_video).css("opacity","1");
                 this.mobile_video.play();
             } else{
+                this.poster.hide();
                 this.video.play();
             }
         },
