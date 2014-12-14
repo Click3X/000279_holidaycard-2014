@@ -1,13 +1,15 @@
 'use strict';
 
 /*----- user agent ------*/
-var i,svg,mobile = false,retina,mp4,
+var i,svg,mobile = false,retina,mp4,ipad = false,
 uagent = navigator.userAgent.toLowerCase(),
 search_strings = [ "iphone","ipod","series60","symbian","android","windows ce","windows7phone","w7p","blackberry","palm" ];
 
 for(i in search_strings){
     if( uagent.search( search_strings[i] ) > -1 ) mobile = true;
 }
+
+if( uagent.search( "ipad" ) > -1 ) ipad = true;
 
 /*---mp4------*/
 var mp4 = ( Modernizr.video && document.createElement('video').canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2') );
@@ -64,6 +66,7 @@ function setbodytags(){
     document.body.className = "noselect";
     if(mobile == true) document.body.className+=" mobile";
     if(retina) document.body.className+=" retina";
+    if(ipad) document.body.className+=" ipad";
     // if(svg) document.body.className+=" svg";
     // if(mp4) document.body.className+=" mp4";
 }

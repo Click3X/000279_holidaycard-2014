@@ -212,7 +212,7 @@ ul.answer-list{
     }
 }
 
-body.mobile{
+body.mobile, body.ipad{
     ul.answer-list{
         li{
             &:hover{
@@ -226,6 +226,12 @@ body.mobile{
                             @include prefix(box-shadow, 6px 6px 0 0 #ffffff );
                         }
                     }
+                }
+            }
+
+            &.active{
+                .answer-inner{
+                    border:6px solid $lightblue;
                 }
             }
         }
