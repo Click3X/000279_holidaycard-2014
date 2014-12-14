@@ -5,7 +5,7 @@ define([
 
     var AnswerView = Backbone.View.extend({
     	events:{
-    		"click a":"clicked"
+    		"click a":"clicked",
     	},
         initialize:function(){
         	console.log("initialize answer view");
@@ -36,6 +36,14 @@ define([
         	_t.collection.push(_t.model);
         	_t.onactivechanged();
             _t.loadimage();
+
+            _t.$el.on("tap",function(){
+                if(mobile == true){
+                    TweenMax.to( _t.$el.find(".answer-inner").eq(0) , .15, { 
+                        opacity:.6, repeat:1, yoyo:true, ease:"linear" 
+                    });
+                }
+            });
         },
         loadimage:function(){
         	var _t = this, img = new Image();

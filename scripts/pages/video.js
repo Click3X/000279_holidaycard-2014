@@ -73,7 +73,7 @@ define([
         onvideoready:function(){
             var _t = this;
 
-            $('body').animate({ scrollTop: $("#page-container").offset().top }, {duration:500, easing: "easeInOutCubic", complete:function(){
+            $('body').animate({ scrollTop: $("#page-container").offset().top - 10 }, {duration:500, easing: "easeInOutCubic", complete:function(){
                 _t.ready();
                 _t.showfooter();
             }});

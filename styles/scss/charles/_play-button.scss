@@ -8,6 +8,7 @@
 	margin:-80px 0 0 -80px;
 	left:50%;
 	top:50%;
+	opacity:1;
 }
 
 .play-button:after {
@@ -24,4 +25,8 @@
 
 div.poster:hover .play-button{
 	background-color: $darkblue;
+}
+
+body.mobile div.poster:hover .play-button{
+	background-color: $submitblue;
 }

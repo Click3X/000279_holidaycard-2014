@@ -35,8 +35,10 @@
 }
 
 .start-over-holder {
-    margin:40px auto 0 auto;
+    margin:30px auto 0 auto;
     text-align: center;
+
+    @media(min-width:640px){ margin:40px auto 0 auto; }
 
     .start-over-btn {
         display: inline-block;
@@ -44,6 +46,7 @@
         font-weight: 600;
         background-color:$submitblue;
         padding:0 1.8em;
+
         @include prefix(transition, all 200ms);
 
         &:hover {

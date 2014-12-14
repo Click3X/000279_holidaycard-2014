@@ -1,13 +1,12 @@
 'use strict';
 
 /*----- user agent ------*/
-var i,svg,mobile,retina,mp4,
+var i,svg,mobile = false,retina,mp4,
 uagent = navigator.userAgent.toLowerCase(),
 search_strings = [ "iphone","ipod","series60","symbian","android","windows ce","windows7phone","w7p","blackberry","palm" ];
 
 for(i in search_strings){
     if( uagent.search( search_strings[i] ) > -1 ) mobile = true;
-    else mobile = false;
 }
 
 /*---mp4------*/
@@ -63,7 +62,7 @@ window.twttr=(function(d,s,id){
 /*--------set default body tags---------*/
 function setbodytags(){
     document.body.className = "noselect";
-    if(mobile) document.body.className+=" mobile";
+    if(mobile == true) document.body.className+=" mobile";
     if(retina) document.body.className+=" retina";
     // if(svg) document.body.className+=" svg";
     // if(mp4) document.body.className+=" mp4";

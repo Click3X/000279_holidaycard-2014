@@ -2,6 +2,8 @@
 
 define([
     'jquery',
+    'mobile',
+    'tweenmax',
     'easing',
     'backbone',
     'pages/home',
@@ -9,7 +11,7 @@ define([
     'pages/tshirt',
     'pages/complete',
     'models/session'
-], function ($, E, Backbone, Home, Video, TShirt, Complete, Session) {
+], function ($, Mobile, TweenMax, E, Backbone, Home, Video, TShirt, Complete, Session) {
     'use strict';
 
     var RouterRouter = Backbone.Router.extend({
@@ -17,6 +19,7 @@ define([
         giftcode_form:null,
     	initialize:function(){
     		console.log("initialize router");
+            
             var _t = this;
 
             _t.session              = new Session();

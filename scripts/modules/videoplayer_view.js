@@ -25,9 +25,7 @@ define([
             });
         },
         play:function(){
-            if(mobile == true){
-                $(this.mobile_video).css("opacity","1");
-            } else{
+            if(mobile == false){
                 this.video.play();
             }
         },
@@ -42,10 +40,6 @@ define([
                 $( _t.video ).remove();
                 if(_type) $( _t.mobile_video ).attr( "type", "video/" + _type );
                 if(_url) $( _t.mobile_video ).attr( "src", _url );
-                
-                $(_t.mobile_video).on("play", function(){
-                    _t.poster.fadeOut(300);
-                });
             } else {
                 $( _t.mobile_video ).remove();
                 if(_type) $( _t.video ).attr( "type", "video/" + _type );

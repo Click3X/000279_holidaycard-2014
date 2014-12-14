@@ -25,14 +25,14 @@ input[type=radio] {
 	text-transform: uppercase;
 	background-color:$btn-grey;
 	color:#ffffff;
-	font-size:1.8em; 
+	font-size:1.6em; 
     line-height: 2em;
     padding:0 .7em;
     border:1px solid white;
     letter-spacing: .03em;
 
     @media(min-width: 640px){ 
-    	font-size: 2.4em; 
+    	font-size: 2.3em; 
     }
 }
 
