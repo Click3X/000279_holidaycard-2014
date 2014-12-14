@@ -28,6 +28,7 @@ switch ($host) {
 	case 'holiday.dev':
 	case 'holidaycard.dev':
 	case 'localhost':
+	case '192.168.1.9':
 		define('ENVIRONMENT', 'local');
 	break;
 	default:

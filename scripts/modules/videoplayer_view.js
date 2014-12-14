@@ -27,9 +27,7 @@ define([
         play:function(){
             if(mobile == true){
                 $(this.mobile_video).css("opacity","1");
-                this.mobile_video.play();
             } else{
-                this.poster.fadeOut(300);
                 this.video.play();
             }
         },
@@ -44,10 +42,18 @@ define([
                 $( _t.video ).remove();
                 if(_type) $( _t.mobile_video ).attr( "type", "video/" + _type );
                 if(_url) $( _t.mobile_video ).attr( "src", _url );
+                
+                $(_t.mobile_video).on("play", function(){
+                    _t.poster.fadeOut(300);
+                });
             } else {
                 $( _t.mobile_video ).remove();
                 if(_type) $( _t.video ).attr( "type", "video/" + _type );
                 if(_url) $( _t.video ).attr( "src", _url );
+                
+                $(_t.video).on("play", function(){
+                    _t.poster.fadeOut(300);
+                });
             }
 
             if(_thumb) _t.loadposter(_thumb);
