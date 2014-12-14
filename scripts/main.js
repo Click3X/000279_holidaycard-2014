@@ -17,8 +17,6 @@ require.config({
     },
     paths: {
         jquery:     'scripts/vendor/jquery/jquery.min',
-        mobile:     'scripts/vendor/jquery/jquery.mobile.touch.min',
-        tweenmax:   'http://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.0/TweenMax.min',
         easing:     'scripts/vendor/jquery/jquery.easing',
         backbone:   'scripts/vendor/backbone/backbone',
         underscore: 'scripts/vendor/underscore/underscore-min',

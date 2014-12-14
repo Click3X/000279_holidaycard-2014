@@ -94,7 +94,6 @@ body.page-tshirt, body.page-complete{
                     height: 100%;
                     position: absolute;
                     z-index: 1;
-
                 }
 
                 video.mobile-video{
@@ -207,24 +206,6 @@ ul.answer-list{
                     h4{
                         @include prefix(box-shadow, none );
                     }
-                }
-            }
-        }
-    }
-}
-
-body.mobile{
-    ul.answer-list{
-        li:hover{
-            .answer-inner{
-                border:6px solid white;
-            }
-        }
-
-        a{
-            .question-label{
-                h4{
-                    @include prefix(box-shadow, 6px 6px 0 0 #ffffff );
                 }
             }
         }
