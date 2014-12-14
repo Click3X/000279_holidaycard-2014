@@ -40,7 +40,8 @@ define([
 
             _t.slider.model.on("change:ready", function(){
                 console.log("slider ready changed");
-                $('body').animate({scrollTop:0}, {duration:400, easing: "easeInOutQuart", complete:function(){
+
+                $('body').animate({scrollTop:0}, {duration:500, easing: "easeInOutCubic", complete:function(){
                     _t.ready();
                     _t.slider.activateslidebyindex(0);
                 }});
