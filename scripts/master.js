@@ -3,7 +3,7 @@
 /*----- user agent ------*/
 var i,svg,mobile,retina,mp4,
 uagent = navigator.userAgent.toLowerCase(),
-search_strings = [ "iphone","ipod","ipad","series60","symbian","android","windows ce","windows7phone","w7p","blackberry","palm" ];
+search_strings = [ "iphone","ipod","series60","symbian","android","windows ce","windows7phone","w7p","blackberry","palm" ];
 
 for(i in search_strings){
     if( uagent.search( search_strings[i] ) > -1 ) mobile = true;
