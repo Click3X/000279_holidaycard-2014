@@ -66,6 +66,9 @@ define([
         getnumquestions:function(){
             return this.attributes.questions.length;
         },
+        islastquestion:function(){
+            return this.getactivequestionindex() == this.getnumquestions()-1;
+        },
         //CLIENT WORKERS
         setclient:function(_data){
             this.attributes.client.set(_data);

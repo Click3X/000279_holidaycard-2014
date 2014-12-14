@@ -47,16 +47,19 @@ define([
                 //hide answers. takes 200ms per answer
                 question_views[ _t.session.getactivequestionindex() ].hideanswers();
 
-                console.log($("body").scrollTop() , navigation_view.$el.offset().top - 20)
+                console.log("is last question: ", _t.session.islastquestion());
+
                 //scroll to top
                 setTimeout(function(){
-                    if( $("body").scrollTop() > navigation_view.$el.offset().top - 20)
+                    if( $("body").scrollTop() > navigation_view.$el.offset().top - 20 && !_t.session.islastquestion() ){
                         $("body").animate({scrollTop: ( navigation_view.$el.offset().top - 20 ) + "px"}, {duration:500, easing: "easeInOutCubic", complete:function(){
                             _t.initnextquestion();
                         }});
-                    else
+                    } else {
                         _t.initnextquestion();
+                    }
                 }, _t.session.getactivequestion().get("answers").length*205 );
+
             }).on("change:story_path", function(_changed_model){
                 var newpath =  _changed_model.get("story_path");
 
