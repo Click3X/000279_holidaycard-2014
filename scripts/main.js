@@ -38,7 +38,5 @@ require([
 
         /*----- start router ------*/
         router            = new Router();
-
-        console.log("TweenMax", TweenMax)
     });
 });

@@ -32,7 +32,7 @@ if( !Object.keys ){
         }
 
         return keys;
-    };
+    }
 }
 
 /*--------facebook sdk---------*/
@@ -41,7 +41,7 @@ window.fbAsyncInit = function() {
       appId      : '1515702512016907',
       xfbml      : true,
       version    : 'v2.2'
-    });
+    })
 };
 
 (function(d, s, id){
@@ -52,23 +52,12 @@ window.fbAsyncInit = function() {
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-/*--------twitter share---------*/
-window.twttr=(function(d,s,id){
-    var t,js,fjs=d.getElementsByTagName(s)[0];
-    if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;
-    js.src="https://platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js,fjs);
-    return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})
-}(document,"script","twitter-wjs"));
-
 /*--------set default body tags---------*/
 function setbodytags(){
     document.body.className = "noselect";
     if(mobile == true) document.body.className+=" mobile";
     if(retina) document.body.className+=" retina";
     if(ipad) document.body.className+=" ipad";
-    // if(svg) document.body.className+=" svg";
-    // if(mp4) document.body.className+=" mp4";
 }
 
 /*--------set default pop window parameters---------*/
@@ -89,5 +78,21 @@ function openpopup(url, title, w, h){
         newWindow.focus();
     }
 }
+
+// DISABLE HOVER ON SCROLL ---------------------------
+var body = document.body, scrolltimer;
+
+window.addEventListener('scroll', function() {
+    clearTimeout(scrolltimer);
+
+    if(!body.classList.contains('disable-hover')) {
+        body.classList.add('disable-hover');
+    }
+
+    scrolltimer = setTimeout(function(){
+        body.classList.remove('disable-hover');
+    },200);
+}, false);
+  
 
 setbodytags();
