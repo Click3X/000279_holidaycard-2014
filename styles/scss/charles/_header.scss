@@ -2,6 +2,7 @@
     position: relative;
     width:100%;
     text-align: center;
+    position: fixed;
 }
 
 // BACK BTN
@@ -224,6 +225,9 @@
 .footer {
     padding: 80px 20px;
     opacity: 0;
+    background-color:white;
+    position:relative;
+    z-index: 2;
 
     &.ready{
         opacity: 1;
