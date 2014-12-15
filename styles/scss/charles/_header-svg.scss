@@ -14,26 +14,6 @@
     .snow-container { padding-bottom: 418px; }
 }
 
-// DIRECTIONS ARROW
-.directions {
-    position: relative;
-
-    &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top:17%; left:0; right:0;
-        margin:auto;
-        width: 80%; max-width: 490px;
-        height: 2px;
-        background-color:#d84f28;
-
-        @media(min-width: 481px) {
-            height: 3px;
-        }
-    }
-}
-
 .cta span {
     display: inline-block;
     margin: 0 auto;

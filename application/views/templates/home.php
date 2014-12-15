@@ -5,8 +5,8 @@
   <div class="cube cube3"></div>
 </div>
 <div class="page-content">
+	<hr>
 	<div class="directions clearfix">
-	    <!-- <p>Answer each question to create a custom Holiday Video, then share your story with others!</p> -->
 	    <p class="cta"><span>Create &amp; share</span><span>your holiday video today!</span></p>
 	    <div id="get-started" class="get-started">Get Started</div>
 	</div>

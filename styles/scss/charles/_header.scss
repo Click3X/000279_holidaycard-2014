@@ -180,42 +180,55 @@
 // GET STARTED DIRECTIONS
 .directions {
     text-align: center;
+    margin-top: -22px;
+
+    @media (min-width: 640px) {
+        margin-top: -34px;
+    }
+
     p {
         display:block;
         color:$darkblue;
         text-transform: capitalize;
         max-width: 12em;
         margin: .5em auto 1em;
-        font-size: 1.2em;
+        font-size: 1.3em;
         line-height: 1.3em;
-        @media(min-width: 481px) { font-size: 2em; }
+        @media(min-width: 640px) { font-size: 2em; }
     }
+
     .get-started {
         color:$darkblue;
-        display: inline-block;
-        position: relative;
         text-align: center;
         text-transform: uppercase;
         font-weight: 800;
         font-family: "proxima-nova-alt-ext-cond",sans-serif;
-        font-size: 1em;
-        margin-bottom: 0;
+        font-size: 1.1em;
+        margin-bottom: .2em;
 
-        @media(min-width: 481px) { font-size: 1.5em; margin-bottom: .5em;}
+        @media(min-width: 480px) { 
+            font-size: 1.2em;
+            margin-bottom: .3em;
+        }
+
         @media(min-width: 640px) { 
             font-size: 1.8em;
-            margin-bottom: .8em;
+            margin-bottom: .7em;
         }
     }
 }
 
 // FOOTER 
 .footer {
-    padding: 80px 20px;
+    padding: 80px 0;
     opacity: 0;
     background-color:white;
     position:relative;
     z-index: 2;
+
+    .footer-inner{
+        padding: 0 40px;
+    }
 
     &.ready{
         opacity: 1;
@@ -227,18 +240,18 @@
     }
 
     .gift-icon {
-        margin: 2.25em auto 1.25em;
+        width: 90px;
+        background-color: white;
         background-image: url("../../images/footer/gift-icon.png");
-        background-size: cover;
-        background-position: 50% 50%;
+        background-size:contain;
         background-repeat: no-repeat;
-        width: 13%;
-        height: 0;
-        padding-bottom: 14.6%;
+        background-position: center center;
+        height: 50px;
+        margin: -25px auto 20px auto;
 
-        @media(min-width: 525px) {
-            width:67px;
-            padding-bottom:75px;
+        @media(min-width:481px) {
+            height: 70px;
+            margin: -35px auto 20px auto;
         }
     }
 

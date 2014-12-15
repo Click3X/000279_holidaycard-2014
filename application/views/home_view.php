@@ -55,16 +55,19 @@
 
         <!-- FOOTER -->
         <div id="footer" class="footer clearfix">
-            <div class="gift-icon"></div>
-            <p>If you have a gift code<br><span class="red">enter it here</span></p>
-            <form id="giftcode" class="gift-code-form">
-                <div class="txt-holder clearfix">
-                    <label for="code" class="form-txt"></label>
-                    <input name="code" id="gift-code" type="text" placeholder="Gift code" />
-                    <span class="error"></span>
-                    <input type="submit" class="form-btn" value="submit" />
-                </div>
-            </form>
+            <div class="footer-inner">
+                <hr>
+                <div class="gift-icon"></div>
+                <p>If you have a gift code<br><span class="red">enter it here</span></p>
+                <form id="giftcode" class="gift-code-form">
+                    <div class="txt-holder clearfix">
+                        <label for="code" class="form-txt"></label>
+                        <input name="code" id="gift-code" type="text" placeholder="Gift code" />
+                        <span class="error"></span>
+                        <input type="submit" class="form-btn" value="submit" />
+                    </div>
+                </form>
+            </div>
         </div>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
