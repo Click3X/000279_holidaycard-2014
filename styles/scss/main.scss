@@ -59,8 +59,6 @@ body.page-tshirt, body.page-complete{
     }
 }
 
-.mobile,
-.ipad,
 .disable-hover,
 .disable-hover *{
     pointer-events: none !important;
@@ -247,31 +245,31 @@ ul.answer-list{
     }
 }
 
-// body.mobile, body.ipad{
-//     ul.answer-list{
-//         li{
-//             &:hover{
-//                 .answer-inner{
-//                     border:6px solid white;
-//                 }
+body.mobile, body.ipad{
+    ul.answer-list{
+        li{
+            &:hover{
+                .answer-inner{
+                    border:6px solid white;
+                }
 
-//                 a{
-//                     .question-label{
-//                         h4{
-//                             @include prefix(box-shadow, 6px 6px 0 0 #ffffff );
-//                         }
-//                     }
-//                 }
-//             }
+                a{
+                    .question-label{
+                        h4{
+                            @include prefix(box-shadow, 6px 6px 0 0 #ffffff );
+                        }
+                    }
+                }
+            }
 
-//             &.active{
-//                 .answer-inner{
-//                     border:6px solid $lightblue;
-//                 }
-//             }
-//         }
-//     }
-// }
+            &.active{
+                .answer-inner{
+                    border:6px solid $lightblue;
+                }
+            }
+        }
+    }
+}
 
 @import 'charles/loader.scss';
 @import 'charles/header.scss';
