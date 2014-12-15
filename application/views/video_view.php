@@ -62,12 +62,14 @@
         <div id="page-container">
             <div class="form-txt">Happy Holidays!</div>
             <section>
-                <h1>HERE IS MY HOLIDAY STORY <?php echo $video->video_id; ?></h1>
+                <h1>HERE IS MY HOLIDAY STORY</h1>
                 <div class="video-wrapper">
                     <div class="video-container">
                         <div class="video-player">
                             <video class="mobile-video" width="960" height="540" controls></video>
-                            <div class="poster"></div>
+                            <div class="poster">
+                                <div class="play-button"></div>
+                            </div>
                             <video class="video" width="960" height="540" controls></video>
                         </div>
                     </div>

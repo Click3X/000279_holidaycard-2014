@@ -10,17 +10,20 @@
     
     input[type="text"]{
         text-align: center;
-        padding-left:1em;
         color:$blue;
-        letter-spacing: 1em;
-
-        max-width: 360px;
         margin:0 auto;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        width:100%;
+
+         @media(min-width: 480px) { 
+            max-width: 380px;
+        }
     }
 }
 
 // STYLE PLACE HOLDER TEXT FOR INPUTS
-::-webkit-input-placeholder { color: #b2b3b4; letter-spacing: normal; text-align: center; font-weight:300 }
-:-moz-placeholder{ color: #b2b3b4; letter-spacing: normal; text-align: center; font-weight:300}
-::-moz-placeholder{ color: #b2b3b4; letter-spacing: normal; text-align: center; font-weight:300 }
-:-ms-input-placeholder{ color: #b2b3b4; letter-spacing: normal; text-align: center; font-weight:300 }
+::-webkit-input-placeholder { color: #b2b3b4; letter-spacing: normal; text-align: center; font-weight:300; letter-spacing: .1em; }
+:-moz-placeholder{ color: #b2b3b4; letter-spacing: normal; text-align: center; font-weight:300; letter-spacing: .1em;}
+::-moz-placeholder{ color: #b2b3b4; letter-spacing: normal; text-align: center; font-weight:300; letter-spacing: .1em; }
+:-ms-input-placeholder{ color: #b2b3b4; letter-spacing: normal; text-align: center; font-weight:300;  letter-spacing: .1em;}
