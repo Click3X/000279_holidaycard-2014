@@ -60,8 +60,9 @@
 
         <!-- PAGE CONTAINER -->
         <div id="page-container">
+            <div class="form-txt">Happy Holidays!</div>
             <section>
-                <h1>MY HOLIDAY STORY: <?php echo $video->video_id; ?></h1>
+                <h1>HERE IS MY HOLIDAY STORY <?php echo $video->video_id; ?></h1>
                 <div class="video-wrapper">
                     <div class="video-container">
                         <div class="video-player">
