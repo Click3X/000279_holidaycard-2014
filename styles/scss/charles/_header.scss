@@ -224,6 +224,7 @@
     background-color:white;
     position:relative;
     z-index: 2;
+    text-align: center;
 
     .footer-inner{
         padding: 0 40px;
@@ -277,6 +278,34 @@
             font-weight: 700;
             height: 0;
             font-size: .8em;
+        }
+    }
+
+    .credits{
+        margin:20px auto 0 auto;
+        font-size: .9em;
+        display: inline-block;
+        
+        a{
+            display: inline-block;
+            padding: 20px;
+            text-decoration:none !important;
+
+            p{
+                color: #999 !important;
+            }
+
+            .logo{
+                width:200px;
+                height: auto;
+                margin-left: -2px;
+                margin-top: 4px;
+            }
+        }
+
+        &:hover{
+            margin-top: 19px;
+            border: 1px solid #CCC;
         }
     }
 }

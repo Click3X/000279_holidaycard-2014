@@ -80,6 +80,12 @@
             </section>
         </div>
 
+        <div id="footer" class="footer clearfix">
+            <div class="footer-inner">
+                <div class="credits"><a href="http://ablebaker-nyc.com" target="_blank"><p>original music by</p><img class="logo" src="<?= base_url(); ?>images/ui/ablebaker_logo.jpg" width="200" /></a></div>
+            </div>
+        </div>
+
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

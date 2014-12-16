@@ -63,6 +63,7 @@
                         <input type="submit" class="form-btn" value="submit" />
                     </div>
                 </form>
+                <div class="credits"><a href="http://ablebaker-nyc.com" target="_blank"><p>original music by</p><img class="logo" src="<?= base_url(); ?>images/ui/ablebaker_logo.jpg" width="200" /></a></div>
             </div>
         </div>
 

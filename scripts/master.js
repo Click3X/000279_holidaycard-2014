@@ -82,7 +82,7 @@ function openpopup(url, title, w, h){
 
     var left = ((width / 2) - (w / 2)) + dualScreenLeft;
     var top = ((height / 2) - h) + dualScreenTop;
-    var newWindow = window.open(url, title, 'scrollbars=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+    var newWindow = window.open(url, escape(title), 'scrollbars=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
 
     // Puts focus on the newWindow
     if( window.focus ){
@@ -90,9 +90,7 @@ function openpopup(url, title, w, h){
     }
 }
 
-// DISABLE HOVER ON SCROLL ---------------------------
-
-
+/*--------disable pointer events on scroll----------------*/
 window.addEventListener('scroll', function() {
     clearTimeout(scrolltimer);
 
