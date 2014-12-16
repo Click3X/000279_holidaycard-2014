@@ -33,7 +33,7 @@
 
         <script src="<?= base_url();?>scripts/vendor/modernizr/modernizr.min.js"></script>
     </head>
-    <body class="noselect">
+    <body class="noselect single-video">
         <!-- HEADER -->
         <div id="header-container" class="header-container clearfix">   
             <!-- ANIMATED SNOW -->
@@ -80,7 +80,7 @@
             </section>
         </div>
 
-        <div id="footer" class="footer clearfix">
+        <div id="footer" class="footer clearfix single-video-footer">
             <div class="footer-inner">
                 <div class="credits"><a href="http://ablebaker-nyc.com" target="_blank"><p>original music by</p><img class="logo" src="<?= base_url(); ?>images/ui/ablebaker_logo.jpg" width="200" /></a></div>
             </div>

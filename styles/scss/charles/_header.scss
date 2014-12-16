@@ -226,6 +226,11 @@
     z-index: 2;
     text-align: center;
 
+    &.single-video-footer{
+        padding: 40px 0;
+        opacity: 1;
+    }
+
     .footer-inner{
         padding: 0 40px;
     }
@@ -319,5 +324,6 @@
         }
     }
 }
+
 
 .red { color:$red; }
