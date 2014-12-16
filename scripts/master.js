@@ -1,7 +1,7 @@
 'use strict';
 
 /*----- user agent ------*/
-var i,svg=false,mobile=false,retina=false,mp4=false,ipad=false,iphone=false,
+var i,svg=false,mobile=false,retina=false,mp4=false,ipad=false,iphone=false,ie=false,
 body = document.body, scrolltimer,
 uagent = navigator.userAgent.toLowerCase(),
 search_strings = [ "iphone","ipod","series60","symbian","android","windows ce","windows7phone","w7p","blackberry","palm" ];
@@ -12,6 +12,9 @@ for(i in search_strings){
 
 if( uagent.search( "ipad" ) > -1 ) ipad = true;
 if( uagent.search( "iphone" ) > -1 ) iphone = true;
+if( uagent.search( "msie" ) > -1 ) ie = true;
+
+alert(uagent);
 
 /*---mp4------*/
 var mp4 = ( Modernizr.video && document.createElement('video').canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2') );
@@ -67,6 +70,7 @@ function setbodytags(){
     if(retina == true)  body.className += " retina";
     if(ipad == true)    body.className += " ipad";
     if(iphone == true)  body.className += " iphone";
+    if(ie == true)  body.className += " ie";
 }
 
 /*--------set default pop window parameters---------*/

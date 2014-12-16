@@ -8,10 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
         <link rel="stylesheet" href="<?= base_url();?>styles/css/main.css">
         
-        <!--[if IE]>
-            <link rel="stylesheet" type="text/css" href="<?= base_url();?>styles/css/ie.css" />
-        <![endif]-->
-
         <link rel="icon" type="image/png" href="favicon.png">
 
         <!-- TYPE KIT FONT JS CODE -->

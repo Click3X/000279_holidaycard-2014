@@ -1,0 +1,48 @@
+/* STYLES FOR IE */
+
+body.ie{
+    ul.answer-list .question-label::before, 
+    ul.tshirt-slides .question-label::before,
+    #main-nav-container ul.nav-pills li a::before,
+    .btn-holder:after {
+        font-size: 32px !important;
+    }
+
+    @media all and (min-width: 481px) {
+        ul.answer-list .question-label::before, 
+        ul.tshirt-slides .question-label::before,
+        #main-nav-container ul.nav-pills li a::before,
+        .btn-holder:after {
+            font-size: 36px !important;
+        }
+    }
+
+    /* SHOW BACKGROUND SVG FOR IE */
+    #header-container .svg-holder > .new-header {
+        display: block;
+    }
+
+
+    .new-header {
+        background-image:url('../../images/new-header/header.png');
+        background-repeat:no-repeat;
+        width: 100%;
+        padding-bottom: 61.5%;
+        position: absolute;
+        top: 0;
+        left:0;
+        right: 0;
+        margin: auto;
+    }
+
+    /* SHOW BACKGROUND SVG */
+    .svg .new-header{
+        background-size: cover; 
+        background-image:url('../../images/new-header/header.svg'); 
+    }
+
+    /* HIDE INLINE SVG */
+    #header-container .svg-holder #Layer_1 {
+        display: none;
+    }
+}
