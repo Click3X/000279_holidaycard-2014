@@ -45,18 +45,18 @@
 			</div>
 			<div class="form-txt">Confirm your mailing info</div>
 			<div class="txt-holder clearfix">
-				
+
 				<label for="address" class="form-txt color">address</label>
-				<input type="text" name="address" id="address" value="<%= address %>" />
+				<input type="text" name="address" id="address" value="<%= address %>" class="validate" />
 
 				<label for="city" class="form-txt color">city</label>
-				<input type="text" name="city" id="city" value="<%= city %>" />
+				<input type="text" name="city" id="city" value="<%= city %>" class="validate" />
 
 				<div class="state-zip-holder clearfix">
 					<div class="state-holder clearfix">
 						<div class="input-inner">
 							<label for="state" class="form-txt">state</label>
-							<select class="state" name="state" autocomplete="off">
+							<select class="state validate" name="state" autocomplete="off">
 								<?php foreach ($states as $key => $state): ?>
 								<option autocomplete="off" value="<?php echo $state->state_abbr; ?>"><?php echo $state->state_name; ?></option>
 								<?php endforeach; ?>
@@ -66,7 +66,7 @@
 					<div class="zip-holder">
 						<div class="input-inner">
 							<label for="zip" class="form-txt zip">zip code</label>
-							<input type="text" name="zip" id="zip" value="<%= zip %>" />
+							<input type="text" name="zip" id="zip" value="<%= zip %>" class="validate"/>
 						</div>
 					</div>
 				</div>

@@ -16,10 +16,10 @@ define([
             }});
         },
         append:function(){
-            if( this.session.attributes.client.attributes.first_name ){
+            if( this.session.attributes.client.attributes.id ){
                 this.$el.html( this.template( this.session.attributes.client.attributes ) );
             }else{
-                this.$el.html( "<h5>Sorry, somehow I've forgotten your name.</h5>");
+                this.$el.html( "<h5>Sorry, somehow I've lost track of your order. Please give us a call at 212-627-1900.</h5>");
             }
         }
     });

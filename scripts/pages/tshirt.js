@@ -18,8 +18,8 @@ define([
             if( this.session.attributes.client.attributes.id ){
                 this.$el.html( this.template( this.session.attributes.client.attributes ) );
             }else{
-                //this.$el.html( "<h5>Sorry, that's not a valid gift code.</h5>");
-                this.$el.html( this.template( {id:"0", first_name:"Jason", address:"15 Warren St #121", city:"Jersey City", state:"NJ", zip:"07302"} ) );
+                this.$el.html( "<h5>Sorry, that's not a valid gift code.</h5>");
+                // this.$el.html( this.template( {id:"0", first_name:"", address:"", city:"", state:"", zip:""} ) );
             }
         },
         activate:function(){
@@ -59,29 +59,25 @@ define([
         validate:function(){
             var v = true;
 
-            //inputs
-
-            this.$el.find("input").each(function(){
-                console.log($(this).attr("type"));
+            this.$el.find(".validate").each(function(){
                 var input = $(this);
 
-                switch( input.attr("type") ){
-                    case "text":
-                    console.log("text field");
-                    if( input.val() == "" ){
-                        v = false;
-                        $(this).addClass("error").attr("error",true);
-                    }
-                    break;
+                input.removeClass("error");
+
+                console.log("INPUT:::: ", input.val());
+
+                if( !input.val() || input.val() == "" ){
+                    v = false;
+                    input.addClass("error");
                 }
             });
 
-            return false;
+            return v;
         },
         submitorder:function(){
             var _t = this;
 
-            if( _t.validate() ){
+            if( _t.validate() == true ){
                 if(!_t.form_container.hasClass("sending")){
                     _t.form_container.addClass("sending");
 
