@@ -37,7 +37,7 @@
 
         <script src="<?= base_url();?>scripts/vendor/modernizr/modernizr.min.js"></script>
     </head>
-    <body>
+    <body class="noselect">
         <!-- HEADER -->
         <div id="header-container" class="header-container clearfix">   
             <!-- ANIMATED SNOW -->

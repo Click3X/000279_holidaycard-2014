@@ -53,6 +53,7 @@ class Encoder extends CI_Controller {
 		$response->mp4 	= $mp4;
 		$response->webm = $webm;
 		$response->id = $this->video_model->add( array( "video_id"=>$selections_str ) );
+		$response->poster_id = $selections[0];
 
 		$this->output->set_header("Access-Control-Allow-Origin: *");
 		$this->output->set_header("Access-Control-Expose-Headers: Access-Control-Allow-Origin");

@@ -40,13 +40,23 @@ define([
                 $( _t.video ).remove();
                 if(_type) $( _t.mobile_video ).attr( "type", "video/" + _type );
                 if(_url) $( _t.mobile_video ).attr( "src", _url );
+
+                $(_t.mobile_video).on("play", function(){
+                    $(_t.mobile_video).css("opacity",1);
+                });
+
+                if(iphone){
+                    $(_t.mobile_video).on("pause", function(){
+                        $(_t.mobile_video).css("opacity",0);
+                    });
+                }
             } else {
                 $( _t.mobile_video ).remove();
                 if(_type) $( _t.video ).attr( "type", "video/" + _type );
                 if(_url) $( _t.video ).attr( "src", _url );
-                
+
                 $(_t.video).on("play", function(){
-                    _t.poster.fadeOut(300);
+                    _t.poster.fadeOut(200);
                 });
             }
 

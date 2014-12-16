@@ -1,7 +1,7 @@
 'use strict';
 
 /*----- user agent ------*/
-var i,svg,mobile = false,retina,mp4,ipad = false,
+var i,svg=false,mobile=false,retina=false,mp4=false,ipad=false,iphone=false,
 uagent = navigator.userAgent.toLowerCase(),
 search_strings = [ "iphone","ipod","series60","symbian","android","windows ce","windows7phone","w7p","blackberry","palm" ];
 
@@ -10,6 +10,7 @@ for(i in search_strings){
 }
 
 if( uagent.search( "ipad" ) > -1 ) ipad = true;
+if( uagent.search( "iphone" ) > -1 ) iphone = true;
 
 /*---mp4------*/
 var mp4 = ( Modernizr.video && document.createElement('video').canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2') );
@@ -54,10 +55,10 @@ window.fbAsyncInit = function() {
 
 /*--------set default body tags---------*/
 function setbodytags(){
-    document.body.className = "noselect";
-    if(mobile == true) document.body.className+=" mobile";
-    if(retina) document.body.className+=" retina";
-    if(ipad) document.body.className+=" ipad";
+    if(mobile == true) body.classList.add("mobile");
+    if(retina == true) body.classList.add("retina");
+    if(ipad == true) body.classList.add("ipad");
+    if(iphone == true) body.classList.add("iphone");
 }
 
 /*--------set default pop window parameters---------*/

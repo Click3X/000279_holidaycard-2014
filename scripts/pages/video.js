@@ -53,7 +53,7 @@ define([
                         _t.saved_video_key = response.id;
 
                         var _type = mp4 ? "mp4" : "webm";
-                        _t.videoplayer.load( response[_type].video, _type, base_url + "images/thumbs/vacation.jpg" );
+                        _t.videoplayer.load( response[_type].video, _type, base_url + "images/thumbs/"+ response["poster_id"] + ".jpg" );
 
                         _t.$el.find(".social-buttons a.fb").click( function(){
                             _t.shareonfacebook();
