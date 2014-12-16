@@ -32,7 +32,7 @@
         <script type="text/javascript">
             var base_url    = "<?=base_url(); ?>";
             var video_id    = "<?= $video->video_id; ?>";
-            var thumb       = "<?= base_url(); ?>images/thumbs/poster.jpg";
+            var thumb       = "<?= base_url(); ?>images/thumbs/video_poster.jpg";
         </script>
 
         <script src="<?= base_url();?>scripts/vendor/modernizr/modernizr.min.js"></script>
