@@ -67,7 +67,7 @@ define([
 
             /*--- update body tags --*/
             setbodytags();
-            body.classList.add("page-" + _pageid);
+            body.className += " page-" + _pageid;
 
             this.session.activatepagebyid(_pageid);
 	    },

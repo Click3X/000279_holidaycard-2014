@@ -6,6 +6,8 @@ body = document.body, scrolltimer,
 uagent = navigator.userAgent.toLowerCase(),
 search_strings = [ "iphone","ipod","series60","symbian","android","windows ce","windows7phone","w7p","blackberry","palm" ];
 
+alert(document.body);
+
 for(i in search_strings){
     if( uagent.search( search_strings[i] ) > -1 ) mobile = true;
 }
@@ -62,10 +64,11 @@ window.fbAsyncInit = function() {
 /*--------set default body tags---------*/
 function setbodytags(){
     body.className = "";
-    if(mobile == true) body.classList.add("mobile");
-    if(retina == true) body.classList.add("retina");
-    if(ipad == true) body.classList.add("ipad");
-    if(iphone == true) body.classList.add("iphone");
+
+    if(mobile == true)  body.className += " mobile";
+    if(retina == true)  body.className += " retina";
+    if(ipad == true)    body.className += " ipad";
+    if(iphone == true)  body.className += " iphone";
 }
 
 /*--------set default pop window parameters---------*/
@@ -93,12 +96,17 @@ function openpopup(url, title, w, h){
 window.addEventListener('scroll', function() {
     clearTimeout(scrolltimer);
 
-    if(!body.classList.contains('disable-hover')) {
-        body.classList.add('disable-hover');
+    if(body.className.indexOf('disable-hover') == -1) {
+        body.className += ' disable-hover';
     }
 
     scrolltimer = setTimeout(function(){
-        body.classList.remove('disable-hover');
+        var classes = body.className.split(" ");
+        for(var i = 0; i<classes.length; i++){
+            if( classes[i] == 'disable-hover' )
+                classes.splice(i,1);
+        }
+        body.className = classes.join(" ");
     },200);
 }, false);
   
