@@ -80,7 +80,7 @@ define([
         submitgiftcode:function(){
             var _t = this;
 
-            _t.giftcode_form.find(".error").html();
+            _t.giftcode_form.find(".error").html("");
 
             $.ajax({
                 type: 'POST',
