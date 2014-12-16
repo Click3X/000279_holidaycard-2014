@@ -293,13 +293,23 @@
 
             p{
                 color: #CCC !important;
+                font-size:1.3em;
+
+                @media(min-width: 481px) {
+                   width:200px;
+                   font-size:1.7em;
+                }
             }
 
             .logo{
-                width:200px;
+                width:170px;
                 height: auto;
                 margin-left: -2px;
                 margin-top: 4px;
+
+                @media(min-width: 481px) {
+                    width:200px;
+                 }
             }
         }
 
