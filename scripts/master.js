@@ -6,8 +6,6 @@ body = document.body, scrolltimer,
 uagent = navigator.userAgent.toLowerCase(),
 search_strings = [ "iphone","ipod","series60","symbian","android","windows ce","windows7phone","w7p","blackberry","palm" ];
 
-alert(document.body);
-
 for(i in search_strings){
     if( uagent.search( search_strings[i] ) > -1 ) mobile = true;
 }
