@@ -54,7 +54,7 @@ define([
 
                         var _type = mp4 ? "mp4" : "webm";
 
-                        _t.videoplayer.load( response[_type].video, _type, base_url + "images/ui/poster.jpg" );
+                        _t.videoplayer.load( response[_type].video, _type, base_url + "images/thumbs/poster.jpg" );
 
                         /*---poster based on first question. uncomment if needed.-----*/
                         //_t.videoplayer.load( response[_type].video, _type, base_url + "images/thumbs/"+ response["poster_id"] + ".jpg" );
