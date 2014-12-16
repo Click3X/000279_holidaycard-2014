@@ -2,6 +2,7 @@
 
 /*----- user agent ------*/
 var i,svg=false,mobile=false,retina=false,mp4=false,ipad=false,iphone=false,
+body = document.body, scrolltimer,
 uagent = navigator.userAgent.toLowerCase(),
 search_strings = [ "iphone","ipod","series60","symbian","android","windows ce","windows7phone","w7p","blackberry","palm" ];
 
@@ -60,6 +61,7 @@ window.fbAsyncInit = function() {
 
 /*--------set default body tags---------*/
 function setbodytags(){
+    body.className = "";
     if(mobile == true) body.classList.add("mobile");
     if(retina == true) body.classList.add("retina");
     if(ipad == true) body.classList.add("ipad");
@@ -86,7 +88,7 @@ function openpopup(url, title, w, h){
 }
 
 // DISABLE HOVER ON SCROLL ---------------------------
-var body = document.body, scrolltimer;
+
 
 window.addEventListener('scroll', function() {
     clearTimeout(scrolltimer);
