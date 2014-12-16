@@ -43,19 +43,15 @@
 				<input type="radio" name="size" id="xlr" value="xlr">
 				<label for="xlr" class="form-btn">xlr</label>
 			</div>
-			<!-- <div class="form-txt">Pick a color</div>
-			<div class="tshirt-color-holder clearfix">
-				<input type="radio" name="color" id="color-1" value="color-1" checked>
-				<label for="color-1" class="form-btn color-1">color-1</label>
-				<input type="radio" name="color" id="color-2" value="color-2">
-				<label for="color-2" class="form-btn color-2">color-2</label>
-			</div> -->
 			<div class="form-txt">Confirm your mailing info</div>
 			<div class="txt-holder clearfix">
+				
 				<label for="address" class="form-txt color">address</label>
-				<input type="text" name="address" id="address" value="<%= address %>">
+				<input type="text" name="address" id="address" value="<%= address %>" />
+
 				<label for="city" class="form-txt color">city</label>
 				<input type="text" name="city" id="city" value="<%= city %>" />
+
 				<div class="state-zip-holder clearfix">
 					<div class="state-holder clearfix">
 						<div class="input-inner">
@@ -70,7 +66,7 @@
 					<div class="zip-holder">
 						<div class="input-inner">
 							<label for="zip" class="form-txt zip">zip code</label>
-							<input type="text" name="zip" id="zip" value="<%= zip %>">
+							<input type="text" name="zip" id="zip" value="<%= zip %>" />
 						</div>
 					</div>
 				</div>

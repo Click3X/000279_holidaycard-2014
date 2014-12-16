@@ -77,7 +77,7 @@ class Encoder extends CI_Controller {
 		array_push( $files, "'".base_url()."videos/src/".$ext."/outro_".$ending.".".$ext."'" );
 
 		$sources 	= "file ".implode("\nfile ", $files);
-		$filelist 	= FCPATH."videos/tmp/filelist.txt";
+		$filelist 	= FCPATH."videos/tmp/".implode("-", $selections)."_".time().".txt";
 		$savefile 	= file_put_contents($filelist, $sources);
 		
 		// build the ffmpeg command and exec
@@ -117,6 +117,8 @@ class Encoder extends CI_Controller {
 				$response->error = "failed to write tmp file : ". $result;
 			}	
 		}
+
+		unlink($filelist);
 
 		return $response;
 	}

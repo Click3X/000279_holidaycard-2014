@@ -15,11 +15,11 @@ define([
         slide_input:null,
         error_span:null,
         append:function(){
-            if( this.session.attributes.client.attributes.first_name ){
+            if( this.session.attributes.client.attributes.id ){
                 this.$el.html( this.template( this.session.attributes.client.attributes ) );
             }else{
-                this.$el.html( "<h5>Sorry, that's not a valid gift code.</h5>");
-                //this.$el.html( this.template( {id:"0", first_name:"Jason", address:"15 Warren St #121", city:"Jersey City", state:"NJ", zip:"07302"} ) );
+                //this.$el.html( "<h5>Sorry, that's not a valid gift code.</h5>");
+                this.$el.html( this.template( {id:"0", first_name:"Jason", address:"15 Warren St #121", city:"Jersey City", state:"NJ", zip:"07302"} ) );
             }
         },
         activate:function(){
@@ -56,28 +56,52 @@ define([
 
             this.slider.remove();
         },
+        validate:function(){
+            var v = true;
+
+            //inputs
+
+            this.$el.find("input").each(function(){
+                console.log($(this).attr("type"));
+                var input = $(this);
+
+                switch( input.attr("type") ){
+                    case "text":
+                    console.log("text field");
+                    if( input.val() == "" ){
+                        v = false;
+                        $(this).addClass("error").attr("error",true);
+                    }
+                    break;
+                }
+            });
+
+            return false;
+        },
         submitorder:function(){
             var _t = this;
 
-            if(!_t.form_container.hasClass("sending")){
-                _t.form_container.addClass("sending");
+            if( _t.validate() ){
+                if(!_t.form_container.hasClass("sending")){
+                    _t.form_container.addClass("sending");
 
-                $.ajax({
-                  type: 'POST',
-                  url: base_url + 'orders/add',
-                  data: _t.order_form.serialize(),
-                  dataType:'json'
-                }).done(function(result){
-                     _t.form_container.removeClass("sending");
+                    $.ajax({
+                      type: 'POST',
+                      url: base_url + 'orders/add',
+                      data: _t.order_form.serialize(),
+                      dataType:'json'
+                    }).done(function(result){
+                         _t.form_container.removeClass("sending");
 
-                    if(result.success){
-                        router.navigate("complete", true);
-                    } else {
-                         _t.error_span.html(result.error);
-                    }
+                        if(result.success){
+                            router.navigate("complete", true);
+                        } else {
+                             _t.error_span.html(result.error);
+                        }
 
-                    console.log("order complete: ", result);
-                });
+                        console.log("order complete: ", result);
+                    });
+                }
             }
         }
     });
