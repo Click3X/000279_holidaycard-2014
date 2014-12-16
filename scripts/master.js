@@ -36,6 +36,11 @@ if( !Object.keys ){
     }
 }
 
+/*-----google analytics events----- */
+function tracksocial(_label){
+  ga('send', 'event', 'social', 'share', _label);
+}
+
 /*--------facebook sdk---------*/
 window.fbAsyncInit = function() {
     FB.init({

@@ -53,7 +53,11 @@ define([
                         _t.saved_video_key = response.id;
 
                         var _type = mp4 ? "mp4" : "webm";
-                        _t.videoplayer.load( response[_type].video, _type, base_url + "images/thumbs/"+ response["poster_id"] + ".jpg" );
+
+                        _t.videoplayer.load( response[_type].video, _type, base_url + "images/ui/poster.jpg" );
+
+                        /*---poster based on first question. uncomment if needed.-----*/
+                        //_t.videoplayer.load( response[_type].video, _type, base_url + "images/thumbs/"+ response["poster_id"] + ".jpg" );
 
                         _t.$el.find(".social-buttons a.fb").click( function(){
                             _t.shareonfacebook();
@@ -81,6 +85,8 @@ define([
         shareonfacebook:function(){
             var _t = this;
 
+            tracksocial("facebook");
+
             FB.ui({
               method: 'share',
               href: base_url + 'video/' + _t.saved_video_key,
@@ -90,6 +96,8 @@ define([
         },
         shareontwitter:function(){
             var _t = this;
+
+            tracksocial("twitter");
             
             openpopup( "https://twitter.com/share?url=" + base_url + 'video/' + _t.saved_video_key + "&text=" + encodeURIComponent( default_twitter_status ) , "Share on Twitter", 530, 240 );
         },

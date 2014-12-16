@@ -32,7 +32,10 @@
         <script type="text/javascript">
             var base_url    = "<?=base_url(); ?>";
             var video_id    = "<?= $video->video_id; ?>";
-            var thumb       = "<?= base_url(); ?>images/thumbs/" + video_id.split("-")[0] + ".jpg";
+            var thumb       = "<?= base_url(); ?>images/ui/poster.jpg";
+
+            /*---poster based on first question. uncomment if needed.-----*/
+            //var thumb       = "<?= base_url(); ?>images/thumbs/" + video_id.split("-")[0] + ".jpg";
         </script>
 
         <script src="<?= base_url();?>scripts/vendor/modernizr/modernizr.min.js"></script>
