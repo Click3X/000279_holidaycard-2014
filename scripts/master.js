@@ -14,8 +14,6 @@ if( uagent.search( "ipad" ) > -1 ) ipad = true;
 if( uagent.search( "iphone" ) > -1 ) iphone = true;
 if( uagent.search( "msie" ) > -1 ) ie = true;
 
-alert(uagent);
-
 /*---mp4------*/
 var mp4 = ( Modernizr.video && document.createElement('video').canPlayType('video/mp4; codecs=avc1.42E01E,mp4a.40.2') );
 
