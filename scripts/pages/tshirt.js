@@ -18,8 +18,8 @@ define([
             if( this.session.attributes.client.attributes.id ){
                 this.$el.html( this.template( this.session.attributes.client.attributes ) );
             }else{
-               this.$el.html( "<h5>Sorry, that's not a valid gift code.</h5>");
-               // this.$el.html( this.template( {id:"0", first_name:"", address:"", city:"", state:"", zip:""} ) );
+               //this.$el.html( "<h5>Sorry, that's not a valid gift code.</h5>");
+               this.$el.html( this.template( {id:"0", first_name:"", address:"", city:"", state:"", zip:""} ) );
             }
         },
         activate:function(){
