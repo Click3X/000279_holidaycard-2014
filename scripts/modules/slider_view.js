@@ -54,7 +54,7 @@ define([
                 _model.set("active",_id == _model.id);
             });
 
-            // this.trigger("slidechanged", _id);
+            this.trigger("slidechanged", _id);
         },
         selectdotbyid:function(_id){
             this.$el.find("ul.slider-nav-dots li.active").removeClass("active")  ;

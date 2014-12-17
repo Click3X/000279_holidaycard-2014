@@ -18,8 +18,8 @@ define([
             if( this.session.attributes.client.attributes.id ){
                 this.$el.html( this.template( this.session.attributes.client.attributes ) );
             }else{
-                this.$el.html( "<h5>Sorry, that's not a valid gift code.</h5>");
-                // this.$el.html( this.template( {id:"0", first_name:"", address:"", city:"", state:"", zip:""} ) );
+               this.$el.html( "<h5>Sorry, that's not a valid gift code.</h5>");
+               // this.$el.html( this.template( {id:"0", first_name:"", address:"", city:"", state:"", zip:""} ) );
             }
         },
         activate:function(){
@@ -27,12 +27,14 @@ define([
 
             _t.form_container       = _t.$el.find("#form-container").eq(0);
             _t.order_form           = _t.$el.find("form#order-form").eq(0);
-            _t.slide_input          = _t.$el.find("input[name='design']").eq(0);
+            _t.slide_input          = _t.$el.find("input.design").eq(0);
             _t.error_span           = _t.$el.find("span.error").eq(0);
             _t.state_select         = _t.$el.find("select.state").eq(0);
 
             _t.slider = new SliderView({ el:this.$el.find(".slider")[0] });
             _t.slider.on("slidechanged", function(_slide_id){
+                console.log("slidechanged");
+
                 _t.slide_input.attr("value",_slide_id);
             });
 

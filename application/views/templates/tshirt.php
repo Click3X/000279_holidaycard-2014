@@ -31,7 +31,7 @@
 	<div id="form-container">
 		<form id="order-form" class="tshirt-form">
 			<input name="ref_client_id" id="client-id" type="hidden" value="<%= id %>"/>
-			<input name="design" id="tshirt-design" type="hidden"/>
+			<input class="design" name="design" id="tshirt-design" type="hidden"/>
 			<div class="form-txt">Pick a size</div>
 			<div class="tshirt-size-holder clearfix">
 				<input type="radio" name="size" id="sml" value="sml">
