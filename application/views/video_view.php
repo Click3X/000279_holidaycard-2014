@@ -10,7 +10,7 @@
 
         <link rel="icon" type="image/png" href="favicon.png">
 
-        <meta property="og:url" content="<?= base_url(); ?>video/<?= $video->video_id; ?>" /> 
+        <meta property="og:url" content="<?= base_url(); ?>video/<?= $videoid; ?>" /> 
         <meta property="og:title" content="Happy Holidays from Click 3X!" />
         <meta property="og:description" content="Check out my Holiday Video and make your own at holidays.click3x.com/2014!" /> 
         <meta property="og:image" content="<?= base_url(); ?>images/thumbs/social_banner.jpg"/> 

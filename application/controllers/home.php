@@ -15,6 +15,6 @@ class Home extends CI_Controller {
 		$this->load->model("video_model");
 		$video = $this->video_model->get( array( "id"=>$videoid ) );
 
-		$this->load->view( "video_view", array( "video"=>$video ) );
+		$this->load->view( "video_view", array( "videoid"=>$videoid, "video"=>$video ) );
 	}
 }
