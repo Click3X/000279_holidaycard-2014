@@ -7,6 +7,17 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" />
         <link rel="stylesheet" href="<?= base_url();?>styles/css/main.css">
+
+        <meta property="og:url" content="<?= base_url(); ?>" /> 
+        <meta property="og:title" content="Happy Holidays from Click 3X!" />
+        <meta property="og:description" content="Create and share your holiday story at holidays.click3x.com/2014!" /> 
+        <meta property="og:image" content="<?= base_url(); ?>images/thumbs/social_banner.jpg"/> 
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@click3x">
+        <meta name="twitter:title" content="Happy Holidays from Click 3X!">
+        <meta name="twitter:description" content="Create and share your holiday story at holidays.click3x.com/2014!">
+        <meta name="twitter:image:src" content="<?= base_url(); ?>images/thumbs/social_banner.jpg">
         
         <link rel="icon" type="image/png" href="favicon.png">
 
